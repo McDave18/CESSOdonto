@@ -1,0 +1,903 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content "> 
+        <form action="" #formu1="ngForm" (ngSubmit)="onSubmit(formu1)">
+
+
+          <div class="box box-info">
+            <div class="row">
+                <div class="col-md-4">
+                  <label>Alerta Médica: </label>
+                  <input type="text" class="form-control" placeholder="Escriba ..." name="alert" #alertm="ngModel" [(ngModel)]="form1.alertam">
+                </div>
+                <div class="col-md-4">
+                  <label>Alergias: </label>
+                  <input type="text" class="form-control" placeholder="Escriba ..." name="alergi" #alergim="ngModel" [(ngModel)]="form1.alergias">
+                </div>
+                <div class="col-md-4">
+                  <label>Fecha: </label>
+                  <input type="date" class="form-control" placeholder="DD/MM/AAAA" name="fech" #fechm="ngModel" [(ngModel)]="form1.fecha">
+                </div>
+                <div class="col-md-8">
+                  <label>Nombre del paciente: </label>
+                  <input type="text" class="form-control" placeholder="Escriba..." name="nombr" #nombrm="ngModel" [(ngModel)]="form1.nombre">
+                </div>
+                <div class="col-md-4">
+                  <label>Celular: </label>
+                  <input type="text" class="form-control" placeholder="Ingrese número a 10 digitos..." name="celul" #celum="ngModel" [(ngModel)]="form1.celular">
+                </div>
+      
+            </div>
+          </div>
+
+
+
+
+
+        <div class="box box-primary">
+        <div class="row">
+        
+            <div class="box-header with-border">
+                <div class=" col-md-10">
+                <h5><b>I) Seleccione la respuesta correcta (deje en blanco si no entiende la pregunta)</b></h5>
+            </div>
+            </div>
+        
+        <div class="col-md-6">
+            
+            <label>1.- ¿Está en buena salud?</label>
+            <div class="form-group">
+              <select class="form-control" name="pregunta1" #ipreg1="ngModel" [(ngModel)]="form1.Iask1">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            
+            <label>2.- ¿Ha habido cambios en su salud durante el último año?</label>
+            <div class="form-group">
+              <select class="form-control" name="pregunta2" #ipreg2="ngModel" [(ngModel)]="form1.iask2">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            
+            <label>3.- ¿Ha estado hospitalizado/a o ha tenido una enfermedad grave en los ultimos tres años?</label>
+            
+            <div class="form-group">
+              <select class="form-control" name="pregunta3" #ipreg3="ngModel" [(ngModel)]="form1.iask3">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            
+              <label>Si sí, ¿por qué?</label>
+              <input type="text" class="form-control" placeholder="Escriba ..." name="ipregunta31" #preg31="ngModel" [(ngModel)]="form1.iask31">
+            
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            
+            <label>4.- ¿Ha tenido problemas con algún tratamiento dental en el pasado?</label>
+            <div class="form-group">
+              <select class="form-control" name="ipregunta5" #ipreg5="ngModel" [(ngModel)]="form1.Iask5">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+            
+        </div>
+
+          <div class="col-md-10">
+              
+            <label>5.- ¿Se encuentra actualmente bajo tratamiento médico?</label>
+            
+            <div class="form-group">
+              <select class="form-control" name="pregunta4" #ipreg4="ngModel" [(ngModel)]="form1.iask4">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            
+              <label>¿Para qué?</label>
+              <input type="text" class="form-control" placeholder="Escriba ..." name="ipregunta41" #ipreg41="ngModel" [(ngModel)]="form1.iask41">
+              <label>Fecha de su último examen médico</label>
+              <input type="text" class="form-control" placeholder="DD/MM/AAAA" name="ipregunta42" #ipreg42="ngModel" [(ngModel)]="form1.iask42">
+              <label>Fecha de su última cita dental:</label>
+              <input type="text" class="form-control" placeholder="DD/MM/AAAA" name="ipregunta43" #ipreg43="ngModel" [(ngModel)]="form1.iask43">
+            
+            </div>
+            
+          </div>
+        </div>
+        </div>
+     
+     
+     
+     <div class="box box-success">
+        <div class="row">
+            <div class="box-header with-border">
+                <div class=" col-md-10">
+                <h5><b>II) Ha notado...</b></h5>
+                </div>
+            </div>
+        <div class="col-md-4">
+            <label>7.- ¿Dolor de pecho (angina)?</label>
+            <div class="form-group">
+              <select class="form-control" name="iipregunta7" #iipreg7="ngModel" [(ngModel)]="form1.IIask7">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>8.- ¿Los tobillos hinchados?</label>
+            <div class="form-group">
+              <select class="form-control" name="iipregunta8" #iipreg8="ngModel" [(ngModel)]="form1.IIask8">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>9.- ¿Falta de aliento?</label>
+            <div class="form-group">
+              <select class="form-control" name="iipregunta9" #iipreg9="ngModel" [(ngModel)]="form1.IIask9">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>10.- ¿Reciente pérdida de peso, fiebre, sudor en la noche?</label>
+            <div class="form-group">
+              <select class="form-control" name="iipregunta10" #iipreg10="ngModel" [(ngModel)]="form1.IIask10">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label>11.- ¿Tos persistente o con sangre?</label>
+            <div class="form-group">
+              <select class="form-control" name="iipregunta11" #iipreg11="ngModel" [(ngModel)]="form1.IIask11">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+    
+        </div>
+        <div class="col-md-4">
+                <label>12.- ¿Hemorragias o moretones frecuentes?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta12" #iipreg12="ngModel" [(ngModel)]="form1.IIask12">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+        <label>13.- ¿Problemas nasales (sinusitis)?</label>
+        <div class="form-group">
+          <select class="form-control" name="iipregunta13" #iipreg13="ngModel" [(ngModel)]="form1.IIask13">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+        </div>
+        <div class="col-md-4">
+                <label>14.- ¿Dificultad al tragar?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta14" #iipreg14="ngModel" [(ngModel)]="form1.IIask14">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>15.- ¿Diarrea, estreñimiento, sangre en las heces?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta15" #iipreg15="ngModel" [(ngModel)]="form1.IIask15">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>16.- ¿Vómitos con frecuencia, naúseas?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta16" #iipreg16="ngModel" [(ngModel)]="form1.IIask16">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>17.- ¿Dificultad al orinar, sangre en la orina?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta17" #iipreg17="ngModel" [(ngModel)]="form1.IIask17">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>18.- ¿Mareos?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta18" #iipreg18="ngModel" [(ngModel)]="form1.IIask18">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>19.- ¿Ruidos o zumbidos en los oidos?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta19" #iipreg19="ngModel" [(ngModel)]="form1.IIask19">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>20.- ¿Dolores de cabeza?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta20" #iipreg20="ngModel" [(ngModel)]="form1.IIask20">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>21.- ¿Desmayos?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta21" #iipreg21="ngModel" [(ngModel)]="form1.IIask21">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>22.- ¿Vista borrosa?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta22" #iipreg22="ngModel" [(ngModel)]="form1.IIask22">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>23.- ¿Convulsiones?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta23" #iipreg23="ngModel" [(ngModel)]="form1.IIask23">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+        <div class="col-md-4">
+                <label>24.- ¿Sed excesiva?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta24" #iipreg24="ngModel" [(ngModel)]="form1.IIask24">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+        </div>
+            <div class="col-md-4">
+                <label>25.- ¿Orina con frecuencia?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta25" #iipreg25="ngModel" [(ngModel)]="form1.IIask25">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>26.- ¿Boca seca?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta26" #iipreg26="ngModel" [(ngModel)]="form1.IIask26">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>27.- ¿Ictericia?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta27" #iipreg27="ngModel" [(ngModel)]="form1.IIask27">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>28.- ¿Dolor o rigidez en las articulaciones?</label>
+                <div class="form-group">
+                  <select class="form-control" name="iipregunta28" #iipreg28="ngModel" [(ngModel)]="form1.IIask28">
+                    <option>Elija una opción</option>
+                    <option >No</option>
+                    <option >Si</option>
+                  </select>
+                </div>
+            </div>
+
+
+
+        </div>
+     </div>
+
+
+
+
+
+
+     <div class="box box-danger">
+      <div class="row">
+          <div class="box-header with-border">
+              <div class=" col-md-10">
+              <h5><b>III) Tiene o ha tenido...</b></h5>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <label>29.- ¿Enfermedades del corazón?</label>
+            <div class="form-group">
+              <select class="form-control" name="iiipregunta29" #iiipreg29="ngModel" [(ngModel)]="form1.IIIask29">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>30.- ¿Infarto de corazón, defectos del corazón?</label>
+            <div class="form-group">
+              <select class="form-control" name="iiipregunt309" #iiipreg30="ngModel" [(ngModel)]="form1.IIIask30">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <label>31.- ¿Soplos en el corazón?</label>
+          <div class="form-group">
+            <select class="form-control" name="iiipregunta31" #iiipreg31="ngModel" [(ngModel)]="form1.IIIask31">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+
+      </div>
+      <div class="col-md-4">
+          <label>32.- ¿Fiebre reumática?</label>
+          <div class="form-group">
+            <select class="form-control" name="iiipregunta32" #iiipreg32="ngModel" [(ngModel)]="form1.IIIask32">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <label>33.- ¿Apoplejia, endurecimiento de las arterias?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta33" #iiipreg33="ngModel" [(ngModel)]="form1.IIIask33">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <label>34.- ¿Presión sanguínea alta?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta34" #iiipreg34="ngModel" [(ngModel)]="form1.IIIask34">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <label>35.- ¿Asma, tuberculosis, enfisema, otras enfermedades pulmonares?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta35" #iiipreg35="ngModel" [(ngModel)]="form1.IIIask35">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>36.- ¿Hepatitis, otras enfermedades del hígado?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta36" #iiipreg36="ngModel" [(ngModel)]="form1.IIIask36">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+    </div>
+      <div class="col-md-4">
+        <label>37.- ¿Problemas de estómago, úlceras?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta37" #iiipreg37="ngModel" [(ngModel)]="form1.IIIask37">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+
+      </div>
+    <div class="col-md-4">
+        <label>38.- ¿Alergias a remedios, comidas, medicamentos látex?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta38" #iiipre38="ngModel" [(ngModel)]="form1.IIIask38">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+     </div>
+      <div class="col-md-4">
+      <label>39.- ¿Familiares con diabetes, problemas de corazón, tumores?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta39" #iiipreg39="ngModel" [(ngModel)]="form1.IIIask39">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+      </div>
+      <div class="col-md-4">
+      <label>40.- ¿SIDA?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta40" #iiipreg40="ngModel" [(ngModel)]="form1.IIIask40">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+      </div>
+      <div class="col-md-4">
+        <label>41.- ¿Tumores, cáncer?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta41" #iiipreg41="ngModel" [(ngModel)]="form1.IIIask41">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <label>42.- ¿Artritis, reuma?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta42" #iiipreg42="ngModel" [(ngModel)]="form1.IIIask42">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>43.- ¿Enfermedades de los ojos?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta43" #iiipreg43="ngModel" [(ngModel)]="form1.IIIask43">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>44.- ¿Enfermedades de la piel?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta44" #iiipreg44="ngModel" [(ngModel)]="form1.IIIask44">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>45.- ¿Anemia?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta45" #iiipreg45="ngModel" [(ngModel)]="form1.IIIask45">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>46.- ¿Enfermedades venéreas (sífiles, gonorrea)?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta46" #iiipreg46="ngModel" [(ngModel)]="form1.IIIask46">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>47.- ¿Herpes?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta47" #iiipreg47="ngModel" [(ngModel)]="form1.IIIask47">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+        <label>48.- ¿Enfermedades renales (riñon), vejiga?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta48" #iiipreg48="ngModel" [(ngModel)]="form1.IIIask48">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+      <label>49.- ¿Enfermedades de tiroides o glándulas suprarrenales?</label>
+      <div class="form-group">
+        <select class="form-control" name="iiipregunta49" #iiipreg49="ngModel" [(ngModel)]="form1.IIIask49">
+          <option>Elija una opción</option>
+          <option >No</option>
+          <option >Si</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+        <label>50.- ¿Diabetes?</label>
+        <div class="form-group">
+          <select class="form-control" name="iiipregunta50" #iiipreg50="ngModel" [(ngModel)]="form1.IIIask50">
+            <option>Elija una opción</option>
+            <option >No</option>
+            <option >Si</option>
+          </select>
+        </div>
+
+    </div>
+
+      </div>
+     </div>
+
+
+
+     <div class="box box-info">
+      <div class="row">
+          <div class="box-header with-border">
+              <div class=" col-md-10">
+              <h5><b>IV) Tiene o ha tenido...</b></h5>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <label>51.- ¿Tratamiento psiquiátrico?</label>
+            <div class="form-group">
+              <select class="form-control" name="ivpregunta51" #ivpreg51="ngModel" [(ngModel)]="form1.IVask51">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>52.- ¿Tratamientos de radiación?</label>
+            <div class="form-group">
+              <select class="form-control" name="ivpregunta52" #ivpreg52="ngModel" [(ngModel)]="form1.IVask52">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <label>53.- ¿Quimioterapia?</label>
+          <div class="form-group">
+            <select class="form-control" name="ivpregunta53" #ivpreg53="ngModel" [(ngModel)]="form1.IVask53">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>54.- ¿Válvula artificial de corazón?</label>
+            <div class="form-group">
+              <select class="form-control" name="ivpregunta54" #ivpreg54="ngModel" [(ngModel)]="form1.IVask54">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <label>55.- ¿Articulación artificial?</label>
+          <div class="form-group">
+            <select class="form-control" name="ivpregunta55" #ivpreg55="ngModel" [(ngModel)]="form1.IVask55">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>56.- ¿Hospitalizaciones?</label>
+            <div class="form-group">
+              <select class="form-control" name="ivpregunta56" #ivpreg56="ngModel" [(ngModel)]="form1.IVask56">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <label>57.- ¿Transfusiones de sangre?</label>
+          <div class="form-group">
+            <select class="form-control" name="ivpregunta57" #ivpreg57="ngModel" [(ngModel)]="form1.IVask57">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <label>58.- ¿Cirugías?</label>
+          <div class="form-group">
+            <select class="form-control" name="ivpregunta58" #ivpreg58="ngModel" [(ngModel)]="form1.IVask58">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label>59.- ¿Marcapasos?</label>
+          <div class="form-group">
+            <select class="form-control" name="ivpregunta59" #ivpreg59="ngModel" [(ngModel)]="form1.IVask59">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <label>60.- ¿Lentes de contacto?</label>
+          <div class="form-group">
+            <select class="form-control" name="ivpregunta60" #ivpreg60="ngModel" [(ngModel)]="form1.IVask60">
+              <option>Elija una opción</option>
+              <option >No</option>
+              <option >Si</option>
+            </select>
+          </div>
+        </div>
+      
+      </div>
+     </div>
+
+
+
+
+
+
+
+     <div class="box box-warning">
+      <div class="row">
+          <div class="box-header with-border">
+              <div class=" col-md-10">
+              <h5><b>V) Está tomando...</b></h5>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <label>61.- ¿Drogas de uso recreativo?</label>
+            <div class="form-group">
+              <select class="form-control" name="vpregunta61" #vpreg61="ngModel" [(ngModel)]="form1.Vask61">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <label>62.- ¿Remedios, medicamentos, medicamentos sin receta (incluyendo aspirina)?</label>
+            <div class="form-group">
+              <select class="form-control" name="vpregunta62" #vpreg62="ngModel" [(ngModel)]="form1.Vask62">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <label>63.- ¿Tabaco? (De cualquier tipo)</label>
+            <div class="form-group">
+              <select class="form-control" name="vpregunta63" #vpreg63="ngModel" [(ngModel)]="form1.Vask63">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <label>64.- ¿Alcohol (Bebidas alcohólicas)?</label>
+            <div class="form-group">
+              <select class="form-control" name="vpregunta64" #vpreg64="ngModel" [(ngModel)]="form1.Vask64">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-md-12">
+              <label>Liste por favor: </label>
+              <input type="text" class="form-control" placeholder="Escriba ..." name="vpregunta641" #vpreg641="ngModel" [(ngModel)]="form1.Vask641">
+          </div>
+          
+
+
+
+      </div>
+     </div>
+
+
+
+
+
+     <div class="box box-default">
+      <div class="row">
+          <div class="box-header with-border">
+              <div class=" col-md-10">
+              <h5><b>VI) Sólo para mujeres...</b></h5>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <label>65.- ¿Está o podría estar embarazada o dando a pecho?</label>
+            <div class="form-group">
+              <select class="form-control" name="vipregunta65" #vipreg65="ngModel" [(ngModel)]="form1.VIask65">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <label>66.- ¿Está tomanco pastillas anticonceptivas?</label>
+            <div class="form-group">
+              <select class="form-control" name="vipregunta66" #vipreg66="ngModel" [(ngModel)]="form1.VIask66">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+
+          </div>
+
+      </div>
+     </div>
+
+
+
+
+     <div class="box box-success">
+      <div class="row">
+          <div class="box-header with-border">
+              <div class=" col-md-10">
+              <h5><b>VII) Para todos los pacientes...</b></h5>
+              </div>
+          </div>
+          <div class="col-md-10">
+            <label>67.- ¿Tiene o ha tenido alguna enfermedad o problema médico que NO esté en este cuestionario?</label>
+            <div class="form-group">
+              <select class="form-control" name="viipregunta67" #viipreg67="ngModel" [(ngModel)]="form1.VIIask67">
+                <option>Elija una opción</option>
+                <option >No</option>
+                <option >Si</option>
+              </select>
+            </div>
+              <label>Si la respuesta es afirmativa, explique: </label>
+              <input type="text" class="form-control" placeholder="Escriba ..." name="vpregunta671" #vpreg671="ngModel" [(ngModel)]="form1.Vask671">
+          
+          </div>
+      </div>
+     </div>
+
+    
+     <div class="box box-info">
+      <div class="row">
+          <div class="col-md-12">
+            <label><i><small>Que yo sepa, he respondido completamente y correctamente todas las preguntas. Informaré a mi dentista si hay algún cambio en mi salud y/o en los medicamentos que tomo.</small> </i></label>
+            <label>Nombre del paciente: </label>
+            <input type="text" class="form-control" placeholder="Ingrese su nombre ..." name="nombr2" #nombr22="ngModel" [(ngModel)]="form1.firma">
+            <label>Fecha: </label>
+            <input type="date" class="form-control" placeholder="DD/MM/AAAA" name="fecha11" #fechaa1="ngModel" [(ngModel)]="form1.fecha2">
+          </div>
+
+      </div>
+     </div>
+
+
+
+
+     <button type="submit">Guardar</button>
+
+
+    </form>
+
+    </section>
+    <!-- /.content -->
+  </div>
