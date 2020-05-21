@@ -11,12 +11,13 @@ export class Formulario2Service{
 
     }
     registrarFormulario2(formulario2):Observable<any>
-    {
+    { 
+        //luego checamos eso xD  sale 
         let json = JSON.stringify(formulario2);
-        let params = 'json'+json;
+        let params = 'json='+json;
+        console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-
-        return this._http.post('http://localhost/larabel/appi_odontologia/public/api/formulario2',params,{headers:headers});
+        return this._http.post('http://odon.com.devel/api/formulario',params,{headers:headers}); 
 
     }
 }

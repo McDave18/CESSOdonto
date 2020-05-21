@@ -34,6 +34,9 @@ export class Formulario2Component implements OnInit {
       nullToEmptyString: true,
     };
 
+
+    //aqui es lo que envias a la api y en la api llamas el nombre 
+    // como dice ahi fecha,name,sexo
     var data = [
       {
         Fecha: this.form2.fecha,

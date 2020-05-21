@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resourse('/api/formulario2','Formulario2Controllers');
+Route::resource('/api/formulario','Formulario2Controllers');
