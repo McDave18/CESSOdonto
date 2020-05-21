@@ -13,7 +13,7 @@ import { Formulario2Service } from 'src/app/services/formulario2.service';
 export class Formulario2Component implements OnInit {
 
   public form2;
-  constructor(private _formulario2services:Formulario2Service ) { this.form2= new Formulario2(0,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')}
+  constructor(private _formulario2services:Formulario2Service ) { this.form2= new Formulario2(0,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')}
 
 
   ngOnInit(): void {

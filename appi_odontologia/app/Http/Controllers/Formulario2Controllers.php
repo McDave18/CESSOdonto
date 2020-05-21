@@ -17,7 +17,26 @@ class Formulario2Controllers extends Controller
 
             // cra las demas relaciones que se hacen en te formulario
 
-
+            $interrogacion = new Interrogacion();
+            $interrogacion->Id_Paciente="12";
+            $interrogacion->1_Enfermedades=$params["enfermedades"];
+            $interrogacion->2_Diagnosticos=$params["diagnosticos"];
+            $interrogacion->3_Alergia_Penicilina=$params["penicilina"];
+            $interrogacion->3_1_Alergia_Otros=$params["pen_otros"];
+            $interrogacion->3_2_Cuales=$params["pen_cuales"];
+            $interrogacion->4_Anestesia=$params["anestesia"]; 
+            $interrogacion->4_1_Problema_Anestesia=$params["prom_anestesia"];
+            $interrogacion->4_2_Descripcion=$params["des_anestesia"];
+            $interrogacion->5_SangraMucho=$params["sangra"];
+            $interrogacion->5_1_HemorragiaFrec=$params["hemorragia"];
+            $interrogacion->6_UsaAnti=$params["usa_anti"];
+            $interrogacion->6_1_UsaTranqui=$params["usa_tranqui"];
+            $interrogacion->6_2_Descripcion=$params["usa_tranqui_descrip"];
+            $interrogacion->6_3_Otros_Med=$params["otros_met"];
+            $interrogacion->6_4_Descripcion=$params["otros_med_des"];
+            $interrogacion->7_ParienteDiabetico=$params["diabetico"];
+            $interrogacion->7_1_Cuales=$params["par_cual"];
+            $interrogacion->save();
 
             //aqui solamente guardamos la ultima parte del formulario
             $exploracion = new Exploracion(); // aqui llamamos a la conexion que te mensione anterior
