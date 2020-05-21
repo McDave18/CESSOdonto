@@ -18,7 +18,7 @@
         <form action="" #formu2="ngForm" (ngSubmit)="onSubmit(formu2)">
 
 
-            <div class="box box-info">
+            <!-- <div class="box box-info">
                 <div class="row">
           
                     <div class="box-header with-border">
@@ -76,7 +76,7 @@
                     </div>
           
                 </div>
-              </div>
+              </div> -->
           
           
               <div class="box box-primary">
@@ -276,6 +276,312 @@
                        </div>
           
                 </div>
+
+
+                <div class="box box-primary">
+                  <div class="row">
+            
+                      <div class="box-header with-border">
+                          <div class=" col-md-10">
+                          <h4><b>Odontograma</b></h4>
+                      </div>
+                      </div>
+            
+                      <div class="box-header with-border">
+                        <div class=" col-md-12 alert alert-info">
+                        <h5><b>DDS: Diente Derecho Superior | DIS: Diente Izquierdo Superior | DDI: Diente Derecho Inferior | DII: Diente Izquierdo Inferior</b></h5>
+                    </div>
+                    </div>
+
+                      <div class="col-md-12">
+                    <img src="../assets/imagen/OdontogramaDDS.jpg">
+                      </div>
+                      <br><br>
+            
+                      
+                      <div class="col-md-3">
+                          <label>DDS18:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                        </div>
+              
+                        <div class="col-md-3">
+                          <label>DDS17:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS16:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS15:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS14:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS13:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS12:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS11:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS55:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS54:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                        </div>
+
+                        <div class="col-md-3">
+                          <label>DDS53:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS52:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                        </div>
+            
+                        <div class="col-md-3">
+                          <label>DDS51:</label>
+                          <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                        </div>
+
+
+
+                        <div class="col-md-12">
+                          <img src="../assets/imagen/OdontogramaDDI.jpg">
+                            </div>
+                            <br><br>
+                  
+                            
+                            <div class="col-md-3">
+                                <label>DDI48:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                              </div>
+                    
+                              <div class="col-md-3">
+                                <label>DDI47:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI46:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI45:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI44:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI43:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI42:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI41:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI85:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI84:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                              </div>
+      
+                              <div class="col-md-3">
+                                <label>DDI83:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI82:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                              </div>
+                  
+                              <div class="col-md-3">
+                                <label>DDI81:</label>
+                                <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                              </div>
+
+                              <div class="col-md-12">
+                                <img src="../assets/imagen/OdontogramaDIS.jpg">
+                                  </div>
+                                  <br><br>
+                        
+                                  
+                                  <div class="col-md-3">
+                                      <label>DIS28:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                                    </div>
+                          
+                                    <div class="col-md-3">
+                                      <label>DIS27:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS26:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS25:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS24:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS23:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS22:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS21:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS65:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS64:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                                    </div>
+            
+                                    <div class="col-md-3">
+                                      <label>DIS63:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS62:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                    </div>
+                        
+                                    <div class="col-md-3">
+                                      <label>DIS61:</label>
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                      <img src="../assets/imagen/OdontogramaDII.jpg">
+                                        </div>
+                                        <br><br>
+                              
+                                        
+                                        <div class="col-md-3">
+                                            <label>DIS38:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                                          </div>
+                                
+                                          <div class="col-md-3">
+                                            <label>DIS37:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS36:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS35:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS34:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS33:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS32:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS31:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS75:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS74:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                                          </div>
+                  
+                                          <div class="col-md-3">
+                                            <label>DIS73:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS72:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                          </div>
+                              
+                                          <div class="col-md-3">
+                                            <label>DIS71:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                          </div>
+            
+                         </div>
+            
+                  </div> 
           
 
 
