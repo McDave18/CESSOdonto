@@ -12,6 +12,7 @@ import { PaneldoctorComponent } from './components/doctor/panel/panel.doctor.com
 import { FormsModule} from '@angular/forms';
 import { Formulario2Component } from './components/doctor/formulario2/formulario2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Formulario3Component } from './components/doctor/formulario3/formulario3.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     Formulario1Component,
     PaneldoctorComponent,
     Formulario2Component,
+    Formulario3Component
 
     
     

@@ -1,0 +1,101 @@
+<p>formulario3</p>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+    <section class="content "> 
+        <form action="" #formu3="ngForm" (ngSubmit)="onSubmit(formu3)">
+
+
+            <div class="box box-info">
+                <div class="row">
+          
+                    <div class="box-header with-border">
+                        <div class=" col-md-10">
+                        <h5><b>DATOS PERSONALES</b></h5>
+                    </div>
+                    </div>
+          
+                    <div class="col-md-4">
+                        <label>Fecha: </label>
+                        <input type="date" class="form-control" placeholder="DD/MM/AAAA" name="fech" #fechm="ngModel" [(ngModel)]="form3.fecha">
+                      </div>
+                    <div class="col-md-8">
+                        <label>Nombre: </label>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombr" #nombrm="ngModel" [(ngModel)]="form3.nombre">
+                      </div>
+                    
+                      <div class="col-md-4">
+                        <label>Edad </label>
+                        <input type="text" class="form-control" placeholder="Escriba ..." name="eddad" #edad="ngModel" [(ngModel)]="form3.edad">
+                      </div>
+          
+                      <div class="col-md-4">
+                        <label>Sexo</label>
+                        <div class="form-group">
+                          <select class="form-control" name="sexo" #sex="ngModel" [(ngModel)]="form3.sexo">
+                            <option>Elija una opción</option>
+                            <option >Hombre</option>
+                            <option >Mujer</option>
+                          </select>
+                        </div>
+            
+                    </div>
+                    
+                    
+                    <div class="col-md-4">
+                      <label>Teléfono: </label>
+                      <input type="text" class="form-control" placeholder="Ingrese número a 10 digitos..." name="celul" #celum="ngModel" [(ngModel)]="form3.celular">
+                    </div>
+          
+                    <div class="col-md-8">
+                
+                        <label>Tipo de población</label>
+                        <div class="form-group">
+                          <select class="form-control" name="poblacion1" #pobla="ngModel" [(ngModel)]="form3.poblacion">
+                            <option>Elija una opción</option>
+                            <option >Universidad Veracruzana</option>
+                            <option >Público Abierto</option>
+                          </select>
+                          <label>En caso de ser miembro UV, favor de escribir su facultad</label>
+                          <input type="text" class="form-control" placeholder="Escriba nombre de su Facultad..." name="poblacio1" #poblacion11="ngModel" [(ngModel)]="form3.poblacion1">
+                
+                        </div>
+            
+                    </div>
+          
+                </div>
+              </div>
+          
+                <button type="submit">Guardar</button>
+
+        </form>
+       
+          
+    </section>
+              <!-- /.content -->
+</div>
+        
+        
+
+
+
+
+
+
+
+
+
+
+            

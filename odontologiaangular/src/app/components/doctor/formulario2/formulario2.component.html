@@ -85,36 +85,36 @@
                     <div class="box-header with-border">
                         <div class=" col-md-10">
                         <h5><b>INTERROGATORIO</b></h5>
-                    </div>
+                        </div>
                     </div>
           
                     
                     <div class="col-md-10">
                         <label>1.- ¿Qué enfermedades ha padecido durante el último año?</label>
-                        <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta1" #pregu1="ngModel" [(ngModel)]="form2.Iask1">
-                      </div>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta1" #pregu1="ngModel" [(ngModel)]="form2.enfermedades">
+                    </div>
                     
                       <div class="col-md-10">
                         <label>2.- Cuando ha acudido a la consulta, ¿su médico le ha diagnosticado alguna enfermedad? </label>
-                        <input type="text" class="form-control" placeholder="Escriba ..." name="ipregunta2" #pregu2="ngModel" [(ngModel)]="form2.Iask2">
+                        <input type="text" class="form-control" placeholder="Escriba ..." name="ipregunta2" #pregu2="ngModel" [(ngModel)]="form2.diagnosticos">
                       </div>
           
                       <div class="col-md-10">
                         <label>3.- ¿Es usted alérgico a la penicilina?</label>
                         <div class="form-group">
-                          <select class="form-control" name="ipregunta3" #pregu3="ngModel" [(ngModel)]="form2.Iask3">
+                          <select class="form-control" name="ipregunta3" #pregu3="ngModel" [(ngModel)]="form2.penicilina">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>Otros medicamentos:</label>
-                          <select class="form-control" name="ipregunta31" #pregu31="ngModel" [(ngModel)]="form2.Iask31">
+                          <select class="form-control" name="ipregunta31" #pregu31="ngModel" [(ngModel)]="form2.pen_otros">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>¿Cuáles?</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="ask32" #preg32="ngModel" [(ngModel)]="form2.Iask32">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="ask32" #preg32="ngModel" [(ngModel)]="form2.pen_cuales">
                 
                         </div>
             
@@ -123,34 +123,33 @@
                        <div class="col-md-10">
                         <label>4.- ¿Lo han anestesiado anteriormente?</label>
                         <div class="form-group">
-                          <select class="form-control" name="pregunta4" #iask4="ngModel" [(ngModel)]="form2.Iask4">
+                          <select class="form-control" name="pregunta4" #iask4="ngModel" [(ngModel)]="form2.anestesia">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>¿Presentó algún problema cuando se lo aplicaron?</label>
-                          <select class="form-control" name="pregunta41" #iask41="ngModel" [(ngModel)]="form2.Iask41">
+                          <select class="form-control" name="pregunta41" #iask41="ngModel" [(ngModel)]="form2.prom_anestesia">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>¿Qué le ocurrió?</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta42" #iask42="ngModel" [(ngModel)]="form2.Iask42">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta42" #iask42="ngModel" [(ngModel)]="form2.des_anestesia">
                 
                         </div>
-            
-                       </div>
+                      </div>
           
                        <div class="col-md-10">
                         <label>5.- ¿Presenta sangrado excesivo?</label>
                         <div class="form-group">
-                          <select class="form-control" name="ipregu5" #ipreg5="ngModel" [(ngModel)]="form2.Iask5">
+                          <select class="form-control" name="ipregu5" #ipreg5="ngModel" [(ngModel)]="form2.sangra">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>Hermorragia frecuente:</label>
-                          <select class="form-control" name="pregunta51" #ipreg51="ngModel" [(ngModel)]="form2.Iask51">
+                          <select class="form-control" name="pregunta51" #ipreg51="ngModel" [(ngModel)]="form2.hemorragia">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
@@ -163,25 +162,25 @@
                        <div class="col-md-10">
                         <label>6.- ¿Usa algún medicamento anticoagulante?</label>
                         <div class="form-group">
-                          <select class="form-control" name="pregunta6" #ipreg6="ngModel" [(ngModel)]="form2.Iask6">
+                          <select class="form-control" name="pregunta6" #ipreg6="ngModel" [(ngModel)]="form2.usa_anti">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>Tranquilizantes</label>
-                          <select class="form-control" name="pregunta61" #ipreg61="ngModel" [(ngModel)]="form2.Iask61">
+                          <select class="form-control" name="pregunta61" #ipreg61="ngModel" [(ngModel)]="form2.usa_tranqui">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>Otros</label>
-                          <select class="form-control" name="pregunta62" #ipreg62="ngModel" [(ngModel)]="form2.Iask62">
+                          <select class="form-control" name="pregunta62" #ipreg62="ngModel" [(ngModel)]="form2.otros_med">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>¿Cuáles?</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta63" #preg63="ngModel" [(ngModel)]="form2.Iask63">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta63" #preg63="ngModel" [(ngModel)]="form2.otros_med_des">
                 
                         </div>
             
@@ -190,13 +189,13 @@
                        <div class="col-md-10">
                         <label>7.- ¿Algún familiar suyo padece Diabetes?</label>
                         <div class="form-group">
-                          <select class="form-control" name="pregunta7" #ipreg7="ngModel" [(ngModel)]="form2.Iask7">
+                          <select class="form-control" name="pregunta7" #ipreg7="ngModel" [(ngModel)]="form2.diabetico">
                             <option>Elija una opción</option>
                             <option >Sí</option>
                             <option >No</option>
                           </select>
                           <label>Parentesco:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta71" #preg71="ngModel" [(ngModel)]="form2.Iask71">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta71" #preg71="ngModel" [(ngModel)]="form2.par_cual">
                 
                         </div>
             
@@ -301,67 +300,67 @@
                       
                       <div class="col-md-3">
                           <label>DDS18:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd18" #ds18="ngModel" [(ngModel)]="form2.dDS18">
                         </div>
               
                         <div class="col-md-3">
                           <label>DDS17:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd17" #ds17="ngModel" [(ngModel)]="form2.dDS17">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS16:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd16" #ds16="ngModel" [(ngModel)]="form2.dDS16">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS15:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd15" #ds15="ngModel" [(ngModel)]="form2.dDS15">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS14:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd14" #ds14="ngModel" [(ngModel)]="form2.dDS14">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS13:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd13" #ds13="ngModel" [(ngModel)]="form2.dDS13">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS12:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd12" #ds12="ngModel" [(ngModel)]="form2.dDS12">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS11:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd11" #ds11="ngModel" [(ngModel)]="form2.dDS11">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS55:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd55" #ds55="ngModel" [(ngModel)]="form2.dDS55">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS54:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd54" #ds54="ngModel" [(ngModel)]="form2.dDS54">
                         </div>
 
                         <div class="col-md-3">
                           <label>DDS53:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd53" #ds53="ngModel" [(ngModel)]="form2.dDS53">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS52:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd52" #ds52="ngModel" [(ngModel)]="form2.dDS52">
                         </div>
             
                         <div class="col-md-3">
                           <label>DDS51:</label>
-                          <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                          <input type="text" class="form-control" placeholder="Escriba..." name="dd51" #ds51="ngModel" [(ngModel)]="form2.dDS51">
                         </div>
 
 
@@ -374,67 +373,67 @@
                             
                             <div class="col-md-3">
                                 <label>DDI48:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd48" #di48="ngModel" [(ngModel)]="form2.dDI48">
                               </div>
                     
                               <div class="col-md-3">
                                 <label>DDI47:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd47" #di47="ngModel" [(ngModel)]="form2.dDI47">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI46:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd46" #di46="ngModel" [(ngModel)]="form2.dDI46">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI45:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd45" #di45="ngModel" [(ngModel)]="form2.dDI45">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI44:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd44" #di44="ngModel" [(ngModel)]="form2.dDI44">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI43:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd43" #di43="ngModel" [(ngModel)]="form2.dDI43">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI42:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd42" #di42="ngModel" [(ngModel)]="form2.dDI42">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI41:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd41" #cdi41="ngModel" [(ngModel)]="form2.dDI41">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI85:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd85" #di85="ngModel" [(ngModel)]="form2.dDI85">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI84:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd84" #di84="ngModel" [(ngModel)]="form2.dDI84">
                               </div>
       
                               <div class="col-md-3">
                                 <label>DDI83:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd83" #di83="ngModel" [(ngModel)]="form2.dDI83">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI82:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd82" #di82="ngModel" [(ngModel)]="form2.dDI82">
                               </div>
                   
                               <div class="col-md-3">
                                 <label>DDI81:</label>
-                                <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                <input type="text" class="form-control" placeholder="Escriba..." name="dd81" #di81="ngModel" [(ngModel)]="form2.dDI81">
                               </div>
 
                               <div class="col-md-12">
@@ -445,67 +444,67 @@
                                   
                                   <div class="col-md-3">
                                       <label>DIS28:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd28" #di28="ngModel" [(ngModel)]="form2.dIS28">
                                     </div>
                           
                                     <div class="col-md-3">
                                       <label>DIS27:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd27" #di27="ngModel" [(ngModel)]="form2.dIS27">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS26:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd26" #di26="ngModel" [(ngModel)]="form2.dIS26">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS25:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd25" #di25="ngModel" [(ngModel)]="form2.dIS25">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS24:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd24" #di24="ngModel" [(ngModel)]="form2.dIS24">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS23:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd23" #di23="ngModel" [(ngModel)]="form2.dIS23">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS22:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd22" #di22="ngModel" [(ngModel)]="form2.dIS22">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS21:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd21" #di21="ngModel" [(ngModel)]="form2.dIS21">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS65:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd65" #di65="ngModel" [(ngModel)]="form2.dIS65">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS64:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd64" #di64="ngModel" [(ngModel)]="form2.dIS64">
                                     </div>
             
                                     <div class="col-md-3">
                                       <label>DIS63:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd63" #di63="ngModel" [(ngModel)]="form2.dIS63">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS62:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd62" #di62="ngModel" [(ngModel)]="form2.dIS62">
                                     </div>
                         
                                     <div class="col-md-3">
                                       <label>DIS61:</label>
-                                      <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                      <input type="text" class="form-control" placeholder="Escriba..." name="dd61" #di61="ngModel" [(ngModel)]="form2.dIS61">
                                     </div>
 
                                     <div class="col-md-12">
@@ -515,68 +514,68 @@
                               
                                         
                                         <div class="col-md-3">
-                                            <label>DIS38:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="cara1" #caraa="ngModel" [(ngModel)]="form2.cara">
+                                            <label>DII38:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd38" #di38="ngModel" [(ngModel)]="form2.dII38">
                                           </div>
                                 
                                           <div class="col-md-3">
-                                            <label>DIS37:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="blando" #bland="ngModel" [(ngModel)]="form2.blando">
+                                            <label>DII37:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd37" #di37="ngModel" [(ngModel)]="form2.dII37">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS36:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="labio" #labio1="ngModel" [(ngModel)]="form2.labios">
+                                            <label>DII36:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd36" #di36="ngModel" [(ngModel)]="form2.dII36">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS35:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="duro" #durom="ngModel" [(ngModel)]="form2.duro">
+                                            <label>DII35:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd35" #di35="ngModel" [(ngModel)]="form2.dII35">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS34:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="pboca" #bocam="ngModel" [(ngModel)]="form2.boca">
+                                            <label>DII34:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd34" #di34="ngModel" [(ngModel)]="form2.dII34">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS33:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="salivales" #salivalem="ngModel" [(ngModel)]="form2.salivales">
+                                            <label>DII33:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd33" #di33="ngModel" [(ngModel)]="form2.dII33">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS32:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                            <label>DII32:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd32" #di32="ngModel" [(ngModel)]="form2.dII32">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS31:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                            <label>DII31:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd31" #di31="ngModel" [(ngModel)]="form2.dII31">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS75:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                            <label>DII75:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd75" #di75="ngModel" [(ngModel)]="form2.dII75">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS74:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="amigda" #amigdam="ngModel" [(ngModel)]="form2.amigdalas">
+                                            <label>DII74:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd74" #di74="ngModel" [(ngModel)]="form2.dII74">
                                           </div>
                   
                                           <div class="col-md-3">
-                                            <label>DIS73:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="cuelloo" #cuellom="ngModel" [(ngModel)]="form2.cuello">
+                                            <label>DII73:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd73" #di73="ngModel" [(ngModel)]="form2.dII73">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS72:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="carillo" #carrillom="ngModel" [(ngModel)]="form2.carrillos">
+                                            <label>DII72:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd72" #di72="ngModel" [(ngModel)]="form2.dII72">
                                           </div>
                               
                                           <div class="col-md-3">
-                                            <label>DIS71:</label>
-                                            <input type="text" class="form-control" placeholder="Escriba..." name="lenguaa" #lenguam="ngModel" [(ngModel)]="form2.lengua">
+                                            <label>DII71:</label>
+                                            <input type="text" class="form-control" placeholder="Escriba..." name="dd71" #di71="ngModel" [(ngModel)]="form2.dII71">
                                           </div>
             
                          </div>
