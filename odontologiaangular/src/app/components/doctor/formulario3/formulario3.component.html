@@ -28,12 +28,31 @@
                     </div>
           
                     <div class="col-md-4">
-                        <label>Fecha: </label>
+                        <label>Fecha de hoy: </label>
                         <input type="date" class="form-control" placeholder="DD/MM/AAAA" name="fech" #fechm="ngModel" [(ngModel)]="form3.fecha">
                       </div>
-                    <div class="col-md-8">
+                    
+                    <div class="col-md-6">
+                      <label>Fecha de nacimiento: </label>
+                      <input type="date" [(ngModel)]="age" />
+                      <button type="button"> Calcular </button>
+                      <label>Edad: {{ showAge }}</label>
+                    </div>
+
+
+                    <div class="col-md-4">
                         <label>Nombre: </label>
-                        <input type="text" class="form-control" placeholder="Escriba..." name="nombr" #nombrm="ngModel" [(ngModel)]="form3.nombre">
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombr" #nombr="ngModel" [(ngModel)]="form3.nombre">
+                      </div>
+
+                      <div class="col-md-4">
+                        <label>Apellido Paterno: </label>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombrP" #nombrP="ngModel" [(ngModel)]="form3.paterno">
+                      </div>
+
+                      <div class="col-md-4">
+                        <label>Apellido Materno: </label>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombrM" #nombrM="ngModel" [(ngModel)]="form3.materno">
                       </div>
                     
                       <div class="col-md-4">
@@ -42,7 +61,7 @@
                       </div>
           
                       <div class="col-md-4">
-                        <label>Sexo</label>
+                        <label>Género</label>
                         <div class="form-group">
                           <select class="form-control" name="sexo" #sex="ngModel" [(ngModel)]="form3.sexo">
                             <option>Elija una opción</option>
