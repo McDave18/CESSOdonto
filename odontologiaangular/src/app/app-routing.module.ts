@@ -10,6 +10,7 @@ import { from } from 'rxjs';
 import { Formulario1 } from './models/formulario1';
 import { Formulario2Component } from './components/doctor/formulario2/formulario2.component';
 import { Formulario3Component } from './components/doctor/formulario3/formulario3.component';
+import { FormularioDocComponent } from './components/admin/formulariodoc/formulariodoc.component';
 
 
 
@@ -27,7 +28,8 @@ children:[
   {path: 'pacientes', component: PacientesComponent},
   {path: 'formulario1', component: Formulario1Component},
   {path: 'formulario2', component: Formulario2Component},
-  {path: 'formulario3', component: Formulario3Component}
+  {path: 'formulario3', component: Formulario3Component},
+  {path: 'formulariodoc', component: FormularioDocComponent}
 ]
 }
 

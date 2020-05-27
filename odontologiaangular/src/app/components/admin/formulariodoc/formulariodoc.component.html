@@ -1,0 +1,92 @@
+<p>formulario3</p>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+   <section class="content "> 
+        <form action="" #formudoc="ngForm" (ngSubmit)="onSubmit(formudoc)">
+
+
+            <div class="box box-info">
+                <div class="row">
+          
+                    <div class="box-header with-border">
+                        <div class=" col-md-10">
+                        <h5><b>Registro Doctores</b></h5>
+                    </div>
+                    </div>
+          
+                    <div class="col-md-4">
+                        <label>Fecha de hoy: </label>
+                        <input type="date" class="form-control" placeholder="DD/MM/AAAA" name="fech" #fechm="ngModel" [(ngModel)]="formdoc.fecha">
+                      </div>
+
+                    <div class="col-md-4">
+                        <label>Nombre: </label>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombr" #nombr="ngModel" [(ngModel)]="formdoc.nombre">
+                      </div>
+
+                      <div class="col-md-4">
+                        <label>Apellido Paterno: </label>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombrP" #nombrP="ngModel" [(ngModel)]="formdoc.paterno">
+                      </div>
+
+                      <div class="col-md-4">
+                        <label>Apellido Materno: </label>
+                        <input type="text" class="form-control" placeholder="Escriba..." name="nombrM" #nombrM="ngModel" [(ngModel)]="formdoc.materno">
+                      </div>
+                    
+
+                      <div class="col-md-4">
+                        <label>RFC </label>
+                        <input type="text" class="form-control" placeholder="Escriba ..." name="rfc1" #rfc11="ngModel" [(ngModel)]="formdoc.rfc">
+                      </div>
+                                
+                      <!-- <div class="col-md-4">
+                        <label>Género</label>
+                        <div class="form-group">
+                          <select class="form-control" name="sexo" #sex="ngModel" [(ngModel)]="form3.sexo">
+                            <option>Elija una opción</option>
+                            <option >Hombre</option>
+                            <option >Mujer</option>
+                          </select>
+                        </div>
+            
+                        </div> -->
+
+          
+                </div>
+              </div>
+          
+                <button type="submit">Guardar</button>
+
+        </form>
+       
+          
+    </section>
+              <!-- /.content -->
+</div>
+        
+        
+
+
+
+
+
+
+
+
+
+
+            

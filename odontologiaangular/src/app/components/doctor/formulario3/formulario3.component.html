@@ -32,12 +32,12 @@
                         <input type="date" class="form-control" placeholder="DD/MM/AAAA" name="fech" #fechm="ngModel" [(ngModel)]="form3.fecha">
                       </div>
                     
-                    <div class="col-md-6">
-                      <label>Fecha de nacimiento: </label>
+                    <!-- <div class="col-md-6">
+                      <h1>Calcular la Edad ⏳</h1>
                       <input type="date" [(ngModel)]="age" />
                       <button type="button"> Calcular </button>
-                      <label>Edad: {{ showAge }}</label>
-                    </div>
+                      <p *ngIf="age">Tu edad es {{ showAge }}</p>
+                    </div> -->
 
 
                     <div class="col-md-4">
@@ -59,7 +59,12 @@
                         <label>Edad </label>
                         <input type="text" class="form-control" placeholder="Escriba ..." name="eddad" #edad="ngModel" [(ngModel)]="form3.edad">
                       </div>
-          
+
+                      <div class="col-md-4">
+                        <label>RFC </label>
+                        <input type="text" class="form-control" placeholder="Escriba ..." name="rfc1" #rfc11="ngModel" [(ngModel)]="form3.rfc">
+                      </div>
+                                
                       <div class="col-md-4">
                         <label>Género</label>
                         <div class="form-group">
@@ -71,12 +76,43 @@
                         </div>
             
                     </div>
-                    
+
+                    <div class="col-md-4">
+                      <label>Ciudad </label>
+                      <input type="text" class="form-control" placeholder="Escriba ..." name="city" #city1="ngModel" [(ngModel)]="form3.ciudad">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label>Colonia </label>
+                      <input type="text" class="form-control" placeholder="Escriba ..." name="colo" #colo1="ngModel" [(ngModel)]="form3.colonia">
+                    </div>
                     
                     <div class="col-md-4">
-                      <label>Teléfono: </label>
+                      <label>Calle </label>
+                      <input type="text" class="form-control" placeholder="Escriba ..." name="aven" #aven1="ngModel" [(ngModel)]="form3.calle">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label>Código Postal </label>
+                      <input type="text" class="form-control" placeholder="Escriba ..." name="cod" #cod1="ngModel" [(ngModel)]="form3.cp">
+                    </div>
+                    
+                    <div class="col-md-4">
+                      <label>Teléfono Casa: </label>
+                      <input type="text" class="form-control" placeholder="Ingrese número..." name="celcasa" #celcasa1="ngModel" [(ngModel)]="form3.celcasa">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label>Teléfono Celular: </label>
                       <input type="text" class="form-control" placeholder="Ingrese número a 10 digitos..." name="celul" #celum="ngModel" [(ngModel)]="form3.celular">
                     </div>
+
+                    <div class="col-md-4">
+                      <label>Doctor Alta: </label>
+                      <input type="text" class="form-control" placeholder="Escriba aqui..." name="docalt" #docalt1="ngModel" [(ngModel)]="form3.docAlt">
+                    </div>
+
+                    
           
                     <div class="col-md-8">
                 

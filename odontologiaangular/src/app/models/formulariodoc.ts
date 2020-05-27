@@ -1,4 +1,4 @@
-export class Formulario3{
+export class FormularioDoc{
     constructor(
         public id:number,
         public fecha:string,

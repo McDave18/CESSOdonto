@@ -13,6 +13,7 @@ import { FormsModule} from '@angular/forms';
 import { Formulario2Component } from './components/doctor/formulario2/formulario2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Formulario3Component } from './components/doctor/formulario3/formulario3.component';
+import { FormularioDocComponent } from './components/admin/formulariodoc/formulariodoc.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Formulario3Component } from './components/doctor/formulario3/formulario
     Formulario1Component,
     PaneldoctorComponent,
     Formulario2Component,
-    Formulario3Component
+    Formulario3Component,
+    FormularioDocComponent
 
     
     

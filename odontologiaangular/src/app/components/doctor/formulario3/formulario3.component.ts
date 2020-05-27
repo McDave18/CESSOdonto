@@ -28,8 +28,18 @@ export class Formulario3Component implements OnInit {
 
   public form3;
 
-  constructor(private _formulario3services:Formulario3Service ) { this.form3= new Formulario3(0,'','','','','','',"","","","")}
+  constructor(private _formulario3services:Formulario3Service ) { this.form3= new Formulario3(0,'','','','','','','','','','','','','','','','','')}
+  
+  // age;
+  // showAge;
 
+  // ageCalculator(){
+  //   if(this.age){
+  //     const convertAge = new Date(this.age);
+  //     const timeDiff = Math.abs(Date.now() - convertAge.getTime());
+  //     this.showAge = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+  //   }
+  // }
 
   ngOnInit(): void {
   }
@@ -42,10 +52,10 @@ export class Formulario3Component implements OnInit {
       decimalseparator: '.',
       showLabels: true, 
       showTitle: true,
-      title: 'Formulario Paciente',
+      title: 'Registro Paciente',
       useBom: true,
       noDownload: false,
-      headers: ["Fecha", "Nombre", "Paterno", "Materno", "Sexo", "Celular", "Poblacion", "Facultad"],
+      headers: ["Fecha", "Nombre", "Paterno", "Materno", "RFC","Sexo","Ciudad","Colonia","Calle","Codigo Postal", "Cel. Casa","Celular", "Doctor","Poblacion", "Facultad"],
       nullToEmptyString: true,
     };
 
@@ -55,8 +65,15 @@ export class Formulario3Component implements OnInit {
         name: this.form3.nombre,
         AP: this.form3.paterno,
         AM: this.form3.materno,
+        RFC: this.form3.rfc,
         Sexo: this.form3.sexo,
+        CD: this.form3.ciudad,
+        Col: this.form3.colonia,
+        Calle: this.form3.calle,
+        CP: this.form3.cp,
+        CelCasa: this.form3.celcasa,
         Telefono: this.form3.celular,
+        DAltas: this.form3.docAlt,
         Poblacion: this.form3.poblacion,
         Facultad: this.form3.poblacion1,
         AGE: this.form3.age,
