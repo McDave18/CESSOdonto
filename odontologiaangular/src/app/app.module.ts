@@ -14,6 +14,7 @@ import { Formulario2Component } from './components/doctor/formulario2/formulario
 import { HttpClientModule } from '@angular/common/http';
 import { Formulario3Component } from './components/doctor/formulario3/formulario3.component';
 import { FormularioDocComponent } from './components/admin/formulariodoc/formulariodoc.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FormularioDocComponent } from './components/admin/formulariodoc/formula
     PaneldoctorComponent,
     Formulario2Component,
     Formulario3Component,
-    FormularioDocComponent
+    FormularioDocComponent,
+    HomeComponent
 
     
     

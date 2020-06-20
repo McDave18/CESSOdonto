@@ -77,8 +77,6 @@ export class FormularioDocComponent implements OnInit {
         DAltas: this.formdoc.docAlt,
         Poblacion: this.formdoc.poblacion,
         Facultad: this.formdoc.poblacion1,
-        AGE: this.formdoc.age,
-        ShowA: this.formdoc.showAge,
       }
     ];
     
