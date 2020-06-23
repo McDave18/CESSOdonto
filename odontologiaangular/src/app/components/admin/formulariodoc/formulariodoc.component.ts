@@ -29,7 +29,7 @@ export class FormularioDocComponent implements OnInit {
 
   public formdoc;
 
-  constructor(private _formulariodocservices:FormularioDocService ) { this.formdoc= new FormularioDoc(0,'','','','','','','','','','','','','','','','','')}
+  constructor(private _formulariodocservices:FormularioDocService ) { this.formdoc= new FormularioDoc(0,'','','','','','','',)}
   
   // age;
   // showAge;
@@ -56,27 +56,19 @@ export class FormularioDocComponent implements OnInit {
       title: 'Registro Paciente',
       useBom: true,
       noDownload: false,
-      headers: ["Fecha", "Nombre", "Paterno", "Materno", "RFC","Sexo","Ciudad","Colonia","Calle","Codigo Postal", "Cel. Casa","Celular", "Doctor","Poblacion", "Facultad"],
+      headers: ["Nombre", "Paterno", "Materno", "RFC","Tipo De Doctor","Usuario","Contraseña"],
       nullToEmptyString: true,
     };
 
     var data = [
       {
-        Fecha: this.formdoc.fecha,
         name: this.formdoc.nombre,
         AP: this.formdoc.paterno,
         AM: this.formdoc.materno,
         RFC: this.formdoc.rfc,
-        Sexo: this.formdoc.sexo,
-        CD: this.formdoc.ciudad,
-        Col: this.formdoc.colonia,
-        Calle: this.formdoc.calle,
-        CP: this.formdoc.cp,
-        CelCasa: this.formdoc.celcasa,
-        Telefono: this.formdoc.celular,
-        DAltas: this.formdoc.docAlt,
-        Poblacion: this.formdoc.poblacion,
-        Facultad: this.formdoc.poblacion1,
+        TipD: this.formdoc.tipoD,
+        NumIDM: this.formdoc.numid,
+        PWD: this.formdoc.psswd
       }
     ];
     

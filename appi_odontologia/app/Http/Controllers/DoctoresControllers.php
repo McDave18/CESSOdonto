@@ -8,45 +8,48 @@ use Illuminate\Http\Response;
 
 class DoctoresControllers extends Controller
 {
-    // public function index(){
-    //     echo "hola checa http://odon.com.devel/";
-    //}
-    public function index( ){
-        //$json = $request->input('json',null);
-       //$params = json_decode($json,true);
-        //if(!empty($params)){
+    public function index(){
+        echo "hola checa http://odon.com.devel/";
+    }
+    public function store(Request $request){
+        $json = $request->input('json',null);
+       $params = json_decode($json,true);
+        if(!empty($params)){
 
             // cra las demas relaciones que se hacen en te formulario
 
             $doctores= new Doctores();
-           // $doctores->Id_Doctor = "";
-            $doctores->NombreD = "David";
-            $doctores->PaternoD = "Bustamante";
-            $doctores->Id_MatriculaD = "160252";
-            $passwd = "contras";
+            $doctores->Id_Doctor = "12i";
+            $doctores->NombreD=$params["nombre"];
+            $doctores->PaternoD=$params["paterno"];
+            $doctores->MaternoD=$params["materno"];
+            $doctores->RFC_Dr=$params["rfc"];
+            $doctores->Estudiante= $params=["tipoD"];
+            $doctores->Id_MatriculaD= $params=["numid"];
+            $passwd = $params=["psswd"];
             $psswdE=hash("sha256",$passwd);
             $doctores->psswdE=$psswdE;
             $doctores->save();
 
 
-            // $data = array(
-            //     'status' => 'success',
-            //     'code' => 200,
-            //     'message' => 'El formulario se ha creado correctamente',
-            //     'formulario2' => $params
-            // );
-            //envia si todo sale bien
-        //}
-        // else{
-        //     $data = array(
-        //         'status' => 'error',
-        //         'code' => 404,
-        //         'message' => 'El formulario no se ha creado',
-        //         'formulario2' => $params
-        //     );
-        //     //aqui por si mandas algun dato mal
-        // }
-        //return response() ->json($data,$data['code']);
+            $data = array(
+                'status' => 'success',
+                'code' => 200,
+                'message' => 'El formulario se ha creado correctamente',
+                'formulario2' => $params
+            );
+            envia si todo sale bien
+        }
+        else{
+            $data = array(
+                'status' => 'error',
+                'code' => 404,
+                'message' => 'El formulario no se ha creado',
+                'formulario2' => $params
+            );
+            //aqui por si mandas algun dato mal
+        }
+        return response() ->json($data,$data['code']);
 
     }
 
