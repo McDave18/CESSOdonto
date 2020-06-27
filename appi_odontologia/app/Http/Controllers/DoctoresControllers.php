@@ -19,14 +19,14 @@ class DoctoresControllers extends Controller
             // cra las demas relaciones que se hacen en te formulario
 
             $doctores= new Doctores();
-            $doctores->Id_Doctor = "12i";
+            // $doctores->Id_Doctor = "12i";
             $doctores->NombreD=$params["nombre"];
             $doctores->PaternoD=$params["paterno"];
             $doctores->MaternoD=$params["materno"];
             $doctores->RFC_Dr=$params["rfc"];
-            $doctores->Estudiante= $params=["tipoD"];
-            $doctores->Id_MatriculaD= $params=["numid"];
-            $passwd = $params=["psswd"];
+            $doctores->Estudiante= $params["tipoD"]; //es boleano, es para ver si es doctor o estudiante ok
+            $doctores->Id_MatriculaD= $params["numid"];
+            $passwd = $params["psswd"];
             $psswdE=hash("sha256",$passwd);
             $doctores->psswdE=$psswdE;
             $doctores->save();
@@ -38,7 +38,6 @@ class DoctoresControllers extends Controller
                 'message' => 'El formulario se ha creado correctamente',
                 'formulario2' => $params
             );
-            envia si todo sale bien
         }
         else{
             $data = array(
@@ -67,15 +66,17 @@ class DoctoresControllers extends Controller
               $signup = array(
                 'status' => 'error',
                 'code'=> 404,
+                'pass'  =>$params,
                 'message' =>'El usuario no se ha podido autentificar',
                   'errors' => $validate->errors()
                 ) ;
-         }else{
+         }
+         else{
               $pass=hash('sha256',$params->password );  
               
-              $signup =$jwtAuth->signup($params->matricula,$pass);
+              $signup =$jwtAuth->signup($params->NumIDM,$pass);
                if(!empty($params->gettoken)){
-                   $signup = $jwtAuth->signup($params->matricula,$pass,true);
+                   $signup = $jwtAuth->signup($params->NumIDM,$pass,true);
                }
          }
         

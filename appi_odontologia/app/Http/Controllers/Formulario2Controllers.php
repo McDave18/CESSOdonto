@@ -18,7 +18,7 @@ class Formulario2Controllers extends Controller
             // cra las demas relaciones que se hacen en te formulario
 
             $interrogacion = new Interrogacion();
-            $interrogacion->Id_Paciente="12";
+            $interrogacion->Id_Paciente="12i";
             $interrogacion->1_Enfermedades=$params["enfermedades"];
             $interrogacion->2_Diagnosticos=$params["diagnosticos"];
             $interrogacion->3_Alergia_Penicilina=$params["penicilina"];

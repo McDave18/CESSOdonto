@@ -1,4 +1,5 @@
 export class FormularioDoc{
+    // aqui ya lo tines
     constructor(
         public id:number,
         public nombre:string,

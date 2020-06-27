@@ -15,14 +15,14 @@
       <!-- /.login-logo -->
       <div class="login-box-body" style="border:1px solid blue">
         <p class="login-box-msg">Inicie sesión</p>
-    
-        <form action="../../index2.html" method="post">
+
+        <form action="../../index2.html" method="post" #login1="ngForm" (ngSubmit)="onSubmit(login1)">
           <div class="form-group has-feedback">
-            <input type="se" class="form-control" placeholder="Usuario">
+            <input type="se" class="form-control" placeholder="Usuario" name="numid" #numid1="ngModel" [(ngModel)]="login.numid">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Contraseña">
+            <input type="password" class="form-control" placeholder="Contraseña" name="pssw" #psswd1="ngModel" [(ngModel)]="login.psswd">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">

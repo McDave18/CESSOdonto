@@ -27,7 +27,7 @@ export class Formulario1Component implements OnInit {
       showTitle: true,
       title: 'Formulario Paciente',
       useBom: true,
-      noDownload: false,
+      noDownload: true,
       headers: ["Alerta Médica", "Alergias", "Fecha", "Nombre del paciente", "Celular", "Pregunta 1", "Pregunta 2", "Pregunta 3","Pregunta 3a","Pregunta 4","Pregunta 5", "Pregunta 5a", "Pregunta 5b", "Pregunta 5c", "Pregunta 7", "Pregunta 8", "Pregunta 9", "Pregunta 10", "Pregunta 11", "Pregunta 12", "Pregunta 13", "Pregunta 14", "Pregunta 15", "Pregunta 16", "Pregunta 17", "Pregunta 18", "Pregunta 19", "Pregunta 20", "Pregunta 21", "Pregunta 22", "Pregunta 23", "Pregunta 24", "Pregunta 25", "Pregunta 26", "Pregunta 27", "Pregunta 28", "Pregunta 29", "Pregunta 30", "Pregunta 31", "Pregunta 32", "Pregunta 33", "Pregunta 34", "Pregunta 35", "Pregunta 36", "Pregunta 37", "Pregunta 38", "Pregunta 39", "Pregunta 40", "Pregunta 41", "Pregunta 42", "Pregunta 43", "Pregunta 44", "Pregunta 45", "Pregunta 46", "Pregunta 47", "Pregunta 48", "Pregunta 49", "Pregunta 50", "Pregunta 51", "Pregunta 52", "Pregunta 53", "Pregunta 54", "Pregunta 55", "Pregunta 56", "Pregunta 57", "Pregunta 58", "Pregunta 59", "Pregunta 60", "Pregunta 61", "Pregunta 62", "Pregunta 63", "Pregunta 64", "Pregunta 64a", "Pregunta 65", "Pregunta 66", "Pregunta 67", "Pregunta 67a", "Firma", "Fecha"],
       nullToEmptyString: true,
     };

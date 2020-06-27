@@ -15,7 +15,8 @@
     </section>
 
    <section class="content "> 
-        <form action="" #formudoc="ngForm" (ngSubmit)="onSubmit(formudoc)">
+     
+        <form action="" #formudoc="ngForm" (ngSubmit)="onSubmit(formudoc)"> 
 
 
             <div class="box box-info">
@@ -53,8 +54,8 @@
                         <div class="form-group">
                           <select class="form-control" name="sexo" #sex="ngModel" [(ngModel)]="formdoc.tipoD">
                             <option>Elija una opción</option>
-                            <option >Doctor</option>
-                            <option >Estudiante</option>
+                            <option value="0">Doctor</option>
+                            <option value="1">Estudiante</option> 
                           </select>
                         </div>
             

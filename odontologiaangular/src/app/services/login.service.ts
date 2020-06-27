@@ -10,14 +10,17 @@ export class LoginService{
     {
 
     }
-    registrarLogin(login):Observable<any>
+    registrarLogin(login,gettoken = null):Observable<any>
     { 
+        if(gettoken != null){
+            login.gettoken ="true";
+        }
         //luego checamos eso xD  sale 
         let json = JSON.stringify(login);
         let params = 'json='+json;
         console.log("login",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.post('http://odon.com.devel/api/formulario',params,{headers:headers}); 
+        return this._http.post('http://odon.com.devel/api/login',params,{headers:headers}); 
 
     }
 }

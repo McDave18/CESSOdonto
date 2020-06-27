@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::resource('/api/formulario','Formulario2Controllers');
 Route::resource('/api/doctores','DoctoresControllers');
 Route::post('/api/login','DoctoresControllers@login');
+Route::resource('/api/formulario1','Formulario1Controllers');

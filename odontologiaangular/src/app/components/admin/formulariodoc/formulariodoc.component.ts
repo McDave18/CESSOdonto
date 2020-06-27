@@ -29,7 +29,10 @@ export class FormularioDocComponent implements OnInit {
 
   public formdoc;
 
-  constructor(private _formulariodocservices:FormularioDocService ) { this.formdoc= new FormularioDoc(0,'','','','','','','',)}
+  constructor(private _formulariodocservices:FormularioDocService ) { 
+
+    this.formdoc= new FormularioDoc(0,'','','','','','','',)
+  }
   
   // age;
   // showAge;
@@ -55,7 +58,7 @@ export class FormularioDocComponent implements OnInit {
       showTitle: true,
       title: 'Registro Paciente',
       useBom: true,
-      noDownload: false,
+      noDownload: true,
       headers: ["Nombre", "Paterno", "Materno", "RFC","Tipo De Doctor","Usuario","Contraseña"],
       nullToEmptyString: true,
     };

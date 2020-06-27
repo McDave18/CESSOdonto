@@ -14,8 +14,9 @@
     </section>
 
     <section class="content "> 
-        <form action="" #formu2="ngForm" (ngSubmit)="onSubmit(formu2)">
-
+      <!-- aqui es donde te guiaras  para el otro formulario-->
+        <form action="" #formu2="ngForm" (ngSubmit)="onSubmit(formu2)"> 
+          <!-- ya tienes lo de arriba ahi esta bien -->
 
             <!-- <div class="box box-info">
                 <div class="row">
@@ -91,6 +92,7 @@
                     <div class="col-md-10">
                         <label>1.- ¿Qué enfermedades ha padecido durante el último año?</label>
                         <input type="text" class="form-control" placeholder="Escriba..." name="ipregunta1" #pregu1="ngModel" [(ngModel)]="form2.enfermedades">
+                        <!-- aqui es donde se enlace con el codigo asi pon en las dema input   name="ipregunta1" #pregu1="ngModel" [(ngModel)]="form2.enfermedades" esto cambia nada mas el nomnre a lo que corresponde -->
                     </div>
                     
                       <div class="col-md-10">
