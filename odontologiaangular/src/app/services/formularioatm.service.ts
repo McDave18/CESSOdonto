@@ -3,22 +3,22 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from'rxjs';
 
 @Injectable()
-export class Formulario1Service{
+export class FormularioAtmService{
     constructor(
         public _http: HttpClient
     )
     {
 
     }
-    registrarFormulario1(formulario1):Observable<any>
+    registrarFormularioAtm(formularioatm):Observable<any>
     { 
         //luego checamos eso xD  sale 
-        let json = JSON.stringify(formulario1);
+        let json = JSON.stringify(formularioatm);
         let params = 'json='+json;
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/formulariohealth',params,{headers:headers}); 
+        return this._http.post('http://odon.com.devel/api/formularioatm',params,{headers:headers}); 
 
     }
 }

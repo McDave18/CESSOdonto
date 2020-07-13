@@ -1,0 +1,379 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content "> 
+        <div class="box-header with-border">
+            <div class= "col-md-12 callout callout-info">
+            <h5><b>Examen Físico de ATM</b></h5>
+        </div>
+        </div>
+        <form action="" #formuatm="ngForm" (ngSubmit)="onSubmit(formuatm)">
+
+
+
+        <div class="box box-primary">
+            <div class="row">
+                <div class="box-header with-border">
+                    <div class=" col-md-12">
+                    <h5><b>Movimiento de la mandíbula</b></h5>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Apertura máxima:</label>
+                    <input type="text" class="form-control" placeholder="Expresada en mm" name="maper" #maper1="ngModel" [(ngModel)]="formatm.ATMMov_Mand_Dim_Aper">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Dimensión Vertical:</label>
+                    <input type="text" class="form-control" placeholder="Expresada en mm" name="mver1" #mver11="ngModel" [(ngModel)]="formatm.ATMMov_Mand_Dim_Vert1">
+                    <input type="text" class="form-control" placeholder="Expresada en mm" name="mver2" #mver12="ngModel" [(ngModel)]="formatm.ATMMov_Mand_Dim_Vert2">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Desviación Mandibular Apertura:</label>
+                    <input type="text" class="form-control" placeholder="Escriba..." name="dmaper" #dmaper="ngModel" [(ngModel)]="formatm.ATMMov_Mand_Desv_Mand_Apertura">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Desviación Mandibular Cierre:</label>
+                    <input type="text" class="form-control" placeholder="Escriba..." name="dmcier" #dmcier1="ngModel" [(ngModel)]="formatm.ATMMov_Mand_Desv_Mand_Cierre">
+                </div>
+            </div>
+        </div>
+
+        <div class="box box-primary">
+            <div class="row">
+                <div class="box-header with-border">
+                    <div class=" col-md-12">
+                    <h5><b>Ruidos Articulares</b></h5>
+                </div>
+                </div>
+                
+                <div class="col-md-4"> 
+                    <label>Chasquido</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chask" #chask11="ngModel" [(ngModel)]="formatm.ATMR_Art_Chasquido">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4"> 
+                    <label>Apertura</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaska" #chaskap="ngModel" [(ngModel)]="formatm.ATMR_Art_Apertura">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4"> 
+                    <label>Cierre</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskc" #chaskc1="ngModel" [(ngModel)]="formatm.ATMR_Art_Cierre">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4"> 
+                    <label>Derecho</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskD" #chaskD1="ngModel" [(ngModel)]="formatm.ATMR_Art_Der">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-4"> 
+                    <label>Izquierdo</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskI" #chaskI1="ngModel" [(ngModel)]="formatm.ATMR_Art_Izq">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-4"> 
+                    <label>Bilateral</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskB" #chaskB1="ngModel" [(ngModel)]="formatm.ATMR_Art_Bilateral">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Inicial</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskIni" #chaskIni1="ngModel" [(ngModel)]="formatm.ATMR_Art_Inicial">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Medio</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskMe" #chaskMe1="ngModel" [(ngModel)]="formatm.ATMR_Art_Medio">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Tardío</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskta" #chaskta1="ngModel" [(ngModel)]="formatm.ATMR_Art_Tardio">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Recíproco</label>
+                    <div class="form-group">
+                    <select class="form-control" name="chaskre" #chaskre1="ngModel" [(ngModel)]="formatm.ATMR_Art_Reciproco">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Crepitación</label>
+                    <div class="form-group">
+                    <select class="form-control" name="crepi" #crepi1="ngModel" [(ngModel)]="formatm.ATMCrepitacion">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Derecho</label>
+                    <div class="form-group">
+                    <select class="form-control" name="crepitD" #crepit1="ngModel" [(ngModel)]="formatm.ATMCrep_Der">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Izquierdo</label>
+                    <div class="form-group">
+                    <select class="form-control" name="crepitI" #crepitI1="ngModel" [(ngModel)]="formatm.ATMCrep_Izq">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Bilateral</label>
+                    <div class="form-group">
+                    <select class="form-control" name="crepitB" #crepitB1="ngModel" [(ngModel)]="formatm.ATMCrep_Bi">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Luxación</label>
+                    <div class="form-group">
+                    <select class="form-control" name="luxac" #luxac1="ngModel" [(ngModel)]="formatm.ATMLuxacion">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Derecho</label>
+                    <div class="form-group">
+                    <select class="form-control" name="luxacD" #luxacD1="ngModel" [(ngModel)]="formatm.ATMLux_Der">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Izquierdo</label>
+                    <div class="form-group">
+                    <select class="form-control" name="luxacI" #luxacI1="ngModel" [(ngModel)]="formatm.ATMLux_Izq">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Bilateral</label>
+                    <div class="form-group">
+                    <select class="form-control" name="luxacB" #luxacB1="ngModel" [(ngModel)]="formatm.ATMLux_Bi">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Dolor</label>
+                    <div class="form-group">
+                    <select class="form-control" name="dolo" #dolo1="ngModel" [(ngModel)]="formatm.ATMDolor">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <label>Derecho</label>
+                    <div class="form-group">
+                    <select class="form-control" name="doloD" #doloD1="ngModel" [(ngModel)]="formatm.ATMDolor_Der">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Izquierdo</label>
+                    <div class="form-group">
+                    <select class="form-control" name="doloI" #doloI1="ngModel" [(ngModel)]="formatm.ATMDolor_Izq">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-3"> 
+                    <label>Bilateral</label>
+                    <div class="form-group">
+                    <select class="form-control" name="doloB" #doloB1="ngModel" [(ngModel)]="formatm.ATMDolor_Bi">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+            
+                <div class="col-md-6">
+                    <label>SDP</label>
+                    <div class="form-group">
+                    <select class="form-control" name="spdd" #spdd5="ngModel" [(ngModel)]="formatm.ATMSDP">
+                        <option>Elija una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Si</option>
+                    </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Zona perdida -->
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+
+        <!-- Inicia tabla diagnóstico -->
+
+   
+            <div class="box-header with-border">
+                <div class= "col-md-12 callout callout-info">
+                <h5><b>Diagnóstico</b></h5>
+            </div>
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                  <tr class="bg-primary">
+                    <th class="static" scope="col">Fecha</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-success">
+                    <th class="static" scope="row">Cuadrantes dañados</th>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="cua1" #cua1p="ngModel" [(ngModel)]="formatm.ATMCuadrantesD1"></td>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="cua2" #cua2p="ngModel" [(ngModel)]="formatm.ATMCuadrantesD2"></td>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="cua3" #cua3p="ngModel" [(ngModel)]="formatm.ATMCuadrantesD3"></td>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="cua4" #cua4p="ngModel" [(ngModel)]="formatm.ATMCuadrantesD4"></td>
+                    </tr>
+                  <tr class="bg-success">
+                    <th class="static" scope="row">Dentarios Dañados</th>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dent1" #dent1p="ngModel" [(ngModel)]="formatm.ATMDentariosD1"></td>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dent2" #dent2p="ngModel" [(ngModel)]="formatm.ATMDentariosD2"></td>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dent3" #dent3p="ngModel" [(ngModel)]="formatm.ATMDentariosD3"></td>
+                    <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dent4" #dent4p="ngModel" [(ngModel)]="formatm.ATMDentariosD4"></td>
+                    </tr>
+                </tbody>
+              </table>
+
+               <!-- De aqui -->
+            <div class="box box-info">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label><i>Nombre del que autoriza (paciente).</i></label>
+                        <input type="text" class="form-control" placeholder="Ingrese su nombre ..." name="nombr2" #nombr22="ngModel" [(ngModel)]="formatm.firma">
+                    </div>
+                </div>
+                </div>
+    <!-- a aqui -->
+
+     <button type="submit">Guardar</button>
+
+
+    </form>
+
+    </section>
+    <!-- /.content -->
+  </div>

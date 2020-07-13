@@ -15,6 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Formulario3Component } from './components/doctor/formulario3/formulario3.component';
 import { FormularioDocComponent } from './components/admin/formulariodoc/formulariodoc.component';
 import { HomeComponent } from './components/home/home.component';
+import { IHOSComponent } from './components/doctor/ihos/ihos.component';
+import { FormularioAtmComponent } from './components/doctor/formularioatm/formularioatm.component';
+import { PlantratamientoComponent } from './components/doctor/plantratamiento/plantratamiento.component';
+import { ControlpagosComponent } from './components/doctor/controlpagos/controlpagos.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { HomeComponent } from './components/home/home.component';
     Formulario2Component,
     Formulario3Component,
     FormularioDocComponent,
-    HomeComponent
+    HomeComponent,
+    IHOSComponent,
+    FormularioAtmComponent,
+    PlantratamientoComponent,
+    ControlpagosComponent
 
     
     

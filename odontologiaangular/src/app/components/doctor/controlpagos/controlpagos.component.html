@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+   <section class="content "> 
+    <div class="box-header with-border">
+        <div class= "col-md-12 callout callout-info">
+        <h5><b>Control de pagos</b></h5>
+    </div>
+    </div>
+     
+         <form action="" #formupago="ngForm" (ngSubmit)="onSubmit(formupago)"> 
+            
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+        <table class="table table-bordered">
+            <thead>
+              <tr class="bg-primary">
+                <th scope="col">Fecha</th>
+                <th scope="col">Nombre del Paciente</th>
+                <th scope="col">Tratamiento Realizado</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Abono</th>
+                <th scope="col">Saldo</th>
+                <th scope="col">Folio</th>
+                <th scope="col">Nombre y Clave del doctor</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr class="bg-success">
+                <td><input style="text-align:center; width: 100%" type="date" class="form-control" placeholder="DD/MM/AAAA" name="fecha11" #fechaa1="ngModel" [(ngModel)]="formpago.fecha1"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121t" #d1617tp="ngModel" [(ngModel)]="formpago.namep"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formpago.trat"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formpago.costo"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3141t" #d1617tp="ngModel" [(ngModel)]="formpago.abono"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d4647t" #d1617tp="ngModel" [(ngModel)]="formpago.saldo"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dtptt" #tpttp="ngModel" [(ngModel)]="formpago.folio"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dtptt" #tpttp="ngModel" [(ngModel)]="formpago.cldoc"></td>
+              </tr>
+            </tbody>
+          </table>
+    <!-- /.content-wrapper -->
+              <!-- /.content -->
+              <button type="submit">Guardar</button>
+
+        </form>
+    </section>
+</div>

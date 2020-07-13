@@ -17,7 +17,7 @@ class Formulario1Controllers extends Controller
 
             // cra las demas relaciones que se hacen en te formulario
 
-            $health_history = new Health_History();
+            $health_history = new Health();
             $health_history->Id_Paciente="12i";
             $health_history->P1=$params["Iask1"];
             $health_history->P2=$params["iask2"];

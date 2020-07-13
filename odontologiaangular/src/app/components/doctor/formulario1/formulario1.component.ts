@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Formulario1 } from 'src/app/models/formulario1';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
+import { Formulario1Service } from 'src/app/services/formulario1.service';
 
 @Component({
   selector: 'app-formulario1',
   templateUrl: './formulario1.component.html',
-  styleUrls: ['./formulario1.component.css']
+  styleUrls: ['./formulario1.component.css'],
+  providers: [Formulario1Service]
 })
 export class Formulario1Component implements OnInit {
 
@@ -124,7 +126,7 @@ export class Formulario1Component implements OnInit {
       
     ];
 
-    new AngularCsv(data, this.form1.nombre, options);
+    new AngularCsv(data, this.form1.firma, options);
   }
 
 }

@@ -12,6 +12,10 @@ import { Formulario2Component } from './components/doctor/formulario2/formulario
 import { Formulario3Component } from './components/doctor/formulario3/formulario3.component';
 import { FormularioDocComponent } from './components/admin/formulariodoc/formulariodoc.component';
 import { HomeComponent } from "./components/home/home.component";
+import { IHOSComponent } from "./components/doctor/ihos/ihos.component";
+import { FormularioAtmComponent } from './components/doctor/formularioatm/formularioatm.component';
+import { PlantratamientoComponent } from './components/doctor/plantratamiento/plantratamiento.component';
+import { ControlpagosComponent } from './components/doctor/controlpagos/controlpagos.component';
 
 
 
@@ -32,7 +36,11 @@ children:[
   {path: 'formulario2', component: Formulario2Component},
   {path: 'formulario3', component: Formulario3Component},
   {path: 'formulariodoc', component: FormularioDocComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'ihos', component: IHOSComponent},
+  {path: 'formularioatm', component: FormularioAtmComponent},
+  {path: 'plantratamiento', component: PlantratamientoComponent},
+  {path: 'controlpagos', component: ControlpagosComponent},
 ]
 }
 

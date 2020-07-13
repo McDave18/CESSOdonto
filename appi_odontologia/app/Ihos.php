@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Health extends Model
+class Ihos extends Model
 {
-	protected $table = 'health_history';// aqui s epone el nombre de la tabla´
+	protected $table = 'ihos';// aqui s epone el nombre de la tabla´
 	//ok
 
 	//aqui crear la conexion con la tabla llamalo en base a la table crea varios de esto en base a las tablas

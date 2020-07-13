@@ -1,0 +1,37 @@
+export class IHOS{
+    constructor(
+        public ID16y17_Pl:string,
+        public ID11y21_Pl:string,
+        public ID26y27_Pl:string,
+        public ID36y37_Pl:string,
+        public ID31y41_Pl:string,
+        public ID46y47_Pl:string,
+        public ID16y17_Sa:string,
+        public ID11y21_Sa:string,
+        public ID26y27_Sa:string,
+        public ID36y37_Sa:string,
+        public ID31y41_Sa:string,
+        public ID46y47_Sa:string,
+        public TD16y17_Pl:string,
+        public TD11y21_Pl:string,
+        public TD26y27_Pl:string,
+        public TD36y37_Pl:string,
+        public TD31y41_Pl:string,
+        public TD46y47_Pl:string,
+        public TD16y17_Sa:string,
+        public TD11y21_Sa:string,
+        public TD26y27_Sa:string,
+        public TD36y37_Sa:string,
+        public TD31y41_Sa:string,
+        public TD46y47_Sa:string,
+        public InPlT:string,
+        public InSaT:string,
+        public TotalInIH:string,
+        public TerPlT:string,
+        public TerSaT:string,
+        public TotalTerIH:string,
+        public Obser:string,
+
+        )
+    {}
+}

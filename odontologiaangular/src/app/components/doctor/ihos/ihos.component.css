@@ -1,0 +1,18 @@
+/* table {
+    display: block;
+    overflow-x: auto;
+    background-color: #d1edf5;
+  }
+  
+  /* .static {
+    position: absolute;
+    background-color: #8bc2e2;
+  } */
+  
+  /* .first-col {
+    padding-left: 74.5px!important;
+  } */
+  td.tdinput
+{
+    border:1px solid rgb(4, 133, 47);
+}
