@@ -19,6 +19,7 @@ import { IHOSComponent } from './components/doctor/ihos/ihos.component';
 import { FormularioAtmComponent } from './components/doctor/formularioatm/formularioatm.component';
 import { PlantratamientoComponent } from './components/doctor/plantratamiento/plantratamiento.component';
 import { ControlpagosComponent } from './components/doctor/controlpagos/controlpagos.component';
+import { MenuComponent} from './components/shared/menu/menu.component'
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ControlpagosComponent } from './components/doctor/controlpagos/controlp
     IHOSComponent,
     FormularioAtmComponent,
     PlantratamientoComponent,
-    ControlpagosComponent
+    ControlpagosComponent,
+    MenuComponent
 
     
     
