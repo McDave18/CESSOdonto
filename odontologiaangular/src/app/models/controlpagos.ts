@@ -3,9 +3,9 @@ export class Controlpagos{
         public fecha1:string,
         public namep:string,
         public trat:string,
-        public costo:string,
-        public abono:string,
-        public saldo:string,
+        public costo:number,
+        public abono:number,
+        public saldo:number,
         public folio:string,
         public cldoc:string
         )

@@ -19,7 +19,6 @@ class FormularioAtmControllers extends Controller
 
             $atm_exfisico = new Atm();
             $atm_exfisico->Id_Paciente="12i";
-            $atm_exfisico->Id_ATM="David";
             $atm_exfisico->Mov_Mand_Dim_Aper=$params["ATMMov_Mand_Dim_Aper"];
             $atm_exfisico->Mov_Mand_Dim_Vert1=$params["ATMMov_Mand_Dim_Vert1"];
             $atm_exfisico->Mov_Mand_Dim_Vert2=$params["ATMMov_Mand_Dim_Vert2"];
@@ -48,22 +47,13 @@ class FormularioAtmControllers extends Controller
             $atm_exfisico->Dolor_Izq=$params["ATMDolor_Izq"];
             $atm_exfisico->Dolor_Bi=$params["ATMDolor_Bi"];
             $atm_exfisico->SDP=$params["ATMSDP"];
-            $atm_exfisico->CuadrantesD1=$params["ATMCuadrantesD1"];
-            $atm_exfisico->CuadrantesD2=$params["ATMCuadrantesD2"];
-            $atm_exfisico->CuadrantesD3=$params["ATMCuadrantesD3"];
-            $atm_exfisico->CuadrantesD4=$params["ATMCuadrantesD4"];
-            $atm_exfisico->DentariosD1=$params["ATMDentariosD1"];
-            $atm_exfisico->DentariosD2=$params["ATMDentariosD2"];
-            $atm_exfisico->DentariosD3=$params["ATMDentariosD3"];
-            $atm_exfisico->DentariosD4=$params["ATMDentariosD4"];
-            $atm_exfisico->NombreAut=$params["firma"];
             $atm_exfisico->save();
 
             $data = array(
                 'status' => 'success',
                 'code' => 200,
                 'message' => 'El formulario se ha creado correctamente',
-                'formulario2' => $params
+                'formularioatm' => $params
             );
             //envia si todo sale bien
         }
@@ -72,7 +62,7 @@ class FormularioAtmControllers extends Controller
                 'status' => 'error',
                 'code' => 404,
                 'message' => 'El formulario no se ha creado',
-                'formulario2' => $params
+                'formularioatm' => $params
             );
             //aqui por si mandas algun dato mal
         }

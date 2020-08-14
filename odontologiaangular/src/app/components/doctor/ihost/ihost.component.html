@@ -1,0 +1,195 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+   <section class="content "> 
+    <div class="box-header with-border">
+        <div class= "col-md-12 callout callout-info">
+        <h5><b>INDICE IHOS</b></h5>
+    </div>
+    </div>
+     
+         <form action="" #formuihost="ngForm" (ngSubmit)="onSubmit(formuihost)"> 
+            
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <table class="table table-bordered">
+          <thead>
+            <tr class="bg-primary">
+              <th class="static" scope="col">INICIAL</th>
+              <th scope="col">16</th>
+              <th scope="col">11</th>
+              <th scope="col">26</th>
+              <th scope="col">36</th>
+              <th scope="col">31</th>
+              <th scope="col">46</th>
+              <th scope="col">Total</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-primary">
+              <th class="static" scope="row">INICIAL</th>
+              <td>17</td>
+              <td>21</td>
+              <td>27</td>
+              <td>17</td>
+              <td>41</td>
+              <td>47</td>
+              <td>Total</td>
+              
+            </tr>
+            <tr class="bg-success">
+              <th class="static" scope="row">PLACA BACT.</th>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formihos.ID16y17_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formihos.ID11y21_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2427" #d2427p="ngModel" [(ngModel)]="formihos.ID26y27_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637" #d3637p="ngModel" [(ngModel)]="formihos.ID36y37_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3141" #d3141p="ngModel" [(ngModel)]="formihos.ID31y41_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d4647" #d4647p="ngModel" [(ngModel)]="formihos.ID46y47_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="tpi" #tpii="ngModel" [(ngModel)]="formihos.InPlT"></td>
+            </tr>
+            <tr class="bg-success">
+              <th class="static" scope="row">SARRO</th>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="si1617" #si1617p="ngModel" [(ngModel)]="formihos.ID16y17_Sa"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="si1121" #si1121p="ngModel" [(ngModel)]="formihos.ID11y21_Sa"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="si2427" #si2427p="ngModel" [(ngModel)]="formihos.ID26y27_Sa"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="si3637" #si3637p="ngModel" [(ngModel)]="formihos.ID36y37_Sa"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="si3141" #si3141p="ngModel" [(ngModel)]="formihos.ID31y41_Sa"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="si4647" #si4647p="ngModel" [(ngModel)]="formihos.ID46y47_Sa"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="tsi" #tsii="ngModel" [(ngModel)]="formihos.InSaT"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="col-md-3">
+            <label>TOTAL HIOS INICIAL: </label>
+            <input type="text" class="form-control" placeholder="..." name="tiih" #tiihp="ngModel" [(ngModel)]="formihos.TotalInIH">
+        </div>
+
+        <!-- IHOS TERMINAL -->
+        <!-- <br>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <div class="col-md-12">
+            <label></label>
+        </div> -->
+
+        <table class="table table-bordered">
+            <thead>
+              <tr class="bg-primary">
+                <th scope="col">TERMINAL</th>
+                <th scope="col">16</th>
+                <th scope="col">11</th>
+                <th scope="col">26</th>
+                <th scope="col">36</th>
+                <th scope="col">31</th>
+                <th scope="col">46</th>
+                <th scope="col">Total</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-primary">
+                <th scope="row">TERMINAL</th>
+                <td>17</td>
+                <td>21</td>
+                <td>27</td>
+                <td>17</td>
+                <td>41</td>
+                <td>47</td>
+                <td>Total</td>
+                
+              </tr>
+              <tr class="bg-success">
+                <th scope="row">PLACA BACT.</th>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617t" #d1617tp="ngModel" [(ngModel)]="formihost.TD16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121t" #d1617tp="ngModel" [(ngModel)]="formihost.TD11y21_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formihost.TD26y27_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formihost.TD36y37_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3141t" #d1617tp="ngModel" [(ngModel)]="formihost.TD31y41_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d4647t" #d1617tp="ngModel" [(ngModel)]="formihost.TD46y47_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dtptt" #tpttp="ngModel" [(ngModel)]="formihost.TerPlT"></td>
+              </tr>
+              <tr class="bg-success">
+                <th scope="row">SARRO</th>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st1617" #st1617p="ngModel" [(ngModel)]="formihost.TD16y17_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st1121" #st1617p="ngModel" [(ngModel)]="formihost.TD11y21_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st2726" #st1617p="ngModel" [(ngModel)]="formihost.TD26y27_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st3637" #st1617p="ngModel" [(ngModel)]="formihost.TD36y37_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st3141" #st1617p="ngModel" [(ngModel)]="formihost.TD31y41_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st4647" #st1617p="ngModel" [(ngModel)]="formihost.TD46y47_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="tst" #tstp="ngModel" [(ngModel)]="formihost.TerSaT"></td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <div class="col-md-3">
+              <label>TOTAL HIOS TERMINAL: </label>
+              <input type="text" class="form-control" placeholder="..." name="ttih" #ttihp="ngModel" [(ngModel)]="formihost.TotalTerIH">
+          </div>
+
+          <!-- IHOS TERMINAL -->
+        <br>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <div class="col-md-12">
+            <label></label>
+        </div>
+        <!-- COMENTARIOS --> 
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Anotaciones
+                  <small>Ingrese observaciones</small>
+                </h3>
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                  <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip"
+                          title="Collapse">
+                    <i class="fa fa-minus"></i></button>
+                  <!-- <button type="button" class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip"
+                          title="Remove">
+                    <i class="fa fa-times"></i></button> -->
+                </div>
+                <!-- /. tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body pad">
+                <form>
+                  <textarea class="textarea" placeholder="Escriba aquí..."
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #7a42e2; padding: 10px; " class="form-control" placeholder="Ingrese sus observaciones" name="obvs" #OBVSs="ngModel" [(ngModel)]="formihost.Obser"></textarea>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-->
+        </div>
+        <!-- ./row -->
+    <!-- /.content-wrapper -->
+              <!-- /.content -->
+              <button type="submit">Guardar</button>
+
+        </form>
+    </section>
+</div>

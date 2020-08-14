@@ -16,3 +16,10 @@
 {
     border:1px solid rgb(4, 133, 47);
 }
+table th {
+  text-align: center;
+}
+
+table tr {
+  text-align: center;
+}

@@ -3,6 +3,7 @@ import { ControlpagosService } from 'src/app/services/controlpagos.service';
 import { Controlpagos } from 'src/app/models/controlpagos';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-controlpagos',
@@ -13,8 +14,11 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 export class ControlpagosComponent implements OnInit {
 
   public formpago;
-  constructor(private _controlpagosservices:ControlpagosService ) { 
-    this.formpago= new Controlpagos('','','','','','','','')
+  identity: any;
+  constructor(private _controlpagosservices:ControlpagosService, public _loginServices: LoginService ) { 
+    this.formpago= new Controlpagos('','','',0,0,0,'','')
+    this.identity = _loginServices.getIdentity();  
+    console.log(this.identity)
   }
 
 
@@ -31,7 +35,7 @@ export class ControlpagosComponent implements OnInit {
       showTitle: true,
       title: 'Tratamiento Paciente',
       useBom: true,
-      noDownload: false,
+      noDownload: true,
       headers: ["ID16y17", "ID11y21", "ID26y27", "ID36y37", "Poblacion", "Facultad", "Enfermedades", "Consulta", "Penicilina","Otros","Cuales","Anestesia","¿Problemas?", "¿Qué ocurrio?", "Sangrado", "Hemorragia", "Anticoagulante", "Tranquilizantes", "Otros", "Cuales", "Diabetes", "Parentesco","Cara","Blando","Duro","Labios","Boca","Cuello","Salivales","Carrillos","Lengua","Amigdalas","dDS18","dDS17","dDS16","dDS15","dDS14","dDS13","dDS12","dDS11","dDS55","dDS54","dDS53","dDS52","dDS51","dIS28","dIS27","dIS26","dIS25","dIS24","dIS23","dIS22","dIS21","dIS65","dIS64","dIS63","dIS62","dIS61","dDI48","dDI47","dDI46","dDI45","dDI44","dDI43","dDI42","dDI41","dDI85","dDI84","dDI83","dDI82","dDI81","dII38","dII37","dII36","dII35","dII34","dII33","dII32","dII31","dII75","dII74","dII73","dII72","dII7"],
       nullToEmptyString: true,
     };

@@ -3,14 +3,15 @@ import { Login } from 'src/app/models/login';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { LoginService } from 'src/app/services/login.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [LoginService]
+  providers: [LoginService],
+
 })
 export class LoginComponent implements OnInit {
 
@@ -19,9 +20,10 @@ export class LoginComponent implements OnInit {
   public status;
   identity;
 
-  constructor(private _loginservices:LoginService,private router: Router) 
+  constructor(private _loginservices:LoginService,private router: Router,private _router:ActivatedRoute) 
   { 
     this.login= new Login('','')
+    this.logout();
   }
 
 
@@ -74,6 +76,21 @@ export class LoginComponent implements OnInit {
         this.status="error";
       }
     );
+    
+  }
+  logout(){
+   
+    this._router.params.subscribe(params =>{
+      let logout = +params['sure'];
+      
+      if(logout == 1){
+        localStorage.removeItem('identity');
+        localStorage.removeItem('token');
+        this.token=null;
+        this.identity=null;
+        this.router.navigate(['login']);
+      }
+    });
   }
 
 }

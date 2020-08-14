@@ -20,6 +20,12 @@ import { FormularioAtmComponent } from './components/doctor/formularioatm/formul
 import { PlantratamientoComponent } from './components/doctor/plantratamiento/plantratamiento.component';
 import { ControlpagosComponent } from './components/doctor/controlpagos/controlpagos.component';
 import { MenuComponent} from './components/shared/menu/menu.component'
+import { LoginService } from './services/login.service';
+import { AuthGuard } from './auth.guard';
+import { OdontogramaComponent } from './components/doctor/odontograma/odontograma.component';
+import { IHOSTComponent } from './components/doctor/ihost/ihost.component';
+import { PlacadbComponent } from './components/doctor/placadb/placadb.component';
+import { PlacadbtComponent } from './components/doctor/placadbt/placadbt.component';
 
 
 @NgModule({
@@ -39,7 +45,11 @@ import { MenuComponent} from './components/shared/menu/menu.component'
     FormularioAtmComponent,
     PlantratamientoComponent,
     ControlpagosComponent,
-    MenuComponent
+    MenuComponent,
+    OdontogramaComponent,
+    IHOSTComponent,
+    PlacadbComponent,
+    PlacadbtComponent
 
     
     
@@ -50,7 +60,7 @@ import { MenuComponent} from './components/shared/menu/menu.component'
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,10 @@ import { Formulario1Service } from 'src/app/services/formulario1.service';
 export class Formulario1Component implements OnInit {
 
   public form1;
-  constructor( ) { this.form1= new Formulario1(0,'','','','','','Elija una opción','Elija una opción','Elija una opción','','Elija una opción','','','','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','Elija una opción','','Elija una opción','Elija una opción','','','','') }
+  constructor( ) 
+  { 
+    this.form1= new Formulario1('',0,0,0,'',0,'Elija una opción','Elija una opción','Elija una opción',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,'','','','Elija una opción') 
+  }
 
   ngOnInit(): void {
 

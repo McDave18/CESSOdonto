@@ -15,7 +15,7 @@ export class FormularioAtmComponent implements OnInit {
 
   constructor(private _formularioatmservices:FormularioAtmService ) { 
 
-    this.formatm= new FormularioAtm('','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')
+    this.formatm= new FormularioAtm(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
   }
   
   ngOnInit(): void {
@@ -66,15 +66,7 @@ export class FormularioAtmComponent implements OnInit {
         DolorI: this.formatm.ATMDolor_Izq,
         DolorB: this.formatm.ATMDolor_Bi,
         Spd: this.formatm.ATMSDP,
-        CD1: this.formatm.ATMCuadrantesD1,
-        CD2: this.formatm.ATMCuadrantesD2,
-        CD3: this.formatm.ATMCuadrantesD3,
-        CD4: this.formatm.ATMCuadrantesD4,
-        DD1: this.formatm.ATMDentariosD1,
-        DD2: this.formatm.ATMDentariosD2,
-        DD3: this.formatm.ATMDentariosD3,
-        DD4: this.formatm.ATMDentariosD4,
-        name1: this.formatm.firma,
+
       }
     ];
     

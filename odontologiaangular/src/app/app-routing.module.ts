@@ -16,6 +16,12 @@ import { IHOSComponent } from "./components/doctor/ihos/ihos.component";
 import { FormularioAtmComponent } from './components/doctor/formularioatm/formularioatm.component';
 import { PlantratamientoComponent } from './components/doctor/plantratamiento/plantratamiento.component';
 import { ControlpagosComponent } from './components/doctor/controlpagos/controlpagos.component';
+import { AuthGuard } from './auth.guard';
+import { LoginService } from './services/login.service';
+import { OdontogramaComponent } from './components/doctor/odontograma/odontograma.component';
+import { IHOSTComponent } from './components/doctor/ihost/ihost.component';
+import { PlacadbComponent } from './components/doctor/placadb/placadb.component';
+import { PlacadbtComponent} from './components/doctor/placadbt/placadbt.component';
 
 
 
@@ -28,7 +34,7 @@ const routes: Routes = [
     {path: '', component: DoctoresComponent},
   ]
 },
-{ path: 'doctorpanel', component: PaneldoctorComponent,
+{ path: 'doctorpanel', component: PaneldoctorComponent,canActivate:[AuthGuard],
 children:[
   {path: '', component: PacientesComponent},
   {path: 'pacientes', component: PacientesComponent},
@@ -41,13 +47,19 @@ children:[
   {path: 'formularioatm', component: FormularioAtmComponent},
   {path: 'plantratamiento', component: PlantratamientoComponent},
   {path: 'controlpagos', component: ControlpagosComponent},
+  {path: 'odontograma', component: OdontogramaComponent},
+  {path: 'ihost', component: IHOSTComponent},
+  {path: 'placadb', component: PlacadbComponent},
+  {path: 'placadbt', component: PlacadbtComponent},
+  
 ]
-}
+},{ path: 'salir/:sure',component: LoginComponent},
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard, LoginService],
 })
 export class AppRoutingModule { }
