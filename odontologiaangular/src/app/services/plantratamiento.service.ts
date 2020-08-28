@@ -18,7 +18,7 @@ export class PlantratamientoService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/formularioihos',params,{headers:headers}); 
+        return this._http.post('http://odon.com.devel/api/tratamiento',params,{headers:headers}); 
 
     }
 }

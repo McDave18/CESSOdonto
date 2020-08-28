@@ -10,6 +10,23 @@ class FormularioAtmControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $atm_exfisico = Atm::where("Id_Paciente",$id)->get();
+        if(is_object($atm_exfisico)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Atm' => $atm_exfisico
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Atm' => 'La Atm no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
@@ -18,7 +35,7 @@ class FormularioAtmControllers extends Controller
             // cra las demas relaciones que se hacen en te formulario
 
             $atm_exfisico = new Atm();
-            $atm_exfisico->Id_Paciente="12i";
+            $atm_exfisico->Id_Paciente=$params["Id_Pacient"];
             $atm_exfisico->Mov_Mand_Dim_Aper=$params["ATMMov_Mand_Dim_Aper"];
             $atm_exfisico->Mov_Mand_Dim_Vert1=$params["ATMMov_Mand_Dim_Vert1"];
             $atm_exfisico->Mov_Mand_Dim_Vert2=$params["ATMMov_Mand_Dim_Vert2"];
@@ -42,7 +59,7 @@ class FormularioAtmControllers extends Controller
             $atm_exfisico->Lux_Der=$params["ATMLux_Der"];
             $atm_exfisico->Lux_Izq=$params["ATMLux_Izq"];
             $atm_exfisico->Lux_Bi=$params["ATMLux_Bi"];
-            $atm_exfisico->Dolor =$params["ATMDolor"];
+            $atm_exfisico->Dolor=$params["ATMDolor"];
             $atm_exfisico->Dolor_Der=$params["ATMDolor_Der"];
             $atm_exfisico->Dolor_Izq=$params["ATMDolor_Izq"];
             $atm_exfisico->Dolor_Bi=$params["ATMDolor_Bi"];

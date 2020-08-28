@@ -1,5 +1,6 @@
 export class IHOS{
     constructor(
+        public Id_Pacient:string,
         public ID16y17_Pl:number,
         public ID11y21_Pl:number,
         public ID26y27_Pl:number,

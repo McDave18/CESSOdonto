@@ -19,6 +19,10 @@
         <h5><b>Plan de Tratamiento</b></h5>
     </div>
     </div>
+    <div class="col-md-10"  *ngIf="info_paciente">
+      <!-- {{info_paciente|json}} -->
+      <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+    </div>
      
          <form action="" #formutra="ngForm" (ngSubmit)="onSubmit(formutra)"> 
             
@@ -35,98 +39,98 @@
           <tbody>
             <tr class="bg-success">
               <th class="static" scope="row">18</th>
-              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td18" #td18p="ngModel" [(ngModel)]="formtra.TdDS18"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td28" #td28p="ngModel" [(ngModel)]="formtra.TdIS28"></td>
               <td>28</td>
             </tr>
             <tr class="bg-success">
               <th class="static" scope="row">17</th>
-              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td17" #td17p="ngModel" [(ngModel)]="formtra.TdDS17"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td27" #td27p="ngModel" [(ngModel)]="formtra.TdIS27"></td>
               <td>27</td>
               </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">16</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td16" #td16p="ngModel" [(ngModel)]="formtra.TdDS16"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td26" #td26p="ngModel" [(ngModel)]="formtra.TdIS26"></td>
                 <td>26</td>
             </tr>
             <tr class="bg-success">
               <th class="static" scope="row">15 55</th>
-              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td15" #td15p="ngModel" [(ngModel)]="formtra.TdDS15"></td>
+              <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td25" #td25p="ngModel" [(ngModel)]="formtra.TdIS25"></td>
               <td>65 25</td>
             </tr> 
             <tr class="bg-success">
                 <th class="static" scope="row">14 54</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td14" #td14p="ngModel" [(ngModel)]="formtra.TdDS14"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td24" #td24p="ngModel" [(ngModel)]="formtra.TdIS24"></td>
                 <td>64 24</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">13 53</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td13" #td13p="ngModel" [(ngModel)]="formtra.TdDS13"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td23" #td23p="ngModel" [(ngModel)]="formtra.TdIS23"></td>
                 <td>63 23</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">12 52</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td12" #td12p="ngModel" [(ngModel)]="formtra.TdDS12"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td22" #td22p="ngModel" [(ngModel)]="formtra.TdIS22"></td>
                 <td>62 22</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">11 51</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td11" #td11p="ngModel" [(ngModel)]="formtra.TdDS11"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td21" #td21p="ngModel" [(ngModel)]="formtra.TdIS21"></td>
                 <td>61 21</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">41 81</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td41" #td41p="ngModel" [(ngModel)]="formtra.TdDI41"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td31" #td31p="ngModel" [(ngModel)]="formtra.TdII31"></td>
                 <td>71 31</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">42 82</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td42" #td42p="ngModel" [(ngModel)]="formtra.TdDI42"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td32" #td32p="ngModel" [(ngModel)]="formtra.TdII32"></td>
                 <td>72 32</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">43 83</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td43" #td43p="ngModel" [(ngModel)]="formtra.TdDI43"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td33" #td33p="ngModel" [(ngModel)]="formtra.TdII33"></td>
                 <td>73 33</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">44 84</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td44" #td44p="ngModel" [(ngModel)]="formtra.TdDI44"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td34" #td34p="ngModel" [(ngModel)]="formtra.TdII34"></td>
                 <td>74 34</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">45 85</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td45" #td45p="ngModel" [(ngModel)]="formtra.TdDI45"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td35" #td35p="ngModel" [(ngModel)]="formtra.TdII35"></td>
                 <td>75 35</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">46</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td46" #td46p="ngModel" [(ngModel)]="formtra.TdDI46"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td36" #td36p="ngModel" [(ngModel)]="formtra.TdII36"></td>
                 <td>36</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">47</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td47" #td47p="ngModel" [(ngModel)]="formtra.TdDI47"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td37" #td37p="ngModel" [(ngModel)]="formtra.TdII37"></td>
                 <td>37</td>
             </tr>
             <tr class="bg-success">
                 <th class="static" scope="row">48</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617" #d1617p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121" #d1121p="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td48" #td48p="ngModel" [(ngModel)]="formtra.TdDI48"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="td38" #td38p="ngModel" [(ngModel)]="formtra.TdII38"></td>
                 <td>38</td>
             </tr>
 
@@ -164,7 +168,7 @@
               <div class="box-body pad">
                 <form>
                   <textarea class="textarea" placeholder="Escriba aquí..."
-                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #7a42e2; padding: 10px; " class="form-control" placeholder="Ingrese sus observaciones" name="obvs" #OBVSs="ngModel" [(ngModel)]="formtra.ID16y17_Pl"></textarea>
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #7a42e2; padding: 10px; " class="form-control" placeholder="Ingrese sus observaciones" name="tobvs" #tOBVSs="ngModel" [(ngModel)]="formtra.TObser"></textarea>
                 </form>
               </div>
             </div>

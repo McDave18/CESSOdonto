@@ -3,6 +3,7 @@ import { Formulario1 } from 'src/app/models/formulario1';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { Formulario1Service } from 'src/app/services/formulario1.service';
+import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 
 @Component({
   selector: 'app-formulario1',
@@ -13,17 +14,22 @@ import { Formulario1Service } from 'src/app/services/formulario1.service';
 export class Formulario1Component implements OnInit {
 
   public form1;
-  constructor( ) 
+  public info_paciente:any;
+  constructor(private _formulario1services:Formulario1Service,public _recivir:Data_enivarService  ) 
   { 
-    this.form1= new Formulario1('',0,0,0,'',0,'Elija una opción','Elija una opción','Elija una opción',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,'','','','Elija una opción') 
+    this.form1= new Formulario1('','','','','','','','','','','','','','Elija una opción','Elija una opción','Elija una opción','','','','Elija una opción','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','') 
   }
 
   ngOnInit(): void {
-
+    this._recivir.dataid$.subscribe(res=>{
+      this.info_paciente=res
+      console.log("recibiendo info",this.info_paciente)
+    }) 
   }
 
   onSubmit(form){
     console.log(this.form1)
+    console.log(this.info_paciente.Id_Paciente)
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -39,11 +45,6 @@ export class Formulario1Component implements OnInit {
 
     var data = [
       {
-        AlertaM: this.form1.alertam,
-        Alergia: this.form1.alergias,
-        Fecha: this.form1.fecha,
-        name: this.form1.nombre,
-        Telefono: this.form1.celular,
         Pregunta1: this.form1.Iask1,
         Pregunta2: this.form1.iask2,
         Pregunta3: this.form1.iask3,
@@ -124,12 +125,21 @@ export class Formulario1Component implements OnInit {
         Pregunta67a: this.form1.VIIask671,
         FirmaP: this.form1.firma,
         Fecha2: this.form1.fecha2,
-
-      },
-      
+        Id_Pacient:this.info_paciente.Id_Paciente,
+       
+      }
     ];
 
+    this.form1.Id_Pacient=this.info_paciente.Id_Paciente
+
+
     new AngularCsv(data, this.form1.firma, options);
+    
+    this._formulario1services.registrarFormulario1(this.form1).subscribe(
+      response=>{
+        console.log(response)
+      }
+    )
   }
 
 }

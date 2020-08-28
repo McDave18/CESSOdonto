@@ -3,44 +3,79 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Exploracion;
+use App\Exploracion; //aqui se agrega la de interrogacion o como?
+use App\Interrogacion;
 
 class Formulario2Controllers extends Controller
 {
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $interrogacion = Interrogacion::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        if(is_object($interrogacion)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Interrogacion' => $interrogacion
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Interrogacion' => 'La Interrogacion no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
+    public function showex($id) {
+        $exploracion = Exploracion::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        if(is_object($exploracion)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Exploracion' => $exploracion
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Exploracion' => 'La Exploracion no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
         if(!empty($params)){
 
-            // cra las demas relaciones que se hacen en te formulario
-
+            // cra las demas relaciones que se hacen en te formulario el otro ya quedo el de formulario1, simon, ese ya
+            // si todo esta bie deveria de funcionar, ok, probaré
             $interrogacion = new Interrogacion();
-            $interrogacion->Id_Paciente="12i";
-            $interrogacion->1_Enfermedades=$params["enfermedades"];
-            $interrogacion->2_Diagnosticos=$params["diagnosticos"];
-            $interrogacion->3_Alergia_Penicilina=$params["penicilina"];
-            $interrogacion->3_1_Alergia_Otros=$params["pen_otros"];
-            $interrogacion->3_2_Cuales=$params["pen_cuales"];
-            $interrogacion->4_Anestesia=$params["anestesia"]; 
-            $interrogacion->4_1_Problema_Anestesia=$params["prom_anestesia"];
-            $interrogacion->4_2_Descripcion=$params["des_anestesia"];
-            $interrogacion->5_SangraMucho=$params["sangra"];
-            $interrogacion->5_1_HemorragiaFrec=$params["hemorragia"];
-            $interrogacion->6_UsaAnti=$params["usa_anti"];
-            $interrogacion->6_1_UsaTranqui=$params["usa_tranqui"];
+            $interrogacion->Id_Paciente=$params["Id_Pacient"];//se guardó el formulario pero no el Id aber de nuevo voy
+            $interrogacion->Enfermedades=$params["enfermedades"]; 
+            $interrogacion->Diagnosticos=$params["diagnosticos"];
+            $interrogacion->Alergia_Penicilina=$params["penicilina"];
+            $interrogacion->Alergia_Otros=$params["pen_otros"];
+            $interrogacion->Cuales=$params["pen_cuales"];
+            $interrogacion->Anestesia=$params["anestesia"]; 
+            $interrogacion->Problema_Anestesia=$params["prom_anestesia"];
+            $interrogacion->Descripcion_4=$params["des_anestesia"];
+            $interrogacion->SangraMucho=$params["sangra"];
+            $interrogacion->HemorragiaFrec=$params["hemorragia"];
+            $interrogacion->UsaAnti=$params["usa_anti"];
+            $interrogacion->UsaTranqui=$params["usa_tranqui"];
             //$interrogacion->6_2_Descripcion=$params["usa_tranqui_descrip"];
-            $interrogacion->6_3_Otros_Med=$params["otros_med"];
-            $interrogacion->6_4_Descripcion=$params["otros_med_des"];
-            $interrogacion->7_ParienteDiabetico=$params["diabetico"];
-            $interrogacion->7_1_Cuales=$params["par_cual"];
+            $interrogacion->Otros_Med=$params["otros_med"];//suptm estas cabron  que paso, ya guarda
+            $interrogacion->Descripcion_6_4=$params["otros_med_des"];
+            $interrogacion->ParienteDiabetico=$params["diabetico"];
+            $interrogacion->Cuales_7_1=$params["par_cual"];
             $interrogacion->save();
 
             //aqui solamente guardamos la ultima parte del formulario
             $exploracion = new Exploracion(); // aqui llamamos a la conexion que te mensione anterior
-            $exploracion->Id_Paciente="12i";  //estos datos  $exploracion este es la variable  ->Id_Paciente este en base a como sellama el campo en la tabla
+            $exploracion->Id_Paciente=$params["Id_Pacient"];  //estos datos  $exploracion este es la variable  ->Id_Paciente este en base a como sellama el campo en la tabla
             $exploracion->Cara=$params["cara"];//$params["cara"]   aqui estrais los datos que se envan y lo relaciones en base al nombre q fue asignado
             $exploracion->Labios=$params["labios"];
             $exploracion->Piso_boca=$params["boca"];

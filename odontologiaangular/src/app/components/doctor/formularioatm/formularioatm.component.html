@@ -22,6 +22,10 @@
         </div>
         <form action="" #formuatm="ngForm" (ngSubmit)="onSubmit(formuatm)">
 
+            <div class="col-md-10"  *ngIf="info_paciente">
+                <!-- {{info_paciente|json}} -->
+                <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+            </div>
 
 
         <div class="box box-primary">

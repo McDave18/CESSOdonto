@@ -25,3 +25,8 @@ Route::resource('/api/odontograma','OdontogramaControllers');
 Route::resource('/api/formulario3','Formulario3Controllers');
 Route::resource('/api/formularioihost','FormularioIhostControllers');
 Route::resource('/api/controlpagos','ControlPagosControllers');
+Route::resource('/api/tratamiento','TratamientoControllers');
+Route::resource('/api/placaant','PlacaAntControllers');
+Route::resource('/api/placaact','PlacaActControllers');
+Route::get('/api/formularioex/{filename}','Formulario2Controllers@showex');
+Route::get('/api/contador/{filename}/{tipo}','Formulario1Controllers@contador');

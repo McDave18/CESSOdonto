@@ -26,6 +26,11 @@ import { OdontogramaComponent } from './components/doctor/odontograma/odontogram
 import { IHOSTComponent } from './components/doctor/ihost/ihost.component';
 import { PlacadbComponent } from './components/doctor/placadb/placadb.component';
 import { PlacadbtComponent } from './components/doctor/placadbt/placadbt.component';
+import { ControlplacaComponent } from './components/doctor/controlplaca/controlplaca.component';
+import { BusquedaComponent } from './components/doctor/busqueda/busqueda.component';
+import { Data_enivarService } from './services/data_enviar_componet.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -49,7 +54,9 @@ import { PlacadbtComponent } from './components/doctor/placadbt/placadbt.compone
     OdontogramaComponent,
     IHOSTComponent,
     PlacadbComponent,
-    PlacadbtComponent
+    PlacadbtComponent,
+    ControlplacaComponent,
+    BusquedaComponent
 
     
     
@@ -59,8 +66,10 @@ import { PlacadbtComponent } from './components/doctor/placadbt/placadbt.compone
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-  ],
-  providers: [AuthGuard,LoginService],
+    BrowserAnimationsModule,
+    MaterialModule,
+  ], 
+  providers: [AuthGuard,LoginService,Data_enivarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import { IHOSTService } from 'src/app/services/ihost.service';
 import { IHOST } from 'src/app/models/ihost';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
+import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-ihost',
@@ -14,17 +16,56 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 export class IHOSTComponent implements OnInit {
 
   public formihost;
-  constructor(private _ihostservices:IHOSTService ) { 
+  public info_paciente:any;
+  constructor(private _ihostservices:IHOSTService ,public _recivir:Data_enivarService) { 
     
-    this.formihost= new IHOST(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
+    this.formihost= new IHOST('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
   }
 
-
   ngOnInit(): void {
+    this._recivir.dataid$.subscribe(res=>{
+      this.info_paciente=res
+      console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.formihost)
+          this.getFormularioihost(res.Id_Paciente);
+      }
+    })
+
+  }
+
+  getFormularioihost(id){
+    console.log(id,"paciente")
+    
+    this._ihostservices.getIHOST(id).subscribe(res=>{
+      console.log("datos formulario ihost",res);
+      if(!isNullOrUndefined(res.Ihost[0])){ // creo q asi es si el array tine mas de 1  entra y te muestra los datos
+      let datos = res.Ihost[0]
+      
+      this.formihost.Id_Pacient=id;//se guardó el formulario pero no el Id aber de nuevo voy
+      this.formihost.TD16y17_Pl=datos.TD16y17_Placa;
+      this.formihost.TD11y21_Pl=datos.TD11y21_Placa;
+      this.formihost.TD26y27_Pl=datos.TD26y27_Placa;
+      this.formihost.TD36y37_Pl=datos.TD36y37_Placa;
+      this.formihost.TD31y41_Pl=datos.TD31y41_Placa;
+      this.formihost.TD46y47_Pl=datos.TD46y47_Placa;
+      this.formihost.TD16y17_Sa=datos.TD16y17_Sarro;
+      this.formihost.TD11y21_Sa=datos.TD11y21_Sarro;
+      this.formihost.TD26y27_Sa=datos.TD26y27_Sarro;
+      this.formihost.TD36y37_Sa=datos.TD36y37_Sarro;
+      this.formihost.TD31y41_Sa=datos.TD31y41_Sarro;
+      this.formihost.TD46y47_Sa=datos.TD46y47_Sarro;
+      this.formihost.TerPlT=datos.TerPlacaTotal;
+      this.formihost.TerSaT=datos.TerSarroTotal;
+      this.formihost.TotalTerIH=datos.TotalTerIHOS;
+      this.formihost.Obser=datos.ObservacionesIHOS;
+    }
+    })
   }
 
   onSubmit(form){
     console.log(this.formihost)
+    console.log(this.info_paciente.Id_Paciente)
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -59,8 +100,15 @@ export class IHOSTComponent implements OnInit {
         TST: this.formihost.TerSaT,
         TTI: this.formihost.TotalTerIH,
         OBS: this.formihost.Obser,
+        Id_Pacient:this.info_paciente.Id_Paciente,
+       
       }
     ];
+
+    this.formihost.Id_Pacient=this.info_paciente.Id_Paciente
+    this.formihost.TerPlT= this.formihost.TD16y17_Pl+this.formihost.TD11y21_Pl+this.formihost.TD26y27_Pl+this.formihost.TD36y37_Pl+this.formihost.TD31y41_Pl+this.formihost.TD46y47_Pl
+    this.formihost.TerSaT= this.formihost.TD16y17_Sa+this.formihost.TD11y21_Sa+this.formihost.TD26y27_Sa+this.formihost.TD36y37_Sa+this.formihost.TD31y41_Sa+this.formihost.TD46y47_Sa
+    this.formihost.TotalTerIH= ((this.formihost.TD16y17_Pl+this.formihost.TD11y21_Pl+this.formihost.TD26y27_Pl+this.formihost.TD36y37_Pl+this.formihost.TD31y41_Pl+this.formihost.TD46y47_Pl)/6)+((this.formihost.TD16y17_Sa+this.formihost.TD11y21_Sa+this.formihost.TD26y27_Sa+this.formihost.TD36y37_Sa+this.formihost.TD31y41_Sa+this.formihost.TD46y47_Sa)/6)
 
     new AngularCsv(data, this.formihost.Obser, options);
     this._ihostservices.registrarIHOST(this.formihost).subscribe(

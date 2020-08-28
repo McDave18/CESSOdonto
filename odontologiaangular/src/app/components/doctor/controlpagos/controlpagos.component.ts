@@ -4,6 +4,8 @@ import { Controlpagos } from 'src/app/models/controlpagos';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { LoginService } from 'src/app/services/login.service';
+import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-controlpagos',
@@ -15,18 +17,49 @@ export class ControlpagosComponent implements OnInit {
 
   public formpago;
   identity: any;
-  constructor(private _controlpagosservices:ControlpagosService, public _loginServices: LoginService ) { 
-    this.formpago= new Controlpagos('','','',0,0,0,'','')
+  public info_paciente:any;
+  constructor(private _controlpagosservices:ControlpagosService, public _loginServices: LoginService,public _recivir:Data_enivarService ) { 
+    this.formpago= new Controlpagos('','',0,0,0,'','')
     this.identity = _loginServices.getIdentity();  
     console.log(this.identity)
   }
 
 
   ngOnInit(): void {
+    this._recivir.dataid$.subscribe(res=>{
+      this.info_paciente=res
+      console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.formpago)
+          this.getFormulariopagos(res.Id_Paciente);
+      }
+    }) 
+
+  }
+
+  getFormulariopagos(id){
+    console.log(id,"paciente")
+    
+    this._controlpagosservices.getControlpagos(id).subscribe(res=>{
+      console.log("datos formulariopagos",res);
+      if(!isNullOrUndefined(res.Pagos[0])){ // creo q asi es si el array tine mas de 1  entra y te muestra los datos
+      let datos = res.Pagos[0]
+      
+      this.formpago.Id_Pacient=id;//se guardó el formulario pero no el Id aber de nuevo voy 
+      this.formpago.fecha1=datos.Fecha_Trat;
+      this.formpago.costo=datos.CostoT;
+      this.formpago.abono=datos.Abono_T;
+      this.formpago.saldo=datos.SaldoT;
+      this.formpago.folio=datos.FolioT;
+      this.formpago.Alta=datos.Doctor_T;
+      
+      }
+    })
   }
 
   onSubmit(form){
     console.log(this.formpago)
+    console.log(this.info_paciente.Id_Paciente)
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -52,9 +85,14 @@ export class ControlpagosComponent implements OnInit {
         Abon: this.formpago.abono,
         Sald: this.formpago.saldo,
         Fol: this.formpago.folio,
-        Alta: this.formpago.cldoc
+        Alta:this.identity.name+this.identity.surname,
+        Id_Pacient:this.info_paciente.Id_Paciente,
+       
       }
     ];
+
+    this.formpago.Id_Pacient=this.info_paciente.Id_Paciente
+    this.formpago.Alta=this.identity.name+this.identity.surname
 
     new AngularCsv(data, this.formpago.namep, options);
     this._controlpagosservices.registrarControlpagos(this.formpago).subscribe(

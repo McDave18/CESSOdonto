@@ -24,7 +24,7 @@ class DoctoresControllers extends Controller
             $doctores->PaternoD=$params["paterno"];
             $doctores->MaternoD=$params["materno"];
             $doctores->RFC_Dr=$params["rfc"];
-            $doctores->Estudiante= $params["tipoD"]; //es boleano, es para ver si es doctor o estudiante ok
+            $doctores->Estudiante= $params["tipoD"];
             $doctores->Id_MatriculaD= $params["numid"];
             $passwd = $params["psswd"];
             $psswdE=hash("sha256",$passwd);

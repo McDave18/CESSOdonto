@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper"> 
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -42,7 +42,7 @@
               
               <tr class="bg-success">
                 <td><input style="text-align:center; width: 100%" type="date" class="form-control" placeholder="DD/MM/AAAA" name="fecha11" #fechaa1="ngModel" [(ngModel)]="formpago.fecha1"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121t" #d1617tp="ngModel" [(ngModel)]="formpago.namep"></td>
+                <td><label for="">{{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label></td>
                 <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formpago.trat"></td>
                 <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formpago.costo"></td>
                 <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3141t" #d1617tp="ngModel" [(ngModel)]="formpago.abono"></td>
@@ -55,7 +55,8 @@
     <!-- /.content-wrapper -->
               <!-- /.content -->
               <button type="submit">Guardar</button>
-
+              
         </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
 </div>

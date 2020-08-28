@@ -10,13 +10,30 @@ class OdontogramaControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $odontograma = Odontograma::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        if(is_object($odontograma)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Odontograma' => $odontograma
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Odontograma' => 'La Odontograma no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
         if(!empty($params)){
 
             $odontograma = new Odontograma();
-            $odontograma->Id_Paciente="12i";
+            $odontograma->Id_Paciente=$params["Id_Pacient"];
             $odontograma->DDS18=$params["dDS18"];
             $odontograma->DDS17=$params["dDS17"];
             $odontograma->DDS16=$params["dDS16"];

@@ -3,6 +3,8 @@ import { IHOS } from 'src/app/models/ihos';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { IHOSService } from 'src/app/services/ihos.service';
+import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-ihos',
@@ -14,17 +16,60 @@ import { IHOSService } from 'src/app/services/ihos.service';
 export class IHOSComponent implements OnInit {
 
   public formihos;
-  constructor(private _ihosservices:IHOSService ) { 
+  public info_paciente:any;
+  constructor(private _ihosservices:IHOSService,public _recivir:Data_enivarService ) { 
     // tienes q crear el modelo del doctor
-    this.formihos= new IHOS(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
+    this.formihos= new IHOS('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
   }
 
 
   ngOnInit(): void {
+    this._recivir.dataid$.subscribe(res=>{
+      this.info_paciente=res
+      console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.formihos)
+          this.getFormularioihos(res.Id_Paciente);
+        
+      }
+    })
+
   }
+  
+
+  getFormularioihos(id){
+    console.log(id,"paciente")
+    
+    this._ihosservices.getIHOS(id).subscribe(res=>{
+      console.log("datos formulario ihos",res);
+      if(!isNullOrUndefined(res.Ihos[0])){ // creo q asi es si el array tine mas de 1  entra y te muestra los datos
+      let datos = res.Ihos[0]
+      
+      this.formihos.Id_Pacient=id;//se guardó el formulario pero no el Id aber de nuevo voy
+      this.formihos.ID16y17_Pl=datos.ID16y17_Placa;
+      this.formihos.ID11y21_Pl=datos.ID11y21_Placa;
+      this.formihos.ID26y27_Pl=datos.ID26y27_Placa;
+      this.formihos.ID36y37_Pl=datos.ID36y37_Placa;
+      this.formihos.ID31y41_Pl=datos.ID31y41_Placa;
+      this.formihos.ID46y47_Pl=datos.ID46y47_Placa;
+      this.formihos.ID16y17_Sa=datos.ID16y17_Sarro;
+      this.formihos.ID11y21_Sa=datos.ID11y21_Sarro;
+      this.formihos.ID26y27_Sa=datos.ID26y27_Sarro;
+      this.formihos.ID36y37_Sa=datos.ID36y37_Sarro;
+      this.formihos.ID31y41_Sa=datos.ID31y41_Sarro;
+      this.formihos.ID46y47_Sa=datos.ID46y47_Sarro;
+      this.formihos.InPlT=datos.InPlacaTotal;
+      this.formihos.InSaT=datos.InSarroTotal;
+      this.formihos.TotalInIH=datos.TotalInIHOS;
+      this.formihos.Obser=datos.ObservacionesIHOS;
+    }
+    })
+  }
+
 
   onSubmit(form){
     console.log(this.formihos)
+    console.log(this.info_paciente.Id_Paciente)
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -60,8 +105,15 @@ export class IHOSComponent implements OnInit {
         IST: this.formihos.InSaT,
         TII: this.formihos.TotalInIH,
         OBS: this.formihos.Obser,
+        Id_Pacient:this.info_paciente.Id_Paciente,
+       
       }
     ];
+
+    this.formihos.Id_Pacient=this.info_paciente.Id_Paciente
+    this.formihos.InPlT= this.formihos.ID16y17_Pl+this.formihos.ID11y21_Pl+this.formihos.ID26y27_Pl+this.formihos.ID36y37_Pl+this.formihos.ID31y41_Pl+this.formihos.ID46y47_Pl
+    this.formihos.InSaT= this.formihos.ID16y17_Sa+this.formihos.ID11y21_Sa+this.formihos.ID26y27_Sa+this.formihos.ID36y37_Sa+this.formihos.ID31y41_Sa+this.formihos.ID46y47_Sa
+    this.formihos.TotalInIH= ((this.formihos.ID16y17_Pl+this.formihos.ID11y21_Pl+this.formihos.ID26y27_Pl+this.formihos.ID36y37_Pl+this.formihos.ID31y41_Pl+this.formihos.ID46y47_Pl)/6)+((this.formihos.ID16y17_Sa+this.formihos.ID11y21_Sa+this.formihos.ID26y27_Sa+this.formihos.ID36y37_Sa+this.formihos.ID31y41_Sa+this.formihos.ID46y47_Sa)/6)
 
     new AngularCsv(data, this.formihos.Obser, options);
     this._ihosservices.registrarIHOS(this.formihos).subscribe(

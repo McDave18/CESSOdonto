@@ -21,4 +21,14 @@ export class FormularioAtmService{
         return this._http.post('http://odon.com.devel/api/formularioatm',params,{headers:headers}); 
 
     }
+    getFormularioatm(id):Observable<any>
+    { 
+        //luego checamos eso xD  sale 
+        // let json = JSON.stringify(formulario2);
+        // let params = 'json='+json;
+        // console.log("formulario",params)
+        let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+        return this._http.get('http://odon.com.devel/api/formularioatm/'+id,{headers:headers}); 
+
+    }
 }

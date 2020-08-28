@@ -3,6 +3,9 @@ import { Formulario2 } from 'src/app/models/formulario2';
 import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { Formulario2Service } from 'src/app/services/formulario2.service';
+import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import { isNullOrUndefined } from 'util';
+
 
 @Component({
   selector: 'app-formulario2',
@@ -13,17 +16,83 @@ import { Formulario2Service } from 'src/app/services/formulario2.service';
 export class Formulario2Component implements OnInit {
 
   public form2;
-  constructor(private _formulario2services:Formulario2Service ) { 
-    // tienes q crear el modielo del doctor
-    this.form2= new Formulario2(0,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')
+  public info_paciente:any;
+  constructor(private _formulario2services:Formulario2Service,public _recivir:Data_enivarService ) { 
+    
+    this.form2= new Formulario2('','','','','','','','','','','','','','','','','','','','','','','','','','','')
   }
 
 
   ngOnInit(): void {
+    this._recivir.dataid$.subscribe(res=>{
+      this.info_paciente=res
+      console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.form2)
+          this.getFormulariointe(res.Id_Paciente);
+          this.getFormularioexplo(res.Id_Paciente);
+      }
+    }) 
+
+  }
+
+  getFormulariointe(id){
+    console.log(id,"paciente")
+    
+    this._formulario2services.getFormulario2(id).subscribe(res=>{
+      console.log("datos formulario2",res);
+      if(!isNullOrUndefined(res.Interrogacion[0])){ 
+      let datos = res.Interrogacion[0]
+      
+      this.form2.Id_Pacient=id;
+      this.form2.enfermedades=datos.Enfermedades; 
+      this.form2.diagnosticos=datos.Diagnosticos;
+      this.form2.penicilina=datos.Alergia_Penicilina;
+      this.form2.pen_otros=datos.Alergia_Otros;
+      this.form2.pen_cuales=datos.Cuales;
+      this.form2.anestesia=datos.Anestesia; 
+      this.form2.prom_anestesia=datos.Problema_Anestesia;
+      this.form2.des_anestesia=datos.Descripcion_4;
+      this.form2.sangra=datos.SangraMucho;
+      this.form2.hemorragia=datos.HemorragiaFrec;
+      this.form2.usa_anti=datos.UsaAnti;
+      this.form2.usa_tranqui=datos.UsaTranqui;
+      //$interrogacion->6_2_Descripcion=$params["usa_tranqui_descrip"];
+      this.form2.otros_med =datos.Otros_Med;//suptm estas cabron  que paso, ya guarda
+      this.form2.otros_med_des= datos.Descripcion_6_4;
+      this.form2.diabetico =datos.ParienteDiabetico;
+      this.form2.par_cual=datos.Cuales_7_1;
+      }
+    })
+  }
+  getFormularioexplo(id){
+    console.log(id,"paciente")
+    
+    this._formulario2services.getFormulario2ex(id).subscribe(res=>{
+      console.log("datos formulario2",res.Exploracion);
+      if(!isNullOrUndefined (res.Exploracion[0])){ // creo q asi es si el array tine mas de 1  entra y te muestra los datos
+      let datos = res.Exploracion[0]
+      
+      this.form2.Id_Pacient=id;//crack esa era del otro
+      this.form2.cara=datos.Cara;
+      this.form2.blando=datos.PBlando;
+      this.form2.duro=datos.PDuro;
+      this.form2.labios=datos.Labios;
+      this.form2.boca=datos.Piso_boca;
+      this.form2.cuello=datos.Cuello;
+      this.form2.salivales=datos.GSalivales;
+      this.form2.carrillos=datos.Carrillos;
+      this.form2.lengua=datos.Lengua;
+      this.form2.amigdalas=datos.Amigdalas;
+
+      
+      }
+    })
   }
 
   onSubmit(form){
     console.log(this.form2)
+    console.log(this.info_paciente.Id_Paciente)
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -32,7 +101,7 @@ export class Formulario2Component implements OnInit {
       showTitle: true,
       title: 'Formulario Paciente',
       useBom: true,
-      noDownload: false,
+      noDownload: true,
       headers: ["Fecha", "Nombre", "Sexo", "Celular", "Poblacion", "Facultad", "Enfermedades", "Consulta", "Penicilina","Otros","Cuales","Anestesia","¿Problemas?", "¿Qué ocurrio?", "Sangrado", "Hemorragia", "Anticoagulante", "Tranquilizantes", "Otros", "Cuales", "Diabetes", "Parentesco","Cara","Blando","Duro","Labios","Boca","Cuello","Salivales","Carrillos","Lengua","Amigdalas","dDS18","dDS17","dDS16","dDS15","dDS14","dDS13","dDS12","dDS11","dDS55","dDS54","dDS53","dDS52","dDS51","dIS28","dIS27","dIS26","dIS25","dIS24","dIS23","dIS22","dIS21","dIS65","dIS64","dIS63","dIS62","dIS61","dDI48","dDI47","dDI46","dDI45","dDI44","dDI43","dDI42","dDI41","dDI85","dDI84","dDI83","dDI82","dDI81","dII38","dII37","dII36","dII35","dII34","dII33","dII32","dII31","dII75","dII74","dII73","dII72","dII7"],
       nullToEmptyString: true,
     };
@@ -77,62 +146,13 @@ export class Formulario2Component implements OnInit {
         Carrillos: this.form2.carrillos,
         Lengua: this.form2.lengua,
         Amigdalas: this.form2.amigdalas,
-        //odontograma
-        D1: this.form2.dDS18,
-        D2: this.form2.dDS17,
-        D3: this.form2.dDS16,
-        D4: this.form2.dDS15,
-        D5: this.form2.dDS14,
-        D6: this.form2.dDS13,
-        D7: this.form2.dDS12,
-        D8: this.form2.dDS11,
-        D9: this.form2.dDS55,
-        D10: this.form2.dDS54,
-        D11: this.form2.dDS53,
-        D12: this.form2.dDS52,
-        D13: this.form2.dDS51,
-        D14: this.form2.dIS28,
-        D15: this.form2.dIS27,
-        D16: this.form2.dIS26,
-        D17: this.form2.dIS25,
-        D18: this.form2.dIS24,
-        D19: this.form2.dIS23,
-        D20: this.form2.dIS22,
-        D21: this.form2.dIS21,
-        D22: this.form2.dIS65,
-        D23: this.form2.dIS64,
-        D24: this.form2.dIS63,
-        D25: this.form2.dIS62,
-        D26: this.form2.dIS61,
-        D27: this.form2.dDI48,
-        D28: this.form2.dDI47,
-        D29: this.form2.dDI46,
-        D30: this.form2.dDI45,
-        D31: this.form2.dDI44,
-        D32: this.form2.dDI43,
-        D33: this.form2.dDI42,
-        D34: this.form2.dDI41,
-        D35: this.form2.dDI85,
-        D36: this.form2.dDI84,
-        D37: this.form2.dDI83,
-        D38: this.form2.dDI82,
-        D39: this.form2.dDI81,
-        D40: this.form2.dII38,
-        D41: this.form2.dII37,
-        D42: this.form2.dII36,
-        D43: this.form2.dII35,
-        D44: this.form2.dII34,
-        D45: this.form2.dII33,
-        D46: this.form2.dII32,
-        D47: this.form2.dII31,
-        D48: this.form2.dII75,
-        D49: this.form2.dII74,
-        D50: this.form2.dII73,
-        D51: this.form2.dII72,
-        D52: this.form2.dII71,
+        Id_Pacient:this.info_paciente.Id_Paciente,
+       
       }
     ];
 
+    this.form2.Id_Pacient=this.info_paciente.Id_Paciente
+  
     new AngularCsv(data, this.form2.anestesia, options);
     this._formulario2services.registrarFormulario2(this.form2).subscribe(
       response=>{

@@ -10,6 +10,23 @@ class FormularioIHOSControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $ihos = Ihos::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        if(is_object($ihos)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Ihos' => $ihos
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Ihos' => 'La Ihos no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
@@ -18,7 +35,7 @@ class FormularioIHOSControllers extends Controller
             // cra las demas relaciones que se hacen en te formulario
 
             $ihos = new Ihos();
-            $ihos->Id_Paciente="12i";
+            $ihos->Id_Paciente=$params["Id_Pacient"];
             $ihos->ID16y17_Placa=$params["ID16y17_Pl"];
             $ihos->ID11y21_Placa=$params["ID11y21_Pl"];
             $ihos->ID26y27_Placa=$params["ID26y27_Pl"];

@@ -86,8 +86,12 @@
                         <div class=" col-md-10">
                         <h5><b>INTERROGATORIO</b></h5>
                         </div>
+                        <div class="col-md-10" *ngIf="info_paciente">
+                          <!-- {{info_paciente|json}} -->
+                          <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+                        </div>
                     </div>
-          
+
                     
                     <div class="col-md-10">
                         <label>1.- ¿Qué enfermedades ha padecido durante el último año?</label>

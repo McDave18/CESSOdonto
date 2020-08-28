@@ -8,14 +8,22 @@ use App\Paciente;
 class Formulario3Controllers extends Controller
 {
     public function index(){
-        echo "hola checa http://odon.com.devel/";
+        // echo "hola checa http://odon.com.devel/";
+        $pacientes = Paciente::all();
+        return response()->json([
+            'code' => 200,
+            'status' => 'success',
+            'pacientes' => $pacientes
+            ]);
+
     }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
         if(!empty($params)){
 
-            // cra las demas relaciones que se hacen en te formulario
+            // cra las demas relaciones que se hacen en te formulario 
+            //aqui se guarda a los pacientes sus datos personales
 
             $datos_personales = new Paciente();
             $datos_personales->Fecha_alta=$params["fecha"];
@@ -32,13 +40,14 @@ class Formulario3Controllers extends Controller
             $datos_personales->cp=$params["cp"];
             $datos_personales->Tel_casa=$params["celcasa"];
             $datos_personales->Tel_Celu=$params["celular"];
-            $datos_personales->Doctor_Alta="9";
+            $datos_personales->Doctor_Alta=$params["Altas"];
             $datos_personales->Poblacion=$params["poblacion"];
             $datos_personales->Facultad=$params["poblacion1"];
             $par1=substr($params["nombre"], 0,2);  
             $par2=substr($params["paterno"], 0,2); 
             $par3=substr($params["materno"], 0,2);
-            $Id_Paciente=$par1.$par2.$par3;
+            $par4=substr($params["fechadob"], 0,4);
+            $Id_Paciente=$par1.$par2.$par3.$par4;
             $datos_personales->Id_Paciente=$Id_Paciente;
             $datos_personales->save();
 

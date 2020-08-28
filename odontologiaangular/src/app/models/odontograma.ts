@@ -1,6 +1,7 @@
 export class Odontograma{
     constructor(
         //odontograma
+        public Id_Pacient:string,
         public dDS18:string,
         public dDS17:string,
         public dDS16:string,

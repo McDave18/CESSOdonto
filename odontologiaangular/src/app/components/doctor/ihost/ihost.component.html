@@ -19,6 +19,10 @@
         <h5><b>INDICE IHOS</b></h5>
     </div>
     </div>
+    <div class="col-md-10"  *ngIf="info_paciente">
+      <!-- {{info_paciente|json}} -->
+      <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+    </div>
      
          <form action="" #formuihost="ngForm" (ngSubmit)="onSubmit(formuihost)"> 
             
@@ -117,31 +121,36 @@
               </tr>
               <tr class="bg-success">
                 <th scope="row">PLACA BACT.</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617t" #d1617tp="ngModel" [(ngModel)]="formihost.TD16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121t" #d1617tp="ngModel" [(ngModel)]="formihost.TD11y21_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formihost.TD26y27_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formihost.TD36y37_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3141t" #d1617tp="ngModel" [(ngModel)]="formihost.TD31y41_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d4647t" #d1617tp="ngModel" [(ngModel)]="formihost.TD46y47_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dtptt" #tpttp="ngModel" [(ngModel)]="formihost.TerPlT"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d1617t" #d1617tp="ngModel" [(ngModel)]="formihost.TD16y17_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d1121t" #d1617tp="ngModel" [(ngModel)]="formihost.TD11y21_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formihost.TD26y27_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formihost.TD36y37_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d3141t" #d1617tp="ngModel" [(ngModel)]="formihost.TD31y41_Pl"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d4647t" #d1617tp="ngModel" [(ngModel)]="formihost.TD46y47_Pl"></td>
+                <!-- <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="dtptt" #tpttp="ngModel" [(ngModel)]="formihost.TerPlT"></td> -->
+                <td><label>{{formihost.TD16y17_Pl+formihost.TD11y21_Pl+formihost.TD26y27_Pl+formihost.TD36y37_Pl+formihost.TD31y41_Pl+formihost.TD46y47_Pl}}</label></td>
+
               </tr>
               <tr class="bg-success">
                 <th scope="row">SARRO</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st1617" #st1617p="ngModel" [(ngModel)]="formihost.TD16y17_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st1121" #st1617p="ngModel" [(ngModel)]="formihost.TD11y21_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st2726" #st1617p="ngModel" [(ngModel)]="formihost.TD26y27_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st3637" #st1617p="ngModel" [(ngModel)]="formihost.TD36y37_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st3141" #st1617p="ngModel" [(ngModel)]="formihost.TD31y41_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st4647" #st1617p="ngModel" [(ngModel)]="formihost.TD46y47_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="tst" #tstp="ngModel" [(ngModel)]="formihost.TerSaT"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="st1617" #st1617p="ngModel" [(ngModel)]="formihost.TD16y17_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="st1121" #st1617p="ngModel" [(ngModel)]="formihost.TD11y21_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="st2726" #st1617p="ngModel" [(ngModel)]="formihost.TD26y27_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="st3637" #st1617p="ngModel" [(ngModel)]="formihost.TD36y37_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="st3141" #st1617p="ngModel" [(ngModel)]="formihost.TD31y41_Sa"></td>
+                <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="st4647" #st1617p="ngModel" [(ngModel)]="formihost.TD46y47_Sa"></td>
+                <!-- <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="tst" #tstp="ngModel" [(ngModel)]="formihost.TerSaT"></td> -->
+                <td><label>{{formihost.TD16y17_Sa+formihost.TD11y21_Sa+formihost.TD26y27_Sa+formihost.TD36y37_Sa+formihost.TD31y41_Sa+formihost.TD46y47_Sa}}</label></td>
               </tr>
             </tbody>
           </table>
   
           <div class="col-md-3">
               <label>TOTAL HIOS TERMINAL: </label>
-              <input type="text" class="form-control" placeholder="..." name="ttih" #ttihp="ngModel" [(ngModel)]="formihost.TotalTerIH">
-          </div>
+              <!-- <input type="text" class="form-control" placeholder="..." name="ttih" #ttihp="ngModel" [(ngModel)]="formihost.TotalTerIH"> -->
+              <td><label>{{((formihost.TD16y17_Pl+formihost.TD11y21_Pl+formihost.TD26y27_Pl+formihost.TD36y37_Pl+formihost.TD31y41_Pl+formihost.TD46y47_Pl)/6)+((formihost.TD16y17_Sa+formihost.TD11y21_Sa+formihost.TD26y27_Sa+formihost.TD36y37_Sa+formihost.TD31y41_Sa+formihost.TD46y47_Sa)/6)}}</label></td>
+
+            </div>
 
           <!-- IHOS TERMINAL -->
         <br>

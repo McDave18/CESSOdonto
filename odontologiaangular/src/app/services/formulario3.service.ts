@@ -10,9 +10,14 @@ export class Formulario3Service{
     {
 
     }
+    getPacientes():Observable<any>{
+       
+        let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+        return this._http.get('http://odon.com.devel/api/formulario3',{headers:headers}); 
+    }
     registrarFormulario3(formulario3):Observable<any>
     { 
-        //luego checamos eso xD  sale 
+        //este es ede apciente simon este es  simon ve al formulario donde se muesta la busqueda de pacientes
         let json = JSON.stringify(formulario3);
         let params = 'json='+json;
         console.log("formulario",params)

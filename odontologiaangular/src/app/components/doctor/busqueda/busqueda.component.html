@@ -1,0 +1,124 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+   <section class="content "> 
+    <div class="box-header with-border">
+        <div class= "col-md-12 callout callout-info">
+        <h5><b>Consulta de información de los pacientes</b></h5>
+    </div>
+    </div>
+
+ <!-- search form (Optional) --> 
+      <!-- <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+
+           
+        </div>
+        
+      </form> -->
+      <div class="box-header with-border">
+      <!-- /.search form -->
+        <!-- <div *ngFor="let paciente of pacientes" class="box-header with-border"> -->
+          <!-- <label for="">{{paciente.NombreP}}</label> -->
+          <!-- <label for="">{{paciente.NombreP}}    {{paciente.PaternoP}}     {{paciente.DOB}}</label>
+          <button (click)="elejir_paciente(paciente)">Selecionar paciente</button>
+        </div> -->
+        <div class="col-md-12">
+          <mat-form-field>
+              <mat-label>Buscar</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+            </mat-form-field>
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- Position Column --> 
+            <!-- <ng-container matColumnDef="Perfil">
+              <th mat-header-cell *matHeaderCellDef> Perfil</th>
+              <td mat-cell *matCellDef="let element"> 
+                  <span class="round">
+                      <picture>
+                          <source media="(max-width: 480px)" srcset="{{element.perfil_480}}">
+                          <source media="(max-width: 640px)" srcset="{{element.perfil_640}}">
+                          <source media="(max-width: 1200px)" srcset="{{element.perfil_1200}}">
+                          <source media="(max-width: 1800px)" srcset="{{element.perfil}}">
+                          <img src="{{element.perfil}}" alt="user" width="50" height="50">
+                      </picture>
+                  </span>
+              </td>
+            </ng-container> -->
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="Nombres">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </th>
+              <td mat-cell *matCellDef="let element"> {{element.NombreP}} </td>
+            </ng-container>
+        
+            <!-- Weight Column -->
+            <ng-container matColumnDef="Apellidos">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
+              <td mat-cell *matCellDef="let element"> {{element.PaternoP+" "+element.MaternoP}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Nacimiento">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Nacimiento </th>
+              <td mat-cell *matCellDef="let element"> {{element.DOB}} </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            -<ng-container matColumnDef="Acciones" >
+              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+              <td mat-cell *matCellDef="let element">
+                 <button  mat-raised-button color="primary" (click)="elejir_paciente(element)">Selecionar paciente</button>
+                </td>
+            </ng-container>
+           <!--<ng-container matColumnDef="Telefono">
+              <th mat-header-cell *matHeaderCellDef > Tel o Cel </th>
+              <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Rol">
+              <th mat-header-cell *matHeaderCellDef > Rol </th>
+              <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Estado">
+              <th mat-header-cell *matHeaderCellDef>Estado</th>
+              <td mat-cell *matCellDef="let element"><i *ngIf="element.estado == 'Activo'" class="mdi mdi-eye-outline" title="Activado"></i><i *ngIf="element.estado == 'Desactivado'" class="mdi mdi-eye-outline-off" title="Desactivado"></i></td>
+            </ng-container> -->
+            <!-- <ng-container matColumnDef="Acciones">
+              <th mat-header-cell *matHeaderCellDef > Acciones </th>
+              <td mat-cell *matCellDef="let element"> <div class="btn-group">
+                  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="ti-settings"></i>
+                  </button>
+                  <div class="dropdown-menu animated flipInX">
+                      <a class="dropdown-item"  data-toggle="modal" data-target="#edit-cliente" (click)="getCliente(element)">Modificar</a> 
+                      <a class="dropdown-item" *ngIf="element.estado == 'Activo'" (click)="activardesactivar(element,'Desactivado')" >Desactivar</a>
+                      <a class="dropdown-item"  *ngIf="element.estado == 'Desactivado'"  (click)="activardesactivar(element,'Activo')">Activar</a>
+                 </div>
+          </div> </td>
+            </ng-container> -->
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </section>
+</div>

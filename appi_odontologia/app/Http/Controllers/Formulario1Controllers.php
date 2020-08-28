@@ -8,14 +8,12 @@ use App\Health;
 class Formulario1Controllers extends Controller
 {
     public function index(){
-        echo "hola checa http://odon.com.devel/";
+        echo "hola checa http://odon.com.devel/ esta web funciona";
     }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
         if(!empty($params)){
-
-            // cra las demas relaciones que se hacen en te formulario
 
             $healthhistory = new Health();
             $healthhistory->Id_Paciente="12i";
@@ -23,7 +21,7 @@ class Formulario1Controllers extends Controller
             $healthhistory->P2=$params["iask2"];
             $healthhistory->P3=$params["iask3"];
             $healthhistory->P3_1=$params["iask31"];
-            $healthhistory->P5=$params["iask5"];
+            $healthhistory->P5=$params["Iask5"];
             $healthhistory->P4=$params["iask4"];
             $healthhistory->P4_1=$params["iask41"];
             $healthhistory->P4_2=$params["iask42"];
@@ -91,8 +89,8 @@ class Formulario1Controllers extends Controller
             $healthhistory->P66=$params["VIask66"];
             $healthhistory->P67=$params["VIIask67"];
             $healthhistory->P67_1=$params["VIIask671"];
-            $healthhistory->fecha_hh=$params["firma"];
-            $healthhistory->FirmaP=$params["fecha2"];
+            $healthhistory->fecha_hh=$params["fecha2"];
+            $healthhistory->FirmaP=$params["firma"];
             $healthhistory->save();
 
             $data = array(
@@ -115,5 +113,54 @@ class Formulario1Controllers extends Controller
         return response() ->json($data,$data['code']);
 
     }
+
+    public function contador($id,$pregunta) {
+            $enero = Health::whereMonth("created_at","1")->where($pregunta,"Si")->count();
+            $febrero = Health::whereMonth("created_at","2")->where($pregunta,"Si")->count();
+            $marzo = Health::whereMonth("created_at","3")->where($pregunta,"Si")->count();
+            $abril = Health::whereMonth("created_at","4")->where($pregunta,"Si")->count();
+            $mayo = Health::whereMonth("created_at","5")->where($pregunta,"Si")->count();
+            $junio = Health::whereMonth("created_at","6")->where($pregunta,"Si")->count();
+            $julio = Health::whereMonth("created_at","7")->where($pregunta,"Si")->count();
+            $agosto = Health::whereMonth("created_at","8")->where($pregunta,"Si")->count();
+            $sep = Health::whereMonth("created_at","9")->where($pregunta,"Si")->count();
+            $oct = Health::whereMonth("created_at","10")->where($pregunta,"Si")->count();
+            $nov = Health::whereMonth("created_at","11")->where($pregunta,"Si")->count();
+            $dic = Health::whereMonth("created_at","12")->where($pregunta,"Si")->count(); //
+            // if(is_object($interrogacion)){
+                $data = [
+                'code' => 200, //
+                'status' => 'success',
+                'en' => $enero , //asi?yes
+                'fe' => $febrero,
+                'mar'=> $marzo,
+                'ab'=> $abril,
+                'may'=> $mayo,
+                'jun'=> $junio,
+                'jul'=> $julio,
+                'ago'=> $agosto,
+                'sept'=> $sep,
+                'octb'=> $oct,
+                'novi'=> $nov,
+                'dici'=> $dic,
+                ];
+            // }else{
+            //     $data = [
+            //     'code' => 404,
+            //     'status' => 'error',
+            //     'contador' => 'el conteo no existe'
+            //     ];
+            // }
+            return response()->json($data,$data['code']);
+        }
+    
+
+
+
+
+
+
+
+
 }
     

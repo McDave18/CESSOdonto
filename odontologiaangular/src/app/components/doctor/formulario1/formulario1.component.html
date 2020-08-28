@@ -43,6 +43,10 @@
       
             </div>
           </div> -->
+          <div class="col-md-10"  *ngIf="info_paciente">
+            <!-- {{info_paciente|json}} -->
+            <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+          </div>
 
 
 
@@ -63,8 +67,8 @@
             <div class="form-group">
               <select class="form-control" name="pregunta1" #ipreg1="ngModel" [(ngModel)]="form1.Iask1">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -75,8 +79,8 @@
             <div class="form-group">
               <select class="form-control" name="pregunta2" #ipreg2="ngModel" [(ngModel)]="form1.iask2">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
             
@@ -88,8 +92,8 @@
             <div class="form-group">
               <select class="form-control" name="pregunta3" #ipreg3="ngModel" [(ngModel)]="form1.iask3">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             
               <label>Si sí, ¿por qué?</label>
@@ -104,8 +108,8 @@
             <div class="form-group">
               <select class="form-control" name="ipregunta5" #ipreg5="ngModel" [(ngModel)]="form1.Iask5">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
             
@@ -118,8 +122,8 @@
             <div class="form-group">
               <select class="form-control" name="pregunta4" #ipreg4="ngModel" [(ngModel)]="form1.iask4">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             
               <label>¿Para qué?</label>
@@ -149,8 +153,8 @@
             <div class="form-group">
               <select class="form-control" name="iipregunta7" #iipreg7="ngModel" [(ngModel)]="form1.IIask7">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -160,8 +164,8 @@
             <div class="form-group">
               <select class="form-control" name="iipregunta8" #iipreg8="ngModel" [(ngModel)]="form1.IIask8">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -171,8 +175,8 @@
             <div class="form-group">
               <select class="form-control" name="iipregunta9" #iipreg9="ngModel" [(ngModel)]="form1.IIask9">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -182,8 +186,8 @@
             <div class="form-group">
               <select class="form-control" name="iipregunta10" #iipreg10="ngModel" [(ngModel)]="form1.IIask10">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
         </div>
@@ -192,8 +196,8 @@
             <div class="form-group">
               <select class="form-control" name="iipregunta11" #iipreg11="ngModel" [(ngModel)]="form1.IIask11">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
     
@@ -203,8 +207,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta12" #iipreg12="ngModel" [(ngModel)]="form1.IIask12">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -213,8 +217,8 @@
         <div class="form-group">
           <select class="form-control" name="iipregunta13" #iipreg13="ngModel" [(ngModel)]="form1.IIask13">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
         </div>
@@ -223,8 +227,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta14" #iipreg14="ngModel" [(ngModel)]="form1.IIask14">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -233,8 +237,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta15" #iipreg15="ngModel" [(ngModel)]="form1.IIask15">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -243,8 +247,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta16" #iipreg16="ngModel" [(ngModel)]="form1.IIask16">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -253,8 +257,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta17" #iipreg17="ngModel" [(ngModel)]="form1.IIask17">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -263,8 +267,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta18" #iipreg18="ngModel" [(ngModel)]="form1.IIask18">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -273,8 +277,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta19" #iipreg19="ngModel" [(ngModel)]="form1.IIask19">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -283,8 +287,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta20" #iipreg20="ngModel" [(ngModel)]="form1.IIask20">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -293,8 +297,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta21" #iipreg21="ngModel" [(ngModel)]="form1.IIask21">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -303,8 +307,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta22" #iipreg22="ngModel" [(ngModel)]="form1.IIask22">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -313,8 +317,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta23" #iipreg23="ngModel" [(ngModel)]="form1.IIask23">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -323,8 +327,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta24" #iipreg24="ngModel" [(ngModel)]="form1.IIask24">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
         </div>
@@ -333,8 +337,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta25" #iipreg25="ngModel" [(ngModel)]="form1.IIask25">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
             </div>
@@ -343,8 +347,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta26" #iipreg26="ngModel" [(ngModel)]="form1.IIask26">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
             </div>
@@ -353,8 +357,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta27" #iipreg27="ngModel" [(ngModel)]="form1.IIask27">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
             </div>
@@ -363,8 +367,8 @@
                 <div class="form-group">
                   <select class="form-control" name="iipregunta28" #iipreg28="ngModel" [(ngModel)]="form1.IIask28">
                     <option>Elija una opción</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
+                    <option>No</option>
+                    <option>Si</option>
                   </select>
                 </div>
             </div>
@@ -391,8 +395,8 @@
             <div class="form-group">
               <select class="form-control" name="iiipregunta29" #iiipreg29="ngModel" [(ngModel)]="form1.IIIask29">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -402,8 +406,8 @@
             <div class="form-group">
               <select class="form-control" name="iiipregunt309" #iiipreg30="ngModel" [(ngModel)]="form1.IIIask30">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
         </div>
@@ -412,8 +416,8 @@
           <div class="form-group">
             <select class="form-control" name="iiipregunta31" #iiipreg31="ngModel" [(ngModel)]="form1.IIIask31">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
 
@@ -423,8 +427,8 @@
           <div class="form-group">
             <select class="form-control" name="iiipregunta32" #iiipreg32="ngModel" [(ngModel)]="form1.IIIask32">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
       </div>
@@ -433,8 +437,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta33" #iiipreg33="ngModel" [(ngModel)]="form1.IIIask33">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
 
@@ -444,8 +448,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta34" #iiipreg34="ngModel" [(ngModel)]="form1.IIIask34">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
     </div>
@@ -454,8 +458,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta35" #iiipreg35="ngModel" [(ngModel)]="form1.IIIask35">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -465,8 +469,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta36" #iiipreg36="ngModel" [(ngModel)]="form1.IIIask36">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
     </div>
@@ -475,8 +479,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta37" #iiipreg37="ngModel" [(ngModel)]="form1.IIIask37">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
 
@@ -486,8 +490,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta38" #iiipre38="ngModel" [(ngModel)]="form1.IIIask38">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
      </div>
@@ -496,8 +500,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta39" #iiipreg39="ngModel" [(ngModel)]="form1.IIIask39">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -507,8 +511,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta40" #iiipreg40="ngModel" [(ngModel)]="form1.IIIask40">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -518,8 +522,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta41" #iiipreg41="ngModel" [(ngModel)]="form1.IIIask41">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
 
@@ -529,8 +533,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta42" #iiipreg42="ngModel" [(ngModel)]="form1.IIIask42">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
 
@@ -540,8 +544,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta43" #iiipreg43="ngModel" [(ngModel)]="form1.IIIask43">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -551,8 +555,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta44" #iiipreg44="ngModel" [(ngModel)]="form1.IIIask44">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -562,8 +566,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta45" #iiipreg45="ngModel" [(ngModel)]="form1.IIIask45">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -606,8 +610,8 @@
       <div class="form-group">
         <select class="form-control" name="iiipregunta49" #iiipreg49="ngModel" [(ngModel)]="form1.IIIask49">
           <option>Elija una opción</option>
-          <option value="0">No</option>
-          <option value="1">Si</option>
+          <option>No</option>
+          <option>Si</option>
         </select>
       </div>
 
@@ -617,8 +621,8 @@
         <div class="form-group">
           <select class="form-control" name="iiipregunta50" #iiipreg50="ngModel" [(ngModel)]="form1.IIIask50">
             <option>Elija una opción</option>
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option>No</option>
+            <option>Si</option>
           </select>
         </div>
 
@@ -641,8 +645,8 @@
             <div class="form-group">
               <select class="form-control" name="ivpregunta51" #ivpreg51="ngModel" [(ngModel)]="form1.IVask51">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -652,8 +656,8 @@
             <div class="form-group">
               <select class="form-control" name="ivpregunta52" #ivpreg52="ngModel" [(ngModel)]="form1.IVask52">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
         </div>
@@ -662,8 +666,8 @@
           <div class="form-group">
             <select class="form-control" name="ivpregunta53" #ivpreg53="ngModel" [(ngModel)]="form1.IVask53">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
 
@@ -673,8 +677,8 @@
             <div class="form-group">
               <select class="form-control" name="ivpregunta54" #ivpreg54="ngModel" [(ngModel)]="form1.IVask54">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
         </div>
@@ -683,8 +687,8 @@
           <div class="form-group">
             <select class="form-control" name="ivpregunta55" #ivpreg55="ngModel" [(ngModel)]="form1.IVask55">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
 
@@ -694,8 +698,8 @@
             <div class="form-group">
               <select class="form-control" name="ivpregunta56" #ivpreg56="ngModel" [(ngModel)]="form1.IVask56">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
         </div>
@@ -704,8 +708,8 @@
           <div class="form-group">
             <select class="form-control" name="ivpregunta57" #ivpreg57="ngModel" [(ngModel)]="form1.IVask57">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
 
@@ -715,8 +719,8 @@
           <div class="form-group">
             <select class="form-control" name="ivpregunta58" #ivpreg58="ngModel" [(ngModel)]="form1.IVask58">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
         </div>
@@ -725,8 +729,8 @@
           <div class="form-group">
             <select class="form-control" name="ivpregunta59" #ivpreg59="ngModel" [(ngModel)]="form1.IVask59">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
 
@@ -736,8 +740,8 @@
           <div class="form-group">
             <select class="form-control" name="ivpregunta60" #ivpreg60="ngModel" [(ngModel)]="form1.IVask60">
               <option>Elija una opción</option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option>No</option>
+              <option>Si</option>
             </select>
           </div>
         </div>
@@ -763,8 +767,8 @@
             <div class="form-group">
               <select class="form-control" name="vpregunta61" #vpreg61="ngModel" [(ngModel)]="form1.Vask61">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -774,8 +778,8 @@
             <div class="form-group">
               <select class="form-control" name="vpregunta62" #vpreg62="ngModel" [(ngModel)]="form1.Vask62">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -785,8 +789,8 @@
             <div class="form-group">
               <select class="form-control" name="vpregunta63" #vpreg63="ngModel" [(ngModel)]="form1.Vask63">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -796,8 +800,8 @@
             <div class="form-group">
               <select class="form-control" name="vpregunta64" #vpreg64="ngModel" [(ngModel)]="form1.Vask64">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -829,8 +833,8 @@
             <div class="form-group">
               <select class="form-control" name="vipregunta65" #vipreg65="ngModel" [(ngModel)]="form1.VIask65">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -840,8 +844,8 @@
             <div class="form-group">
               <select class="form-control" name="vipregunta66" #vipreg66="ngModel" [(ngModel)]="form1.VIask66">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
 
@@ -865,8 +869,8 @@
             <div class="form-group">
               <select class="form-control" name="viipregunta67" #viipreg67="ngModel" [(ngModel)]="form1.VIIask67">
                 <option>Elija una opción</option>
-                <option value="0">No</option>
-                <option value="1">Si</option>
+                <option>No</option>
+                <option>Si</option>
               </select>
             </div>
               <label>Si la respuesta es afirmativa, explique: </label>

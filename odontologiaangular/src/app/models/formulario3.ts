@@ -8,15 +8,15 @@ export class Formulario3{
         public materno: string,
         public edad:number,
         public rfc:string,
-        public sexo:number,
+        public sexo:string,
         public ciudad:string,
         public colonia:string,
         public calle:string,
         public cp:number,
         public celcasa:string,
         public celular:string,
-        public docAlt:string,
-        public poblacion:number,
+        public Altas:string,
+        public poblacion:String,
         public poblacion1:string,
         
 

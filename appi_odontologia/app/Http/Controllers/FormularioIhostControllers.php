@@ -10,13 +10,30 @@ class FormularioIHOSTControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $ihost = Ihost::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        if(is_object($ihost)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Ihost' => $ihost
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Ihost' => 'La Ihost no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
         if(!empty($params)){
 
             $ihost = new Ihost();
-            $ihost->Id_Paciente="12i";
+            $ihost->Id_Paciente=$params["Id_Pacient"];
             $ihost->TD16y17_Placa=$params["TD16y17_Pl"];
             $ihost->TD11y21_Placa=$params["TD11y21_Pl"];
             $ihost->TD26y27_Placa=$params["TD26y27_Pl"];

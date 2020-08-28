@@ -1,5 +1,6 @@
 export class IHOST{
     constructor(
+        public Id_Pacient:string,
         public TD16y17_Pl:number,
         public TD11y21_Pl:number,
         public TD26y27_Pl:number,

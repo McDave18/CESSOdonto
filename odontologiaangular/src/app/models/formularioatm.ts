@@ -1,5 +1,6 @@
 export class FormularioAtm{
     constructor(
+        public Id_Pacient:string,
         public ATMMov_Mand_Dim_Aper:number,
         public ATMMov_Mand_Dim_Vert1:number,
         public ATMMov_Mand_Dim_Vert2:number,

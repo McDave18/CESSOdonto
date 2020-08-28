@@ -22,6 +22,8 @@ import { OdontogramaComponent } from './components/doctor/odontograma/odontogram
 import { IHOSTComponent } from './components/doctor/ihost/ihost.component';
 import { PlacadbComponent } from './components/doctor/placadb/placadb.component';
 import { PlacadbtComponent} from './components/doctor/placadbt/placadbt.component';
+import { ControlplacaComponent } from './components/doctor/controlplaca/controlplaca.component';
+import { BusquedaComponent } from './components/doctor/busqueda/busqueda.component';
 
 
 
@@ -51,6 +53,8 @@ children:[
   {path: 'ihost', component: IHOSTComponent},
   {path: 'placadb', component: PlacadbComponent},
   {path: 'placadbt', component: PlacadbtComponent},
+  {path: 'controlplaca', component: ControlplacaComponent},
+  {path: 'busqueda', component: BusquedaComponent}
   
 ]
 },{ path: 'salir/:sure',component: LoginComponent},

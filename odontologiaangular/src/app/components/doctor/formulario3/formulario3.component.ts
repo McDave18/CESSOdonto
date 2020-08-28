@@ -19,7 +19,7 @@ export class Formulario3Component implements OnInit {
 
   constructor(private _formulario3services:Formulario3Service, public _loginServices: LoginService ) 
   { 
-    this.form3= new Formulario3('','','','','','',0,'',0,'','','',0,'','','',0,'')
+    this.form3= new Formulario3('','','','','','',0,'','','','','',0,'','','','','')
     this.identity = _loginServices.getIdentity();  
     console.log(this.identity)
   }
@@ -60,12 +60,13 @@ export class Formulario3Component implements OnInit {
         CP: this.form3.cp,
         CelCasa: this.form3.celcasa,
         Telefono: this.form3.celular,
-        DAltas: this.form3.docAlt,
+        Altas: this.identity.name+this.identity.surname,
         Poblacion: this.form3.poblacion,
         Facultad: this.form3.poblacion1,
       }
     ];
-    
+
+    this.form3.Altas=this.identity.name+this.identity.surname
 
     new AngularCsv(data, this.form3.paterno, options);
     this._formulario3services.registrarFormulario3(this.form3).subscribe(
