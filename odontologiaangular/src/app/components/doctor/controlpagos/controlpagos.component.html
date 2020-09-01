@@ -19,6 +19,10 @@
         <h5><b>Control de pagos</b></h5>
     </div>
     </div>
+    <div class="col-md-10"  *ngIf="info_paciente">
+      <!-- {{info_paciente|json}} asi -->
+      <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+    </div>
      
          <form action="" #formupago="ngForm" (ngSubmit)="onSubmit(formupago)"> 
             
@@ -57,6 +61,37 @@
               <button type="submit">Guardar</button>
               
         </form>
+
+
+        <!-- {{pagos|json}} -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Tratamiento</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Abono</th>
+              <th scope="col">Saldo</th>
+              <th scope="col">Folio</th>
+              <th scope="col">Doctor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pago of pagos">
+              <th scope="row">1</th>
+              <td>{{pago.Fecha_Trat}}</td>
+              <td>{{pago.Descrip}}</td>
+              <td>{{pago.CostoT}} </td>
+              <td>{{pago.Abono_T}}</td>
+              <td>{{pago.SaldoT}}</td>
+              <td>{{pago.FolioT}} </td>
+              <td>{{pago.Doctor_T}}</td>
+            </tr>
+             
+          </tbody>
+        </table>
+       
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
 </div>

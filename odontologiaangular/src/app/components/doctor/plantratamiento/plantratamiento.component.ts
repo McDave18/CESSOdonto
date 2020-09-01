@@ -4,6 +4,10 @@ import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { PlantratamientoService } from 'src/app/services/plantratamiento.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import Swal from 'sweetalert2'; 
+// import Swal from 'sweetalert2/dist/sweetalert2.js';
+// import 'sweetalert2/src/sweetalert2.scss';
+// const Swal = require('sweetalert2') 
 
 @Component({
   selector: 'app-plantratamiento',
@@ -94,6 +98,10 @@ export class PlantratamientoComponent implements OnInit {
     this._plantratamientoservices.registrarPlantratamiento(this.formtra).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

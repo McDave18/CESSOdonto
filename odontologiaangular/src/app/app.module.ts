@@ -31,6 +31,13 @@ import { BusquedaComponent } from './components/doctor/busqueda/busqueda.compone
 import { Data_enivarService } from './services/data_enviar_componet.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { Placadb3Component } from './components/doctor/placadb3/placadb3.component';
+import { Placadb4Component } from './components/doctor/placadb4/placadb4.component';
+import { Placadb5Component } from './components/doctor/placadb5/placadb5.component';
+import { Placadb6Component } from './components/doctor/placadb6/placadb6.component';
+import { Placadb7Component } from './components/doctor/placadb7/placadb7.component';
+import { SumadientePipe } from './pipes/sumadiente.pipe';
+import { NotasComponent } from './components/doctor/notas/notas.component';
 
 
 @NgModule({
@@ -56,7 +63,15 @@ import { MaterialModule } from './material.module';
     PlacadbComponent,
     PlacadbtComponent,
     ControlplacaComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    Placadb3Component,
+    Placadb4Component,
+    Placadb5Component,
+    Placadb6Component,
+    Placadb7Component,
+    SumadientePipe,
+    NotasComponent,
+
 
     
     

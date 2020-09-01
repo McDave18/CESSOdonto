@@ -31,28 +31,17 @@
         <table class="table table-bordered">
             <thead>
               <tr class="bg-primary">
-                <th scope="col">Sesiones</th>
-                <th scope="col">1a</th>
-                <th scope="col">2a</th>
-                <th scope="col">3a</th>
-                <th scope="col">4a</th>
-                <th scope="col">5a</th>
-                <th scope="col">6a</th>
-                <th scope="col">Final</th>
-                
+                <th scope="col">Fecha</th>
+                <th scope="col"># sesión</th>
+                <th scope="col">% de placa</th>
               </tr>
             </thead>
             <tbody>
               
               <tr class="bg-success">
-                <td>% Placa</td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a1t" #a1ttp="ngModel" [(ngModel)]="formcplaca.a1"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a2t" #a2ttp="ngModel" [(ngModel)]="formcplaca.a2"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a3t" #a3ttp="ngModel" [(ngModel)]="formcplaca.a3"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a4t" #a4ttp="ngModel" [(ngModel)]="formcplaca.a4"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a5t" #a5ttp="ngModel" [(ngModel)]="formcplaca.a5"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a6t" #a6ttp="ngModel" [(ngModel)]="formcplaca.a6"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="totalt" #totaltp="ngModel" [(ngModel)]="formcplaca.total"></td>
+                <td><input style="text-align:center; width: 100%" type="date" class="form-control" placeholder="DD/MM/AAAA" name="a1t" #a1ttp="ngModel" [(ngModel)]="formcplaca.fechacpdb"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a2t" #a2ttp="ngModel" [(ngModel)]="formcplaca.sesion"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="a3t" #a3ttp="ngModel" [(ngModel)]="formcplaca.porcentaje"></td>
               </tr>
             </tbody>
           </table>
@@ -61,6 +50,27 @@
               <button type="submit">Guardar</button>
 
         </form>
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col"># de sesion</th>
+              <th scope="col">% de placa</th>
+              <th scope="col">Abono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sesion of sesiones">
+              <th scope="row">1</th>
+              <td>{{sesion.FechaCPDB}}</td>
+              <td>{{sesion.Sesion}}</td>
+              <td>{{sesion.Porc_p}} </td>
+            </tr>
+             
+          </tbody>
+        </table>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
 </div>

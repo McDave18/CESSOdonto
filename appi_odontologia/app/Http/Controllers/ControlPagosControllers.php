@@ -37,6 +37,7 @@ class ControlPagosControllers extends Controller
             $control_pagos = new Pagos();
             $control_pagos->Id_Paciente=$params["Id_Pacient"];;
             $control_pagos->Fecha_Trat=$params["fecha1"];
+            $control_pagos->Descrip=$params["trat"];
             $control_pagos->CostoT=$params["costo"];
             $control_pagos->Abono_T=$params["abono"];
             $control_pagos->SaldoT=$params["saldo"];

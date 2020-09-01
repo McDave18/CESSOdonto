@@ -16,6 +16,7 @@ export class IHOS{
         public InPlT:number,
         public InSaT:number,
         public TotalInIH:number,
+        public higiene:string,
         public Obser:string,
 
         )

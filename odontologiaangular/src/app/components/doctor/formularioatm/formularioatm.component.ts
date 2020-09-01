@@ -5,6 +5,11 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { FormularioAtmService } from 'src/app/services/formularioatm.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2'; 
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
 
 
 @Component({
@@ -132,6 +137,10 @@ export class FormularioAtmComponent implements OnInit {
     this._formularioatmservices.registrarFormularioAtm(this.formatm).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

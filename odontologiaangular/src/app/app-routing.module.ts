@@ -24,6 +24,7 @@ import { PlacadbComponent } from './components/doctor/placadb/placadb.component'
 import { PlacadbtComponent} from './components/doctor/placadbt/placadbt.component';
 import { ControlplacaComponent } from './components/doctor/controlplaca/controlplaca.component';
 import { BusquedaComponent } from './components/doctor/busqueda/busqueda.component';
+import { NotasComponent } from './components/doctor/notas/notas.component';
 
 
 
@@ -54,7 +55,8 @@ children:[
   {path: 'placadb', component: PlacadbComponent},
   {path: 'placadbt', component: PlacadbtComponent},
   {path: 'controlplaca', component: ControlplacaComponent},
-  {path: 'busqueda', component: BusquedaComponent}
+  {path: 'busqueda', component: BusquedaComponent},
+  {path: 'notas', component: NotasComponent},
   
 ]
 },{ path: 'salir/:sure',component: LoginComponent},

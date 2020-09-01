@@ -16,6 +16,7 @@ export class IHOST{
         public TerPlT:number,
         public TerSaT:number,
         public TotalTerIH:number,
+        public higienet:string,
         public Obser:string,
 
         )

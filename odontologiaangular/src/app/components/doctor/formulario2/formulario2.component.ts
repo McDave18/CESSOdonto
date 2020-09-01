@@ -5,6 +5,11 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { Formulario2Service } from 'src/app/services/formulario2.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2'; 
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
 
 
 @Component({
@@ -17,8 +22,8 @@ export class Formulario2Component implements OnInit {
 
   public form2;
   public info_paciente:any;
-  constructor(private _formulario2services:Formulario2Service,public _recivir:Data_enivarService ) { 
-    
+  constructor(private _formulario2services:Formulario2Service,public _recivir:Data_enivarService ) 
+  { 
     this.form2= new Formulario2('','','','','','','','','','','','','','','','','','','','','','','','','','','')
   }
 
@@ -58,7 +63,7 @@ export class Formulario2Component implements OnInit {
       this.form2.usa_anti=datos.UsaAnti;
       this.form2.usa_tranqui=datos.UsaTranqui;
       //$interrogacion->6_2_Descripcion=$params["usa_tranqui_descrip"];
-      this.form2.otros_med =datos.Otros_Med;//suptm estas cabron  que paso, ya guarda
+      this.form2.otros_med =datos.Otros_Med;
       this.form2.otros_med_des= datos.Descripcion_6_4;
       this.form2.diabetico =datos.ParienteDiabetico;
       this.form2.par_cual=datos.Cuales_7_1;
@@ -70,10 +75,10 @@ export class Formulario2Component implements OnInit {
     
     this._formulario2services.getFormulario2ex(id).subscribe(res=>{
       console.log("datos formulario2",res.Exploracion);
-      if(!isNullOrUndefined (res.Exploracion[0])){ // creo q asi es si el array tine mas de 1  entra y te muestra los datos
+      if(!isNullOrUndefined (res.Exploracion[0])){ 
       let datos = res.Exploracion[0]
       
-      this.form2.Id_Pacient=id;//crack esa era del otro
+      this.form2.Id_Pacient=id;
       this.form2.cara=datos.Cara;
       this.form2.blando=datos.PBlando;
       this.form2.duro=datos.PDuro;
@@ -157,6 +162,10 @@ export class Formulario2Component implements OnInit {
     this._formulario2services.registrarFormulario2(this.form2).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

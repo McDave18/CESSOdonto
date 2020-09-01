@@ -4,6 +4,13 @@ import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { Formulario1Service } from 'src/app/services/formulario1.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2'; 
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
+
 
 @Component({
   selector: 'app-formulario1',
@@ -24,8 +31,101 @@ export class Formulario1Component implements OnInit {
     this._recivir.dataid$.subscribe(res=>{
       this.info_paciente=res
       console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.form1)
+          this.getFormulariohealth(res.Id_Paciente);
+      }
     }) 
+
   }
+
+  getFormulariohealth(id){
+    console.log(id,"paciente")
+    
+    this._formulario1services.getFormulario1(id).subscribe(res=>{
+      console.log("datos formulario1",res);
+      if(!isNullOrUndefined(res.Health[0])){ 
+      let datos = res.Health[0]
+      this.form1.Id_Pacient=id;
+      this.form1.Iask1=datos.P1;
+      this.form1.iask2=datos.P2;
+      this.form1.iask3=datos.P3;
+      this.form1.iask31=datos.P3_1;
+      this.form1.Iask5=datos.P5;
+      this.form1.iask4=datos.P4;
+      this.form1.iask41=datos.P4_1;
+      this.form1.iask42=datos.P4_2;
+      this.form1.iask43=datos.P4_3;
+      this.form1.IIask7=datos.P7;
+      this.form1.IIask8=datos.P8;
+      this.form1.IIask9=datos.P9;
+      this.form1.IIask10=datos.P10;
+      this.form1.IIask11=datos.P11;
+      this.form1.IIask12=datos.P12;
+      this.form1.IIask13=datos.P13;
+      this.form1.IIask14=datos.P14;
+      this.form1.IIask15=datos.P15;
+      this.form1.IIask16=datos.P16;
+      this.form1.IIask17=datos.P17;
+      this.form1.IIask18=datos.P18;
+      this.form1.IIask19=datos.P19;
+      this.form1.IIask20=datos.P20;
+      this.form1.IIask21=datos.P21;
+      this.form1.IIask22=datos.P22;
+      this.form1.IIask23=datos.P23;
+      this.form1.IIask24=datos.P24;
+      this.form1.IIask25=datos.P25;
+      this.form1.IIask26=datos.P26;
+      this.form1.IIask27=datos.P27;
+      this.form1.IIask28=datos.P28;
+      this.form1.IIIask29=datos.P29;
+      this.form1.IIIask30=datos.P30;
+      this.form1.IIIask31=datos.P31;
+      this.form1.IIIask32=datos.P32;
+      this.form1.IIIask33=datos.P33;
+      this.form1.IIIask34=datos.P34;
+      this.form1.IIIask35=datos.P35;
+      this.form1.IIIask36=datos.P36;
+      this.form1.IIIask37=datos.P37;
+      this.form1.IIIask38=datos.P38;
+      this.form1.IIIask39=datos.P39;
+      this.form1.IIIask40=datos.P40;
+      this.form1.IIIask41=datos.P41;
+      this.form1.IIIask42=datos.P42;
+      this.form1.IIIask43=datos.P43;
+      this.form1.IIIask44=datos.P44;
+      this.form1.IIIask45=datos.P45;
+      this.form1.IIIask46=datos.P46;
+      this.form1.IIIask47=datos.P47;
+      this.form1.IIIask48=datos.P48;
+      this.form1.IIIask49=datos.P49;
+      this.form1.IIIask50=datos.P50;
+      this.form1.IVask51=datos.P51;
+      this.form1.IVask52=datos.P52;
+      this.form1.IVask53=datos.P53;
+      this.form1.IVask54=datos.P54;
+      this.form1.IVask55=datos.P55;
+      this.form1.IVask56=datos.P56;
+      this.form1.IVask57=datos.P57;
+      this.form1.IVask58=datos.P58;
+      this.form1.IVask59=datos.P59;
+      this.form1.IVask60=datos.P60;
+      this.form1.Vask61=datos.P61;
+      this.form1.Vask62=datos.P62;
+      this.form1.Vask641=datos.P62_1;
+      this.form1.Vask63=datos.P63;
+      this.form1.Vask64=datos.P64;
+      this.form1.VIask65=datos.P65;
+      this.form1.VIask66=datos.P66;
+      this.form1.VIIask67=datos.P67;
+      this.form1.VIIask671=datos.P67_1;
+      this.form1.fecha2=datos.fecha_hh;
+      this.form1.firma=datos.FirmaP;
+      
+      }
+    })
+  }
+
 
   onSubmit(form){
     console.log(this.form1)
@@ -138,6 +238,10 @@ export class Formulario1Component implements OnInit {
     this._formulario1services.registrarFormulario1(this.form1).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

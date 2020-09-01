@@ -21,4 +21,11 @@ export class PlacadbtService{
         return this._http.post('http://odon.com.devel/api/placaact',params,{headers:headers}); 
 
     }
+    getPlacadbt(id):Observable<any>
+    { 
+        
+        let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+        return this._http.get('http://odon.com.devel/api/placaact/'+id,{headers:headers}); 
+
+    }
 }

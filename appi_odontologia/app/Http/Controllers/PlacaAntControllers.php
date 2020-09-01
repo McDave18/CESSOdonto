@@ -10,6 +10,23 @@ class PlacaAntControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $placaant = PlacaAnt::where("Id_Paciente",$id)->get(); 
+        if(is_object($placaant)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'PlacaAnt' => $placaant
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'PlacaAnt' => 'La PlacaAnt no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);

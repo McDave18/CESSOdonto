@@ -10,13 +10,30 @@ class Formulario1Controllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/ esta web funciona";
     }
+    public function show($id) {
+        $healthhistory = Health::where("Id_Paciente",$id)->get();
+        if(is_object($healthhistory)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'Health' => $healthhistory
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Health' => 'La Health no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);
         if(!empty($params)){
 
             $healthhistory = new Health();
-            $healthhistory->Id_Paciente="12i";
+            $healthhistory->Id_Paciente=$params["Id_Pacient"];
             $healthhistory->P1=$params["Iask1"];
             $healthhistory->P2=$params["iask2"];
             $healthhistory->P3=$params["iask3"];

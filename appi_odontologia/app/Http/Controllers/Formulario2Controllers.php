@@ -11,8 +11,9 @@ class Formulario2Controllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    //cual es el de pagos
     public function show($id) {
-        $interrogacion = Interrogacion::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        $interrogacion = Interrogacion::where("Id_Paciente",$id)->get(); 
         if(is_object($interrogacion)){
             $data = [
             'code' => 200,
@@ -29,7 +30,7 @@ class Formulario2Controllers extends Controller
         return response()->json($data,$data['code']);
     }
     public function showex($id) {
-        $exploracion = Exploracion::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        $exploracion = Exploracion::where("Id_Paciente",$id)->get(); 
         if(is_object($exploracion)){
             $data = [
             'code' => 200,
@@ -50,10 +51,9 @@ class Formulario2Controllers extends Controller
         $params = json_decode($json,true);
         if(!empty($params)){
 
-            // cra las demas relaciones que se hacen en te formulario el otro ya quedo el de formulario1, simon, ese ya
-            // si todo esta bie deveria de funcionar, ok, probaré
+            
             $interrogacion = new Interrogacion();
-            $interrogacion->Id_Paciente=$params["Id_Pacient"];//se guardó el formulario pero no el Id aber de nuevo voy
+            $interrogacion->Id_Paciente=$params["Id_Pacient"];
             $interrogacion->Enfermedades=$params["enfermedades"]; 
             $interrogacion->Diagnosticos=$params["diagnosticos"];
             $interrogacion->Alergia_Penicilina=$params["penicilina"];
@@ -67,7 +67,7 @@ class Formulario2Controllers extends Controller
             $interrogacion->UsaAnti=$params["usa_anti"];
             $interrogacion->UsaTranqui=$params["usa_tranqui"];
             //$interrogacion->6_2_Descripcion=$params["usa_tranqui_descrip"];
-            $interrogacion->Otros_Med=$params["otros_med"];//suptm estas cabron  que paso, ya guarda
+            $interrogacion->Otros_Med=$params["otros_med"];
             $interrogacion->Descripcion_6_4=$params["otros_med_des"];
             $interrogacion->ParienteDiabetico=$params["diabetico"];
             $interrogacion->Cuales_7_1=$params["par_cual"];

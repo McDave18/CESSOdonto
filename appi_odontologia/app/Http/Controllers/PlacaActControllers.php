@@ -10,6 +10,23 @@ class PlacaActControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $placaact = PlacaAct::where("Id_Paciente",$id)->get(); 
+        if(is_object($placaact)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'PlacaAct' => $placaact
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'PlacaAct' => 'La PlacaAct no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);

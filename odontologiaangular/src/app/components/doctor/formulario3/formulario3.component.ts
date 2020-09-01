@@ -4,6 +4,11 @@ import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { Formulario3Service } from 'src/app/services/formulario3.service';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2'; 
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
 
 @Component({
   selector: 'app-formulario3',
@@ -72,6 +77,10 @@ export class Formulario3Component implements OnInit {
     this._formulario3services.registrarFormulario3(this.form3).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

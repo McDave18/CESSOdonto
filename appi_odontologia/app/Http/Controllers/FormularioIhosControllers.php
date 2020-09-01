@@ -51,6 +51,7 @@ class FormularioIHOSControllers extends Controller
             $ihos->InPlacaTotal=$params["InPlT"];
             $ihos->InSarroTotal=$params["InSaT"];
             $ihos->TotalInIHOS=$params["TotalInIH"];
+            $ihos->Higiene=$params["higiene"];
             $ihos->ObservacionesIHOS=$params["Obser"];
             $ihos->save();
 

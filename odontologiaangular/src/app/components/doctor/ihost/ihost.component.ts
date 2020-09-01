@@ -5,6 +5,10 @@ import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2/dist/sweetalert2.js';
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2') 
 
 @Component({
   selector: 'app-ihost',
@@ -19,7 +23,7 @@ export class IHOSTComponent implements OnInit {
   public info_paciente:any;
   constructor(private _ihostservices:IHOSTService ,public _recivir:Data_enivarService) { 
     
-    this.formihost= new IHOST('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
+    this.formihost= new IHOST('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','')
   }
 
   ngOnInit(): void {
@@ -59,6 +63,7 @@ export class IHOSTComponent implements OnInit {
       this.formihost.TerSaT=datos.TerSarroTotal;
       this.formihost.TotalTerIH=datos.TotalTerIHOS;
       this.formihost.Obser=datos.ObservacionesIHOS;
+      this.formihost.higienet=datos.Higienet;
     }
     })
   }
@@ -100,6 +105,7 @@ export class IHOSTComponent implements OnInit {
         TST: this.formihost.TerSaT,
         TTI: this.formihost.TotalTerIH,
         OBS: this.formihost.Obser,
+        HIGT: this.formihost.higienet,
         Id_Pacient:this.info_paciente.Id_Paciente,
        
       }
@@ -108,12 +114,16 @@ export class IHOSTComponent implements OnInit {
     this.formihost.Id_Pacient=this.info_paciente.Id_Paciente
     this.formihost.TerPlT= this.formihost.TD16y17_Pl+this.formihost.TD11y21_Pl+this.formihost.TD26y27_Pl+this.formihost.TD36y37_Pl+this.formihost.TD31y41_Pl+this.formihost.TD46y47_Pl
     this.formihost.TerSaT= this.formihost.TD16y17_Sa+this.formihost.TD11y21_Sa+this.formihost.TD26y27_Sa+this.formihost.TD36y37_Sa+this.formihost.TD31y41_Sa+this.formihost.TD46y47_Sa
-    this.formihost.TotalTerIH= ((this.formihost.TD16y17_Pl+this.formihost.TD11y21_Pl+this.formihost.TD26y27_Pl+this.formihost.TD36y37_Pl+this.formihost.TD31y41_Pl+this.formihost.TD46y47_Pl)/6)+((this.formihost.TD16y17_Sa+this.formihost.TD11y21_Sa+this.formihost.TD26y27_Sa+this.formihost.TD36y37_Sa+this.formihost.TD31y41_Sa+this.formihost.TD46y47_Sa)/6)
+    // this.formihost.TotalTerIH= ((this.formihost.TD16y17_Pl+this.formihost.TD11y21_Pl+this.formihost.TD26y27_Pl+this.formihost.TD36y37_Pl+this.formihost.TD31y41_Pl+this.formihost.TD46y47_Pl)/6)+((this.formihost.TD16y17_Sa+this.formihost.TD11y21_Sa+this.formihost.TD26y27_Sa+this.formihost.TD36y37_Sa+this.formihost.TD31y41_Sa+this.formihost.TD46y47_Sa)/6)
 
     new AngularCsv(data, this.formihost.Obser, options);
     this._ihostservices.registrarIHOST(this.formihost).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

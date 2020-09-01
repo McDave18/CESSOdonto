@@ -49,6 +49,7 @@ class FormularioIHOSTControllers extends Controller
             $ihost->TerPlacaTotal=$params["TerPlT"];
             $ihost->TerSarroTotal=$params["TerSaT"];
             $ihost->TotalTerIHOS=$params["TotalTerIH"];
+            $ihost->Higienet=$params["higienet"];
             $ihost->ObservacionesIHOS=$params["Obser"];
             $ihost->save();
 

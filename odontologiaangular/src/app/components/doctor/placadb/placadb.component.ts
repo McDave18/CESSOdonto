@@ -4,6 +4,12 @@ import {NgForm} from '@angular/forms';
 import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { PlacadbService } from 'src/app/services/placadb.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
+import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2'; 
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
 
 @Component({
   selector: 'app-placadb',
@@ -18,7 +24,6 @@ export class PlacadbComponent implements OnInit {
   public info_paciente:any;
   constructor(private _placadbservices:PlacadbService,public _recivir:Data_enivarService ) 
   { 
-  
     this.formdb= new Placadb('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"")
   }
 
@@ -27,9 +32,62 @@ export class PlacadbComponent implements OnInit {
     this._recivir.dataid$.subscribe(res=>{
       this.info_paciente=res
       console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.formdb)
+          this.getFormularioplacadb(res.Id_Paciente);
+      }
     }) 
 
   }
+
+  getFormularioplacadb(id){
+    console.log(id,"paciente")
+    
+    this._placadbservices.getPlacadb(id).subscribe(res=>{
+      console.log("datos Placadb",res);
+      if(!isNullOrUndefined(res.PlacaAnt[0])){ 
+      let datos = res.PlacaAnt[0]
+      
+      this.formdb.Id_Pacient=id;
+      this.formdb.IdDS18=datos.IDDS18;
+      this.formdb.IdDS17=datos.IDDS17;
+      this.formdb.IdDS16=datos.IDDS16;
+      this.formdb.IdDS15=datos.IDDS15;
+      this.formdb.IdDS14=datos.IDDS14;
+      this.formdb.IdDS13=datos.IDDS13;
+      this.formdb.IdDS12=datos.IDDS12;
+      this.formdb.IdDS11=datos.IDDS11;
+      this.formdb.IdIS28=datos.IDIS28;
+      this.formdb.IdIS27=datos.IDIS27;
+      this.formdb.IdIS26=datos.IDIS26;
+      this.formdb.IdIS25=datos.IDIS25;
+      this.formdb.IdIS24=datos.IDIS24;
+      this.formdb.IdIS23=datos.IDIS23;
+      this.formdb.IdIS22=datos.IDIS22;
+      this.formdb.IdIS21=datos.IDIS21;
+      this.formdb.IdDI48=datos.IDDI48;
+      this.formdb.IdDI47=datos.IDDI47;
+      this.formdb.IdDI46=datos.IDDI46;
+      this.formdb.IdDI45=datos.IDDI45;
+      this.formdb.IdDI44=datos.IDDI44;
+      this.formdb.IdDI43=datos.IDDI43;
+      this.formdb.IdDI42=datos.IDDI42;
+      this.formdb.IdDI41=datos.IDDI41;
+      this.formdb.IdII38=datos.IDII38;
+      this.formdb.IdII37=datos.IDII37;
+      this.formdb.IdII36=datos.IDII36;
+      this.formdb.IdII35=datos.IDII35;
+      this.formdb.IdII34=datos.IDII34;
+      this.formdb.IdII33=datos.IDII33;
+      this.formdb.IdII32=datos.IDII32;
+      this.formdb.IdII31=datos.IDII31;
+      this.formdb.totali=datos.TotalPlacaAnterior;
+      this.formdb.IObser=datos.IObser;
+     
+      }
+    })
+  }
+
 
   onSubmit(form){
     console.log(this.formdb)
@@ -94,6 +152,11 @@ export class PlacadbComponent implements OnInit {
     this._placadbservices.registrarPlacadb(this.formdb).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
+      
       }
     )
   }

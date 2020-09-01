@@ -5,6 +5,10 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { OdontogramaService } from 'src/app/services/odontograma.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2'; 
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
 
 @Component({
   selector: 'app-odontograma',
@@ -186,6 +190,10 @@ export class OdontogramaComponent implements OnInit {
       this._odontogramaservices.registrarOdontograma(this.formodonto).subscribe(
         response=>{
           console.log(response)
+          Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+        },error=>{
+            Swal.fire('Oops...', 'algo salió mal!', 'error')
         }
       )
     }

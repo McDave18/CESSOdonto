@@ -26,6 +26,7 @@
     "angular2-signaturepad": "^2.11.0",
     "chart.js": "^2.9.3",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^9.17.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

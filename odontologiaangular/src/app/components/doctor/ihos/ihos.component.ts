@@ -5,6 +5,11 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { IHOSService } from 'src/app/services/ihos.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2';
+
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
 
 @Component({
   selector: 'app-ihos',
@@ -19,7 +24,7 @@ export class IHOSComponent implements OnInit {
   public info_paciente:any;
   constructor(private _ihosservices:IHOSService,public _recivir:Data_enivarService ) { 
     // tienes q crear el modelo del doctor
-    this.formihos= new IHOS('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
+    this.formihos= new IHOS('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','')
   }
 
 
@@ -62,6 +67,7 @@ export class IHOSComponent implements OnInit {
       this.formihos.InSaT=datos.InSarroTotal;
       this.formihos.TotalInIH=datos.TotalInIHOS;
       this.formihos.Obser=datos.ObservacionesIHOS;
+      this.formihos.higiene=datos.Higiene;
     }
     })
   }
@@ -105,6 +111,7 @@ export class IHOSComponent implements OnInit {
         IST: this.formihos.InSaT,
         TII: this.formihos.TotalInIH,
         OBS: this.formihos.Obser,
+        HIG: this.formihos.higiene,
         Id_Pacient:this.info_paciente.Id_Paciente,
        
       }
@@ -113,12 +120,16 @@ export class IHOSComponent implements OnInit {
     this.formihos.Id_Pacient=this.info_paciente.Id_Paciente
     this.formihos.InPlT= this.formihos.ID16y17_Pl+this.formihos.ID11y21_Pl+this.formihos.ID26y27_Pl+this.formihos.ID36y37_Pl+this.formihos.ID31y41_Pl+this.formihos.ID46y47_Pl
     this.formihos.InSaT= this.formihos.ID16y17_Sa+this.formihos.ID11y21_Sa+this.formihos.ID26y27_Sa+this.formihos.ID36y37_Sa+this.formihos.ID31y41_Sa+this.formihos.ID46y47_Sa
-    this.formihos.TotalInIH= ((this.formihos.ID16y17_Pl+this.formihos.ID11y21_Pl+this.formihos.ID26y27_Pl+this.formihos.ID36y37_Pl+this.formihos.ID31y41_Pl+this.formihos.ID46y47_Pl)/6)+((this.formihos.ID16y17_Sa+this.formihos.ID11y21_Sa+this.formihos.ID26y27_Sa+this.formihos.ID36y37_Sa+this.formihos.ID31y41_Sa+this.formihos.ID46y47_Sa)/6)
+    // this.formihos.TotalInIH= ((this.formihos.ID16y17_Pl+this.formihos.ID11y21_Pl+this.formihos.ID26y27_Pl+this.formihos.ID36y37_Pl+this.formihos.ID31y41_Pl+this.formihos.ID46y47_Pl)/6)+((this.formihos.ID16y17_Sa+this.formihos.ID11y21_Sa+this.formihos.ID26y27_Sa+this.formihos.ID36y37_Sa+this.formihos.ID31y41_Sa+this.formihos.ID46y47_Sa)/6)
 
     new AngularCsv(data, this.formihos.Obser, options);
     this._ihosservices.registrarIHOS(this.formihos).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
   }

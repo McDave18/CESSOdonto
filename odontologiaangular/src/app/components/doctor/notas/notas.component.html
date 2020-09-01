@@ -1,0 +1,83 @@
+<div class="content-wrapper"> 
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+
+   <section class="content "> 
+    <div class="box-header with-border">
+        <div class= "col-md-12 callout callout-info">
+        <h5><b>Notas de evolucion</b></h5>
+    </div>
+    </div>
+    <div class="col-md-10"  *ngIf="info_paciente">
+      <!-- {{info_paciente|json}} asi -->
+      <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+    </div>
+     
+         <form action="" #formunota="ngForm" (ngSubmit)="onSubmit(formunota)"> 
+            
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+        <table class="table table-bordered">
+            <thead>
+              <tr class="bg-primary">
+                <th scope="col">Fecha</th>
+                <th scope="col">No. Diente</th>
+                <th scope="col">Tratamiento</th>
+                <th scope="col">Nombre del Dr.</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr class="bg-success">
+                <td><input style="text-align:center; width: 100%" type="date" class="form-control" placeholder="DD/MM/AAAA" name="fecha11" #fechaa1="ngModel" [(ngModel)]="formnota.fechanota"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formnota.nodiente"></td>
+                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formnota.trata"></td>
+                <td>{{identity.name}} {{identity.surname}}</td>
+              </tr>
+            </tbody>
+          </table>
+    <!-- /.content-wrapper -->
+              <!-- /.content -->
+              <button type="submit">Guardar</button>
+              
+        </form>
+
+
+        <!-- {{notas|json}} -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">No. Diente</th>
+              <th scope="col">Tratamiento</th>
+              <th scope="col">Nombre del Dr.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nota of notas">
+              <th scope="row">1</th>
+              <td>{{nota.FechaE}}</td>
+              <td>{{nota.NoDiente}}</td>
+              <td>{{nota.Tratamiento}} </td>
+              <td>{{nota.NombreDr}}</td>
+            </tr>
+             
+          </tbody>
+        </table>
+       
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+</div>
+

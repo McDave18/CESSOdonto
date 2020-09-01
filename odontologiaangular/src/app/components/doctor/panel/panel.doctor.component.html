@@ -131,7 +131,7 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">CESS</li>
+        <li class="header">CESS {{identity.name}} {{identity.surname}}</li>
         <!-- Optionally, you can add icons to the links [routerLink]="['/inicio']"-->
         <li class="nav-item"><a [routerLink]="['/doctorpanel/home']"><i class="fa fa-h-square"></i> <span>Inicio</span></a></li>
         <li><a [routerLink]="['/doctorpanel/formulario3']"><i class="fa fa-user-circle"></i> <span>Registro Pacientes</span></a></li>
@@ -144,7 +144,23 @@
         <li><a [routerLink]="['/doctorpanel/placadb']"><i class="fa fa-table"></i> <span>% PlacaDB Anterior</span></a></li>
         <li><a [routerLink]="['/doctorpanel/formulario1']"><i class="fa fa-address-card"></i> <span>Health History</span></a></li>
         <li><a [routerLink]="['/doctorpanel/ihost']"><i class="fa fa-table"></i> <span>ÍndiceIHOS Terminal</span></a></li>
-        <li><a [routerLink]="['/doctorpanel/placadbt']"><i class="fa fa-table"></i> <span>% PlacaDB Actual</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-table"></i> <span>% PlacaDB Actual</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a [routerLink]="['/doctorpanel/placadbt']"><i class="fa fa-table"></i>%Placa Sesion 2</a></li>
+            <li><a href="#"><i class="fa fa-table"></i>%Placa Sesion 3</a></li>
+            <li><a href="#"><i class="fa fa-table"></i>%Placa Sesion 4</a></li>
+            <li><a href="#"><i class="fa fa-table"></i>%Placa Sesion 5</a></li>
+            <li><a href="#"><i class="fa fa-table"></i>%Placa Sesion 6</a></li>
+            <li><a href="#"><i class="fa fa-table"></i>%Placa Sesion Final</a></li>
+          </ul>
+        </li>
+        <!-- <li><a [routerLink]="['/doctorpanel/placadbt']"><i class="fa fa-table"></i> <span>% PlacaDB Actual</span></a></li> -->
+        <li><a [routerLink]="['/doctorpanel/notas']"><i class="fa fa-pencil"></i> <span>Notas de Evolucion</span></a></li>
         <li><a [routerLink]="['/doctorpanel/controlplaca']"><i class="fa fa-th-large"></i> <span>Control de Placa</span></a></li>
         <li><a [routerLink]="['/doctorpanel/controlpagos']"><i class="fa fa-credit-card"></i> <span>Control de Pagos</span></a></li>
         

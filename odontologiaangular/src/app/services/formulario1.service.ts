@@ -12,7 +12,7 @@ export class Formulario1Service{
     }
     registrarFormulario1(formulario1):Observable<any>
     { 
-        //luego checamos eso xD  sale 
+        
         let json = JSON.stringify(formulario1);
         let params = 'json='+json;
         console.log("formulario",params)
@@ -23,13 +23,20 @@ export class Formulario1Service{
     }
     contador(mes,pregunta):Observable<any>
     { 
-        //luego checamos eso xD  sale 
+        
         // let json = JSON.stringify(formulario1);
         // let params = 'json='+json;
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
         return this._http.get('http://odon.com.devel/api/contador/'+mes+"/"+pregunta,{headers:headers}); 
+
+    }
+    getFormulario1(id):Observable<any>
+    { 
+        
+        let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+        return this._http.get('http://odon.com.devel/api/formulario1/'+id,{headers:headers}); 
 
     }
 }

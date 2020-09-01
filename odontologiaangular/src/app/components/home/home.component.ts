@@ -223,7 +223,7 @@ contadoe_grafica(){
 
   })
   this._form1.contador(1,"P40").subscribe(res=>{
-    console.log("contador sida",res)
+    console.log("contador Sida",res)
     
     this.sida.push(res.en)
     this.sida.push(res.fe)

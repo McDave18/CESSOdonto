@@ -23,6 +23,9 @@
       <!-- {{info_paciente|json}} asi -->
       <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
     </div>
+    <div class="col-md-3">
+      <label>En caso de no existir el diente, escribir el numero 9 en el cuadro correspondiente</label>
+    </div>
      
          <form action="" #formuihos="ngForm" (ngSubmit)="onSubmit(formuihos)"> 
             
@@ -62,7 +65,7 @@
               <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d3141" #d3141p="ngModel" [(ngModel)]="formihos.ID31y41_Pl"></td>
               <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="d4647" #d4647p="ngModel" [(ngModel)]="formihos.ID46y47_Pl"></td>
               <!-- <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="tpi" #tpii="ngModel" [(ngModel)]="formihos.InPlT"></td> -->
-              <td><label>{{formihos.ID16y17_Pl+formihos.ID11y21_Pl+formihos.ID26y27_Pl+formihos.ID36y37_Pl+formihos.ID31y41_Pl+formihos.ID46y47_Pl}}</label></td>
+              <td><label>{{(formihos.ID16y17_Pl|sumadiente:formihos.ID11y21_Pl:formihos.ID26y27_Pl:formihos.ID36y37_Pl:formihos.ID31y41_Pl:formihos.ID46y47_Pl)|number}}</label></td> 
             </tr>
             <tr class="bg-success">
               <th class="static" scope="row">SARRO</th>
@@ -73,82 +76,30 @@
               <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="si3141" #si3141p="ngModel" [(ngModel)]="formihos.ID31y41_Sa"></td>
               <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="si4647" #si4647p="ngModel" [(ngModel)]="formihos.ID46y47_Sa"></td>
               <!-- <td><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="..." name="tsi" #tsii="ngModel" [(ngModel)]="formihos.InSaT"></td> -->
-              <td><label>{{formihos.ID16y17_Sa+formihos.ID11y21_Sa+formihos.ID26y27_Sa+formihos.ID36y37_Sa+formihos.ID31y41_Sa+formihos.ID46y47_Sa}}</label></td>
+              <td><label>{{(formihos.ID16y17_Sa|sumadiente:formihos.ID11y21_Sa:formihos.ID26y27_Sa:formihos.ID36y37_Sa:formihos.ID31y41_Sa:formihos.ID46y47_Sa)|number}}</label></td>
             </tr>
           </tbody>
         </table>
 
         <div class="col-md-3">
             <label>TOTAL HIOS INICIAL: </label>
-            <!-- <input type="text" class="form-control" placeholder="..." name="tiih" #tiihp="ngModel" [(ngModel)]="formihos.TotalInIH"> -->
-            <td><label>{{((formihos.ID16y17_Pl+formihos.ID11y21_Pl+formihos.ID26y27_Pl+formihos.ID36y37_Pl+formihos.ID31y41_Pl+formihos.ID46y47_Pl)/6)+((formihos.ID16y17_Sa+formihos.ID11y21_Sa+formihos.ID26y27_Sa+formihos.ID36y37_Sa+formihos.ID31y41_Sa+formihos.ID46y47_Sa)/6)}}</label></td>
+            <!-- <input type="text" aqui es que... si no dices q sn la suma de los seis simpre i cuando no sena  mayor a 9, asi, el 9 es el codigo que ponen cuando ese diente no existe por lo cual no se suma por ende tampoco aplica para dividir                 son  dsois vael total, si aqui va el total class="form-control" placeholder="..." name="tiih" #tiihp="ngModel" [(ngModel)]="formihos.TotalInIH"> -->
+            <td><label>{{((formihos.ID16y17_Pl|sumadiente:formihos.ID11y21_Pl:formihos.ID26y27_Pl:formihos.ID36y37_Pl:formihos.ID31y41_Pl:formihos.ID46y47_Pl)+(formihos.ID16y17_Sa|sumadiente:formihos.ID11y21_Sa:formihos.ID26y27_Sa:formihos.ID36y37_Sa:formihos.ID31y41_Sa:formihos.ID46y47_Sa))|number}}</label></td>
+        </div>
+        <div class="col-md-4">
+            
+          <label>Higiene Bucal</label>
+          <div class="form-group">
+            <select class="form-control" name="pregunta1" #ipreg1="ngModel" [(ngModel)]="formihos.higiene">
+              <option>Elija una opción</option>
+              <option>Excelente: 0</option>
+              <option>Buena: 0.1-1.2</option>
+              <option>Regular: 1.3-3.0</option>
+              <option>Mala: 3.1-6.0</option>
+            </select>
+          </div>
         </div>
 
-        <!-- IHOS TERMINAL -->
-        <!-- <br>
-        <div class="col-md-12">
-            <label></label>
-        </div>
-        <div class="col-md-12">
-            <label></label>
-        </div>
-        <div class="col-md-12">
-            <label></label>
-        </div>
-
-        <table class="table table-bordered">
-            <thead>
-              <tr class="bg-primary">
-                <th scope="col">TERMINAL</th>
-                <th scope="col">16</th>
-                <th scope="col">11</th>
-                <th scope="col">26</th>
-                <th scope="col">36</th>
-                <th scope="col">31</th>
-                <th scope="col">46</th>
-                <th scope="col">Total</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="bg-primary">
-                <th scope="row">TERMINAL</th>
-                <td>17</td>
-                <td>21</td>
-                <td>27</td>
-                <td>17</td>
-                <td>41</td>
-                <td>47</td>
-                <td>Total</td>
-                
-              </tr>
-              <tr class="bg-success">
-                <th scope="row">PLACA BACT.</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1617t" #d1617tp="ngModel" [(ngModel)]="formihos.TD16y17_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d1121t" #d1617tp="ngModel" [(ngModel)]="formihos.TD11y21_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d2726t" #d1617tp="ngModel" [(ngModel)]="formihos.TD26y27_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3637t" #d1617tp="ngModel" [(ngModel)]="formihos.TD36y37_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d3141t" #d1617tp="ngModel" [(ngModel)]="formihos.TD31y41_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="d4647t" #d1617tp="ngModel" [(ngModel)]="formihos.TD46y47_Pl"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="dtptt" #tpttp="ngModel" [(ngModel)]="formihos.TerPlT"></td>
-              </tr>
-              <tr class="bg-success">
-                <th scope="row">SARRO</th>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st1617" #st1617p="ngModel" [(ngModel)]="formihos.TD16y17_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st1121" #st1617p="ngModel" [(ngModel)]="formihos.TD11y21_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st2726" #st1617p="ngModel" [(ngModel)]="formihos.TD26y27_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st3637" #st1617p="ngModel" [(ngModel)]="formihos.TD36y37_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st3141" #st1617p="ngModel" [(ngModel)]="formihos.TD31y41_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="st4647" #st1617p="ngModel" [(ngModel)]="formihos.TD46y47_Sa"></td>
-                <td><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="..." name="tst" #tstp="ngModel" [(ngModel)]="formihos.TerSaT"></td>
-              </tr>
-            </tbody>
-          </table>
-  
-          <div class="col-md-6">
-              <label>TOTAL HIOS TERMINAL: </label>
-              <input type="text" class="form-control" placeholder="..." name="ttih" #ttihp="ngModel" [(ngModel)]="formihos.TotalTerIH">
-          </div> -->
 
           <!-- IHOS TERMINAL -->
         <br>

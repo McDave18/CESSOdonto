@@ -6,6 +6,11 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { LoginService } from 'src/app/services/login.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
+import Swal from 'sweetalert2'; 
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
+// const Swal = require('sweetalert2')
+
 
 @Component({
   selector: 'app-controlpagos',
@@ -18,6 +23,7 @@ export class ControlpagosComponent implements OnInit {
   public formpago;
   identity: any;
   public info_paciente:any;
+  public pagos=[]
   constructor(private _controlpagosservices:ControlpagosService, public _loginServices: LoginService,public _recivir:Data_enivarService ) { 
     this.formpago= new Controlpagos('','',0,0,0,'','')
     this.identity = _loginServices.getIdentity();  
@@ -26,12 +32,19 @@ export class ControlpagosComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    
+
+
+
+
     this._recivir.dataid$.subscribe(res=>{
       this.info_paciente=res
       console.log("recibiendo info",this.info_paciente)
       if(!isNullOrUndefined(res)){
         console.log(this.formpago)
           this.getFormulariopagos(res.Id_Paciente);
+          this.getpagos(res.Id_Paciente)
       }
     }) 
 
@@ -52,6 +65,7 @@ export class ControlpagosComponent implements OnInit {
       this.formpago.saldo=datos.SaldoT;
       this.formpago.folio=datos.FolioT;
       this.formpago.Alta=datos.Doctor_T;
+      this.formpago.trat=datos.Descrip;
       
       }
     })
@@ -98,8 +112,18 @@ export class ControlpagosComponent implements OnInit {
     this._controlpagosservices.registrarControlpagos(this.formpago).subscribe(
       response=>{
         console.log(response)
+        Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
+      
+      },error=>{
+          Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
+  }
+  getpagos(id){
+    this._controlpagosservices.getControlpagos(id).subscribe(pagos=>{
+      console.log(pagos)
+      this.pagos=pagos.Pagos;
+    })
   }
 
 }
