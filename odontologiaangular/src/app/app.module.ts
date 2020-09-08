@@ -38,6 +38,10 @@ import { Placadb6Component } from './components/doctor/placadb6/placadb6.compone
 import { Placadb7Component } from './components/doctor/placadb7/placadb7.component';
 import { SumadientePipe } from './pipes/sumadiente.pipe';
 import { NotasComponent } from './components/doctor/notas/notas.component';
+import { SumaCPipe } from './pipes/sumac.pipe';
+import { SumaPPipe } from './pipes/suma-p.pipe';
+import { SumaOPipe } from './pipes/suma-o.pipe';
+import { SumaplacaPipe } from './pipes/sumaplaca.pipe';
 
 
 @NgModule({
@@ -71,6 +75,10 @@ import { NotasComponent } from './components/doctor/notas/notas.component';
     Placadb7Component,
     SumadientePipe,
     NotasComponent,
+    SumaCPipe,
+    SumaPPipe,
+    SumaOPipe,
+    SumaplacaPipe,
 
 
     

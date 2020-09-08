@@ -1,1 +1,238 @@
-<p>placadb5 works!</p>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Centro de Estudios y Servicios en Salud
+        <small>Universidad Veracruzana</small>
+      </h1>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol> -->
+    </section>
+  
+    <section class="content "> 
+  
+        <form action="" #formudbt5="ngForm" (ngSubmit)="onSubmit(formudbt5)"> 
+          
+  
+                <div class="box box-primary">
+                  <div class="row">
+            
+                            <div class="box-header with-border">
+                                <div class=" col-md-10">
+                                <h4><b>Porcentaje de Placa Dentobacteriana</b></h4>
+                            </div>
+                            </div>
+                    
+                            <div class="box-header with-border">
+                                <div class=" col-md-12 alert alert-info">
+                                <h5><b>Sesion 5</b></h5>
+                            </div>
+                            </div>
+                            <div class="col-md-10"  *ngIf="info_paciente">
+                              <!-- {{info_paciente|json}} -->
+                              <label for="">Estás atendiendo a: {{info_paciente.NombreP+" "+info_paciente.PaternoP}}</label>
+                            </div>
+                            
+                            <table class="table table-bordered">
+                              <thead>
+                                <tr class="bg-primary">
+                                  <th scope="col">18</th>
+                                  <th scope="col">17</th>
+                                  <th scope="col">16</th>
+                                  <th scope="col">15</th>
+                                  <th scope="col">14</th>
+                                  <th scope="col">13</th>
+                                  <th scope="col">12</th>
+                                  <th scope="col">11</th>
+                                  <th scope="col">21</th>
+                                  <th scope="col">22</th>
+                                  <th scope="col">23</th>
+                                  <th scope="col">24</th>
+                                  <th scope="col">25</th>
+                                  <th scope="col">26</th>
+                                  <th scope="col">27</th>
+                                  <th scope="col">28</th>
+                                  
+                                </tr>
+                              </thead>
+                      
+                              <tbody>
+                                <tr class="bg-success">
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="18" name="dd18" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS18"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="17" name="dd17" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS17"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="16" name="dd16" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS16"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="15" name="dd15" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS15"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="14" name="dd14" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS14"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="13" name="dd13" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS13"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="12" name="dd12" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS12"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="11" name="dd11" #ds18="ngModel" [(ngModel)]="formdbt5.AdDS11"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="21" name="dd21" #ds21="ngModel" [(ngModel)]="formdbt5.AdIS21"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="22" name="dd22" #ds22="ngModel" [(ngModel)]="formdbt5.AdIS22"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="23" name="dd23" #ds23="ngModel" [(ngModel)]="formdbt5.AdIS23"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="24" name="dd24" #ds24="ngModel" [(ngModel)]="formdbt5.AdIS24"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="25" name="dd25" #ds25="ngModel" [(ngModel)]="formdbt5.AdIS25"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="26" name="dd26" #ds26="ngModel" [(ngModel)]="formdbt5.AdIS26"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="27" name="dd27" #ds27="ngModel" [(ngModel)]="formdbt5.AdIS27"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="28" name="dd28" #ds28="ngModel" [(ngModel)]="formdbt5.AdIS28"></th>
+                                  
+                                </tr>
+                                <!-- <tr class="bg-success">
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="55" name="dd55" #ds55="ngModel" [(ngModel)]="formodonto.dDS55"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="54" name="dd54" #ds54="ngModel" [(ngModel)]="formodonto.dDS54"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="53" name="dd53" #ds53="ngModel" [(ngModel)]="formodonto.dDS53"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="52" name="dd52" #ds52="ngModel" [(ngModel)]="formodonto.dDS52"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="51" name="dd51" #ds51="ngModel" [(ngModel)]="formodonto.dDS51"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="61" name="dd61" #di61="ngModel" [(ngModel)]="formodonto.dIS61"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="62" name="dd62" #di62="ngModel" [(ngModel)]="formodonto.dIS62"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="63" name="dd63" #di63="ngModel" [(ngModel)]="formodonto.dIS63"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="64" name="dd64" #di64="ngModel" [(ngModel)]="formodonto.dIS64"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="65" name="dd65" #di65="ngModel" [(ngModel)]="formodonto.dIS65"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  
+                                </tr> -->
+                              </tbody>
+                            </table>
+                    
+  
+                            <div class="col-md-12">
+                            <img src="../assets/imagen/placadb.png">
+                            </div>
+                            <br><br>
+  
+                            <table class="table table-bordered">
+                      
+                              <tbody>
+                                <!-- <tr class="bg-success">
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="85" name="dd85" #di85="ngModel" [(ngModel)]="formodonto.dDI85"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="84" name="dd84" #di84="ngModel" [(ngModel)]="formodonto.dDI84"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="83" name="dd83" #di83="ngModel" [(ngModel)]="formodonto.dDI83"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="82" name="dd82" #di82="ngModel" [(ngModel)]="formodonto.dDI82"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="81" name="dd81" #di81="ngModel" [(ngModel)]="formodonto.dDI81"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="71" name="dd61" #di61="ngModel" [(ngModel)]="formodonto.dIS61"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="72" name="dd62" #di62="ngModel" [(ngModel)]="formodonto.dIS62"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="73" name="dd63" #di63="ngModel" [(ngModel)]="formodonto.dIS63"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="74" name="dd64" #di64="ngModel" [(ngModel)]="formodonto.dIS64"></th>
+                                  <th><input style="text-align:center; width: 100%" type="text" class="form-control" placeholder="75" name="dd65" #di65="ngModel" [(ngModel)]="formodonto.dIS65"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  <th style="visibility:hidden;"></th>
+                                  
+                                </tr> -->
+                                <tr class="bg-success">
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="48" name="dd48" #ds48="ngModel" [(ngModel)]="formdbt5.AdDI48"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="47" name="dd47" #ds47="ngModel" [(ngModel)]="formdbt5.AdDI47"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="46" name="dd46" #ds46="ngModel" [(ngModel)]="formdbt5.AdDI46"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="45" name="dd45" #ds45="ngModel" [(ngModel)]="formdbt5.AdDI45"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="44" name="dd44" #ds44="ngModel" [(ngModel)]="formdbt5.AdDI44"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="43" name="dd43" #ds43="ngModel" [(ngModel)]="formdbt5.AdDI43"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="42" name="dd42" #ds42="ngModel" [(ngModel)]="formdbt5.AdDI42"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="41" name="dd41" #ds41="ngModel" [(ngModel)]="formdbt5.AdDI41"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="31" name="dd31" #ds31="ngModel" [(ngModel)]="formdbt5.AdII31"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="32" name="dd32" #ds32="ngModel" [(ngModel)]="formdbt5.AdII32"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="33" name="dd33" #ds33="ngModel" [(ngModel)]="formdbt5.AdII33"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="34" name="dd34" #ds34="ngModel" [(ngModel)]="formdbt5.AdII34"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="35" name="dd35" #ds35="ngModel" [(ngModel)]="formdbt5.AdII35"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="36" name="dd36" #ds36="ngModel" [(ngModel)]="formdbt5.AdII36"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="37" name="dd37" #ds37="ngModel" [(ngModel)]="formdbt5.AdII37"></th>
+                                  <th><input style="text-align:center; width: 100%" type="number" class="form-control" placeholder="38" name="dd38" #ds38="ngModel" [(ngModel)]="formdbt5.AdII38"></th>
+                                </tr>
+                              
+  
+                              <!-- <thead> -->
+                                <tr class="bg-primary">
+                                  <th scope="col">48</th>
+                                  <th scope="col">47</th>
+                                  <th scope="col">46</th>
+                                  <th scope="col">45</th>
+                                  <th scope="col">44</th>
+                                  <th scope="col">43</th>
+                                  <th scope="col">42</th>
+                                  <th scope="col">41</th>
+                                  <th scope="col">31</th>
+                                  <th scope="col">32</th>
+                                  <th scope="col">33</th>
+                                  <th scope="col">34</th>
+                                  <th scope="col">35</th>
+                                  <th scope="col">36</th>
+                                  <th scope="col">37</th>
+                                  <th scope="col">38</th>
+                                </tr>
+                              </tbody>
+                              <!-- </thead> -->
+                            </table>
+  
+                    
+                         </div>
+            
+                </div> 
+                <div class="col-md-3">
+                  <label>% de Placa </label>
+                  <!-- <input type="text" class="form-control" placeholder="..." name="plaact" #plaactp="ngModel" [(ngModel)]="formdbt.totala"> -->
+                  <label>{{(formdbt5.AdDS18|sumaplaca:formdbt5.AdDS17:formdbt5.AdDS16:formdbt5.AdDS15:formdbt5.AdDS14:formdbt5.AdDS13:formdbt5.AdDS12:formdbt5.AdDS11:formdbt5.AdIS28:formdbt5.AdIS27:formdbt5.AdIS26:formdbt5.AdIS25:formdbt5.AdIS24:formdbt5.AdIS23:formdbt5.AdIS22:formdbt5.AdIS21:formdbt5.AdDI48:formdbt5.AdDI47:formdbt5.AdDI46:formdbt5.AdDI45:formdbt5.AdDI44:formdbt5.AdDI43:formdbt5.AdDI42:formdbt5.AdDI41:formdbt5.AdII38:formdbt5.AdII37:formdbt5.AdII36:formdbt5.AdII35:formdbt5.AdII34:formdbt5.AdII33:formdbt5.AdII32:formdbt5.AdII31)|number }}</label>
+                </div>
+  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box">
+                        <div class="box-header">
+                          <h3 class="box-title">Anotaciones
+                            <small>Ingrese observaciones</small>
+                          </h3>
+                          <!-- tools box -->
+                          <div class="pull-right box-tools">
+                            <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip"
+                                    title="Collapse">
+                              <i class="fa fa-minus"></i></button>
+                            <!-- <button type="button" class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip"
+                                    title="Remove">
+                              <i class="fa fa-times"></i></button> -->
+                          </div>
+                          <!-- /. tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body pad">
+                          <form>
+                            <textarea class="textarea" placeholder="Escriba aquí..."
+                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #7a42e2; padding: 10px; " class="form-control" placeholder="Ingrese sus observaciones" name="iobser" #diobser="ngModel" [(ngModel)]="formdbt5.AObser"></textarea>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.col-->
+                  </div>
+          
+  
+  
+                <button type="submit">Guardar</button>
+  
+        </form>
+       
+          
+    </section>
+              <!-- /.content -->
+  </div>
+        
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+            

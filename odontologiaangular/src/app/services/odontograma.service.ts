@@ -31,5 +31,16 @@ export class OdontogramaService{
         return this._http.get('http://odon.com.devel/api/odontograma/'+id,{headers:headers}); 
 
     }
+    contador1(mes,pregunta):Observable<any>
+    { 
+        
+        // let json = JSON.stringify(formulario1);
+        // let params = 'json='+json;
+        // console.log("formulario",params)
+        let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+
+        return this._http.get('http://odon.com.devel/api/contador1/'+mes+"/"+pregunta,{headers:headers}); 
+
+    }
    
 }

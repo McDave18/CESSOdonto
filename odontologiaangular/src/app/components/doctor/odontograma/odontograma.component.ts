@@ -6,6 +6,9 @@ import { OdontogramaService } from 'src/app/services/odontograma.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
 import Swal from 'sweetalert2'; 
+import { SumaOPipe } from 'src/app/pipes/suma-o.pipe';
+import { SumaCPipe } from 'src/app/pipes/sumac.pipe';
+import { SumaPPipe } from 'src/app/pipes/suma-p.pipe';
 // import Swal from 'sweetalert2/dist/sweetalert2.js'
 // import 'sweetalert2/src/sweetalert2.scss'
 // const Swal = require('sweetalert2')
@@ -14,15 +17,16 @@ import Swal from 'sweetalert2';
   selector: 'app-odontograma',
   templateUrl: './odontograma.component.html',
   styleUrls: ['./odontograma.component.css'],
-  providers: [OdontogramaService] 
+  providers: [OdontogramaService,SumaOPipe,SumaCPipe, SumaPPipe] 
 })
 export class OdontogramaComponent implements OnInit {
 
     public formodonto;
     public info_paciente:any;
-    constructor(private _odontogramaservices:OdontogramaService, public _recivir:Data_enivarService ) { 
+    
+    constructor(public dientesuma:SumaCPipe, public dientesuma2:SumaPPipe, public dientesuma3:SumaOPipe, private _odontogramaservices:OdontogramaService, public _recivir:Data_enivarService ) { 
       
-      this.formodonto= new Odontograma('','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')
+      this.formodonto= new Odontograma('',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'')
     }
   
     ngOnInit(): void {
@@ -106,6 +110,18 @@ export class OdontogramaComponent implements OnInit {
     
   
     onSubmit(form){
+
+      let o=  this.dientesuma.transform(this.formodonto.dDS18,this.formodonto.dDS17,this.formodonto.dDS16,this.formodonto.dDS15,this.formodonto.dDS14,this.formodonto.dDS13,this.formodonto.dDS12,this.formodonto.dDS11,this.formodonto.dDS55,this.formodonto.dDS54,this.formodonto.dDS53,this.formodonto.dDS52,this.formodonto.dDS51,this.formodonto.dIS28,this.formodonto.dIS27,this.formodonto.dIS26,this.formodonto.dIS25,this.formodonto.dIS24,this.formodonto.dIS23,this.formodonto.dIS22,this.formodonto.dIS21,this.formodonto.dIS65,this.formodonto.dIS64,this.formodonto.dIS63,this.formodonto.dIS62,this.formodonto.dIS61,this.formodonto.dDI48,this.formodonto.dDI47,this.formodonto.dDI46,this.formodonto.dDI45,this.formodonto.dDI44,this.formodonto.dDI43,this.formodonto.dDI42,this.formodonto.dDI41,this.formodonto.dDI85,this.formodonto.dDI84,this.formodonto.dDI83,this.formodonto.dDI82,this.formodonto.dDI81,this.formodonto.dII38,this.formodonto.dII37,this.formodonto.dII36,this.formodonto.dII35,this.formodonto.dII34,this.formodonto.dII33,this.formodonto.dII32,this.formodonto.dII31,this.formodonto.dII75,this.formodonto.dII74,this.formodonto.dII73,this.formodonto.dII72,this.formodonto.dII71)
+      let p=  this.dientesuma2.transform(this.formodonto.dDS18,this.formodonto.dDS17,this.formodonto.dDS16,this.formodonto.dDS15,this.formodonto.dDS14,this.formodonto.dDS13,this.formodonto.dDS12,this.formodonto.dDS11,this.formodonto.dDS55,this.formodonto.dDS54,this.formodonto.dDS53,this.formodonto.dDS52,this.formodonto.dDS51,this.formodonto.dIS28,this.formodonto.dIS27,this.formodonto.dIS26,this.formodonto.dIS25,this.formodonto.dIS24,this.formodonto.dIS23,this.formodonto.dIS22,this.formodonto.dIS21,this.formodonto.dIS65,this.formodonto.dIS64,this.formodonto.dIS63,this.formodonto.dIS62,this.formodonto.dIS61,this.formodonto.dDI48,this.formodonto.dDI47,this.formodonto.dDI46,this.formodonto.dDI45,this.formodonto.dDI44,this.formodonto.dDI43,this.formodonto.dDI42,this.formodonto.dDI41,this.formodonto.dDI85,this.formodonto.dDI84,this.formodonto.dDI83,this.formodonto.dDI82,this.formodonto.dDI81,this.formodonto.dII38,this.formodonto.dII37,this.formodonto.dII36,this.formodonto.dII35,this.formodonto.dII34,this.formodonto.dII33,this.formodonto.dII32,this.formodonto.dII31,this.formodonto.dII75,this.formodonto.dII74,this.formodonto.dII73,this.formodonto.dII72,this.formodonto.dII71)
+      let c=  this.dientesuma3.transform(this.formodonto.dDS18,this.formodonto.dDS17,this.formodonto.dDS16,this.formodonto.dDS15,this.formodonto.dDS14,this.formodonto.dDS13,this.formodonto.dDS12,this.formodonto.dDS11,this.formodonto.dDS55,this.formodonto.dDS54,this.formodonto.dDS53,this.formodonto.dDS52,this.formodonto.dDS51,this.formodonto.dIS28,this.formodonto.dIS27,this.formodonto.dIS26,this.formodonto.dIS25,this.formodonto.dIS24,this.formodonto.dIS23,this.formodonto.dIS22,this.formodonto.dIS21,this.formodonto.dIS65,this.formodonto.dIS64,this.formodonto.dIS63,this.formodonto.dIS62,this.formodonto.dIS61,this.formodonto.dDI48,this.formodonto.dDI47,this.formodonto.dDI46,this.formodonto.dDI45,this.formodonto.dDI44,this.formodonto.dDI43,this.formodonto.dDI42,this.formodonto.dDI41,this.formodonto.dDI85,this.formodonto.dDI84,this.formodonto.dDI83,this.formodonto.dDI82,this.formodonto.dDI81,this.formodonto.dII38,this.formodonto.dII37,this.formodonto.dII36,this.formodonto.dII35,this.formodonto.dII34,this.formodonto.dII33,this.formodonto.dII32,this.formodonto.dII31,this.formodonto.dII75,this.formodonto.dII74,this.formodonto.dII73,this.formodonto.dII72,this.formodonto.dII71)
+      let total= c+p+o
+     
+      console.log("O:",o)
+      console.log("P:",p)
+      console.log("C:",c)
+      console.log("CPO", total)
+      //ese que agarraste es la suma de C P y O,  espara saver si saca la cbien  los tres tienen el mismo valor ? q o, cada pipe es para comparar con diferentes valores, pero lo que se compara son los mismos, solo que en en el sumaC se compara que sea igual a 3, en sumaP sea igual a 4, sumaO sea igual a 1 o 2, en esos 3 pipes se debe de comparar con todos los dientes ok
+      // ((+(formodonto.dDS18|sumaP:formodonto.dDS17:formodonto.dDS16:formodonto.dDS15:formodonto.dDS14:formodonto.dDS13:formodonto.dDS12:formodonto.dDS11:formodonto.dDS55:formodonto.dDS54:formodonto.dDS53:formodonto.dDS52:formodonto.dDS51:formodonto.dIS28:formodonto.dIS27:formodonto.dIS26:formodonto.dIS25:formodonto.dIS24:formodonto.dIS23:formodonto.dIS22:formodonto.dIS21:formodonto.dIS65:formodonto.dIS64:formodonto.dIS63:formodonto.dIS62:formodonto.dIS61:formodonto.dDI48:formodonto.dDI47:formodonto.dDI46:formodonto.dDI45:formodonto.dDI44:formodonto.dDI43:formodonto.dDI42:formodonto.dDI41:formodonto.dDI85:formodonto.dDI84:formodonto.dDI83:formodonto.dDI82:formodonto.dDI81:formodonto.dII38:formodonto.dII37:formodonto.dII,this.6:formodonto.dII35:formodonto.dII34:formodonto.dII33:formodonto.dII32:formodonto.dII31:formodonto.dII75:formodonto.dII74:formodonto.dII73:formodonto.dII72:formodonto.dII71)+(formodonto.dDS18|sumaC:formodonto.dDS17:formodonto.dDS16:formodonto.dDS15:formodonto.dDS14:formodonto.dDS13:formodonto.dDS12:formodonto.dDS11:formodonto.dDS55:formodonto.dDS54:formodonto.dDS53:formodonto.dDS52:formodonto.dDS51:formodonto.dIS28:formodonto.dIS27:formodonto.dIS26:formodonto.dIS25:formodonto.dIS24:formodonto.dIS23:formodonto.dIS22:formodonto.dIS21:formodonto.dIS65:formodonto.dIS64:formodonto.dIS63:formodonto.dIS62:formodonto.dIS61:formodonto.dDI48:formodonto.dDI47:formodonto.dDI46:formodonto.dDI45:formodonto.dDI44:formodonto.dDI43:formodonto.dDI42:formodonto.dDI41:formodonto.dDI85:formodonto.dDI84:formodonto.dDI83:formodonto.dDI82:formodonto.dDI81:formodonto.dII38:formodonto.dII37:formodonto.dII36:formodonto.dII35:formodonto.dII34:formodonto.dII33:formodonto.dII32:formodonto.dII31:formodonto.dII75:formodonto.dII74:formodonto.dII73:formodonto.dII72:formodonto.dII71))|number
       console.log(this.formodonto)
       console.log(this.info_paciente.Id_Paciente)
       var options = { 
@@ -179,13 +195,21 @@ export class OdontogramaComponent implements OnInit {
           D50: this.formodonto.dII73,
           D51: this.formodonto.dII72,
           D52: this.formodonto.dII71,
+          C1: this.formodonto.c1,
+          P1: this.formodonto.p1,
+          O1: this.formodonto.o1,
+          CPO1: this.formodonto.cpo,
           OBBS: this.formodonto.Obser,
           Id_Pacient:this.info_paciente.Id_Paciente,
         }
       ];
 
       this.formodonto.Id_Pacient=this.info_paciente.Id_Paciente
-  
+      this.formodonto.c1=c
+      this.formodonto.p1=p
+      this.formodonto.o1=o
+      this.formodonto.cpo=total
+      //asi?
       new AngularCsv(data, this.formodonto.Obser, options);
       this._odontogramaservices.registrarOdontograma(this.formodonto).subscribe(
         response=>{
@@ -193,6 +217,7 @@ export class OdontogramaComponent implements OnInit {
           Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')// aqui se pone  jajajajjaa
       
         },error=>{
+          console.log(error)
             Swal.fire('Oops...', 'algo salió mal!', 'error')
         }
       )

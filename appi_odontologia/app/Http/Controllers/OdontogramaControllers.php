@@ -86,6 +86,10 @@ class OdontogramaControllers extends Controller
             $odontograma->DII73=$params["dII73"];
             $odontograma->DII72=$params["dII72"];
             $odontograma->DII71=$params["dII71"];
+            $odontograma->C=$params["c1"];
+            $odontograma->P=$params["p1"];
+            $odontograma->O=$params["o1"];
+            $odontograma->CPO=$params["cpo"];
             $odontograma->ObserOdonto=$params["Obser"];
 
             $odontograma->save();
@@ -110,5 +114,54 @@ class OdontogramaControllers extends Controller
         return response() ->json($data,$data['code']);
 
     }
+    public function contador1($id,$pregunta) {
+        $enero = Odontograma::whereMonth("created_at","1")->where($pregunta,">",0)->count(); //qye tabla es, como que qué tabla es? xd mi no entender la pregunta xd ya lo pusiste xD bueno xd las columnas  son la mismas, si vas asacar el total de datos q tien c mayoy a 0 me dices, asi es 
+        $febrero = Odontograma::whereMonth("created_at","2")->where($pregunta,0)->count();
+        $marzo = Odontograma::whereMonth("created_at","3")->where($pregunta,">",0)->count();
+        $abril = Odontograma::whereMonth("created_at","4")->where($pregunta,">",0)->count();
+        $mayo = Odontograma::whereMonth("created_at","5")->where($pregunta,">",0)->count();
+        $junio = Odontograma::whereMonth("created_at","6")->where($pregunta,">",0)->count();
+        $julio = Odontograma::whereMonth("created_at","7")->where($pregunta,">",0)->count();
+        $agosto = Odontograma::whereMonth("created_at","8")->where($pregunta,">",0)->count();
+        $sep = Odontograma::whereMonth("created_at","9")->where($pregunta,">",0)->count();
+        $oct = Odontograma::whereMonth("created_at","10")->where($pregunta,">",0)->count();
+        $nov = Odontograma::whereMonth("created_at","11")->where($pregunta,">",0)->count();
+        $dic = Odontograma::whereMonth("created_at","12")->where($pregunta,">",0)->count(); // segun yo asi, por ya solo lo agregaré al web.php
+        // if(is_object($interrogacion)){
+            $data = [
+            'code' => 200, //
+            'status' => 'success',
+            'en' => $enero , //asi?yes
+            'fe' => $febrero,
+            'mar'=> $marzo,
+            'ab'=> $abril,
+            'may'=> $mayo,
+            'jun'=> $junio,
+            'jul'=> $julio,
+            'ago'=> $agosto,
+            'sept'=> $sep,
+            'octb'=> $oct,
+            'novi'=> $nov,
+            'dici'=> $dic,
+            ];
+        // }else{
+        //     $data = [
+        //     'code' => 404,
+        //     'status' => 'error',
+        //     'contador1' => 'el conteo no existe'
+        //     ];
+        // }
+        return response()->json($data,$data['code']);
+    }
+
+
+
+
+
+
+
+
+
+
 }
     

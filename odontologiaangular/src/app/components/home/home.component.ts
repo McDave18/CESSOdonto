@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { Formulario1Service } from 'src/app/services/formulario1.service';
+import { OdontogramaService } from 'src/app/services/odontograma.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers:[Formulario1Service]
+  providers:[Formulario1Service, OdontogramaService]
 })
 export class HomeComponent implements OnInit {
 
   public chart: any = null;
+  public chart1: any = null;
   public tabaco=[];
   public sida=[];
   public hepatitis=[];
@@ -21,11 +23,16 @@ export class HomeComponent implements OnInit {
   public radiacion=[];
   public alcohol=[];
   public embarazadas=[];
-  constructor(private _form1:Formulario1Service) { }
+  public c=[];
+  public p=[];
+  public o=[];
+
+  constructor(private _form1:Formulario1Service, private _formodonto:OdontogramaService) { }
 
   ngOnInit(): void {
    
     this.contadoe_grafica();
+    this.contador_grafica();
   }
 
   grafica()
@@ -200,6 +207,56 @@ export class HomeComponent implements OnInit {
   //           }]
   //       }
   //   }
+
+});
+}
+grafica1()
+{
+  var ctx = document.getElementById('myChart1');
+  let data: [{
+    x: 10,
+    y: 20
+}, {
+    x: 15,
+    y: 10
+}]
+  this.chart1 =   new Chart(ctx, {
+    
+    type: 'line',
+    data: {
+    datasets: [
+      {
+        label: 'C',
+        data: this.c,
+        borderWidth: 1,
+        backgroundColor: [ 'rgba(244, 070, 017, 0.2)'],
+      },  
+      {
+        label: 'P',
+        data: this.p,
+        borderWidth: 1,
+        backgroundColor: [ 'rgba(243, 218, 011, 0.2)'],
+      },  
+      {
+        label: 'O',
+        data: this.o,
+        borderWidth: 1,
+        backgroundColor: [ 'rgba(215, 215, 215, 0.2)'],
+      }
+
+    ],
+      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          reverse: false,
+          stepSize: 3
+        },
+      }]
+    }
+  }
 
 });
 }
@@ -400,6 +457,71 @@ contadoe_grafica(){
     this.embarazadas.push(res.novi)
     this.embarazadas.push(res.dici)
     this.grafica();
+
+  })
+
+
+
+ 
+
+  
+
+  
+
+}
+contador_grafica(){
+  this._formodonto.contador1(1,"C").subscribe(res=>{
+    console.log("contador c",res)
+    
+    this.c.push(res.en)
+    this.c.push(res.fe)
+    this.c.push(res.mar)
+    this.c.push(res.ab)
+    this.c.push(res.may)
+    this.c.push(res.jun)
+    this.c.push(res.jul)
+    this.c.push(res.ago)
+    this.c.push(res.sept)
+    this.c.push(res.octb)
+    this.c.push(res.novi)
+    this.c.push(res.dici)
+   
+
+  })
+  this._formodonto.contador1(1,"P").subscribe(res=>{
+    console.log("contador P",res)
+    
+    this.p.push(res.en)
+    this.p.push(res.fe)
+    this.p.push(res.mar)
+    this.p.push(res.ab)
+    this.p.push(res.may)
+    this.p.push(res.jun)
+    this.p.push(res.jul)
+    this.p.push(res.ago)
+    this.p.push(res.sept)
+    this.p.push(res.octb)
+    this.p.push(res.novi)
+    this.p.push(res.dici)
+   
+
+  })
+  this._formodonto.contador1(1,"O").subscribe(res=>{
+    console.log("contador O",res)
+    
+    this.o.push(res.en)
+    this.o.push(res.fe)
+    this.o.push(res.mar)
+    this.o.push(res.ab)
+    this.o.push(res.may)
+    this.o.push(res.jun)
+    this.o.push(res.jul)
+    this.o.push(res.ago)
+    this.o.push(res.sept)
+    this.o.push(res.octb)
+    this.o.push(res.novi)
+    this.o.push(res.dici)
+    this.grafica1();
 
   })
 

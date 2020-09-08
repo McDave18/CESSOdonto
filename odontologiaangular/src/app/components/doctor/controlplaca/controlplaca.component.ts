@@ -97,6 +97,7 @@ export class ControlplacaComponent implements OnInit {
         Swal.fire('Yeih...', 'Se ha registrado correctamente', 'success')
       
       },error=>{
+        console.log(error)
           Swal.fire('Oops...', 'algo salió mal!', 'error')
       }
     )
@@ -104,9 +105,10 @@ export class ControlplacaComponent implements OnInit {
 
 
     getsesiones(id){
+      console.log("id",id)
       this._controlplacaservices.getControlsesiones(id).subscribe(sesiones=>{
         console.log(sesiones)
-        this.sesiones=sesiones.Pagos;
+        this.sesiones=sesiones.Sesiones;
       })
     }
 

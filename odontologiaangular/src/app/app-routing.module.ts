@@ -25,6 +25,11 @@ import { PlacadbtComponent} from './components/doctor/placadbt/placadbt.componen
 import { ControlplacaComponent } from './components/doctor/controlplaca/controlplaca.component';
 import { BusquedaComponent } from './components/doctor/busqueda/busqueda.component';
 import { NotasComponent } from './components/doctor/notas/notas.component';
+import { Placadb3Component } from './components/doctor/placadb3/placadb3.component';
+import { Placadb4Component } from './components/doctor/placadb4/placadb4.component';
+import { Placadb5Component } from './components/doctor/placadb5/placadb5.component';
+import { Placadb6Component } from './components/doctor/placadb6/placadb6.component';
+import { Placadb7Component } from './components/doctor/placadb7/placadb7.component';
 
 
 
@@ -57,6 +62,11 @@ children:[
   {path: 'controlplaca', component: ControlplacaComponent},
   {path: 'busqueda', component: BusquedaComponent},
   {path: 'notas', component: NotasComponent},
+  {path: 'placadb3', component: Placadb3Component},
+  {path: 'placadb4', component: Placadb4Component},
+  {path: 'placadb5', component: Placadb5Component},
+  {path: 'placadb6', component: Placadb6Component},
+  {path: 'placadb7', component: Placadb7Component},
   
 ]
 },{ path: 'salir/:sure',component: LoginComponent},

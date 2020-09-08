@@ -58,7 +58,7 @@ export class ControlpagosComponent implements OnInit {
       if(!isNullOrUndefined(res.Pagos[0])){ // creo q asi es si el array tine mas de 1  entra y te muestra los datos
       let datos = res.Pagos[0]
       
-      this.formpago.Id_Pacient=id;//se guardó el formulario pero no el Id aber de nuevo voy 
+      this.formpago.Id_Pacient=id; 
       this.formpago.fecha1=datos.Fecha_Trat;
       this.formpago.costo=datos.CostoT;
       this.formpago.abono=datos.Abono_T;
