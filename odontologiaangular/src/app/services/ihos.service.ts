@@ -18,7 +18,7 @@ export class IHOSService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/formularioihos',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/formularioihos',params,{headers:headers}); 
 
     }
     getIHOS(id):Observable<any>
@@ -28,7 +28,7 @@ export class IHOSService{
         // let params = 'json='+json;
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/formularioihos/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/formularioihos/'+id,{headers:headers}); 
 
     }
 }

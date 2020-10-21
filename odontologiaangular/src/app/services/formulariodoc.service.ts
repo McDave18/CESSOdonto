@@ -18,7 +18,7 @@ export class FormularioDocService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/doctores',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/doctores',params,{headers:headers}); 
 
     }
 }

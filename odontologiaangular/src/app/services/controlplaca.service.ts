@@ -17,7 +17,7 @@ export class ControlplacaService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/controlplaca',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/controlplaca',params,{headers:headers}); 
 
     }
     getControlsesiones(id):Observable<any>
@@ -27,7 +27,7 @@ export class ControlplacaService{
         // let params = 'json='+json;
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/controlplaca/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/controlplaca/'+id,{headers:headers}); 
 
     }
 }

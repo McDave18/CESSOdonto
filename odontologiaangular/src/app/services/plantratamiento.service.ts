@@ -18,7 +18,14 @@ export class PlantratamientoService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/tratamiento',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/tratamiento',params,{headers:headers}); 
+
+    }
+    getTratamiento(id):Observable<any>
+    { 
+        
+        let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+        return this._http.get('https://api.odontocess.org/api/tratamiento/'+id,{headers:headers}); 
 
     }
 }

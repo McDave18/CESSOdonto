@@ -10,6 +10,23 @@ class TratamientoControllers extends Controller
     public function index(){
         echo "hola checa http://odon.com.devel/";
     }
+    public function show($id) {
+        $ptratamiento = Tratamiento::where("Id_Paciente",$id)->get(); //tengo que hacer esto de nuevo para lo de Exploracion?
+        if(is_object($ptratamiento)){
+            $data = [
+            'code' => 200,
+            'status' => 'success',
+            'ptratamiento' => $ptratamiento
+            ];
+        }else{
+            $data = [
+            'code' => 404,
+            'status' => 'error',
+            'Tratamiento' => 'La Tratamiento no existe'
+            ];
+        }
+        return response()->json($data,$data['code']);
+    }
     public function store(Request $request){
         $json = $request->input('json',null);
         $params = json_decode($json,true);

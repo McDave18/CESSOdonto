@@ -18,13 +18,13 @@ export class NotasService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/notase',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/notase',params,{headers:headers}); 
 
     }
     getNotas(id):Observable<any>
     { 
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/notase/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/notase/'+id,{headers:headers}); 
 
     }
 }

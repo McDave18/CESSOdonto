@@ -17,8 +17,7 @@ export class ControlpagosService{
         let params = 'json='+json;
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-
-        return this._http.post('http://odon.com.devel/api/controlpagos',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/controlpagos',params,{headers:headers}); 
 
     }
     getControlpagos(id):Observable<any>
@@ -28,7 +27,7 @@ export class ControlpagosService{
         // let params = 'json='+json;
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/controlpagos/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org//api/controlpagos/'+id,{headers:headers}); 
 
     }
 }

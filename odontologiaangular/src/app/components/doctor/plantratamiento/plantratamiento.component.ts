@@ -5,9 +5,7 @@ import {AngularCsv} from 'angular-csv-ext/dist/Angular-csv';
 import { PlantratamientoService } from 'src/app/services/plantratamiento.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import Swal from 'sweetalert2'; 
-// import Swal from 'sweetalert2/dist/sweetalert2.js';
-// import 'sweetalert2/src/sweetalert2.scss';
-// const Swal = require('sweetalert2') 
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-plantratamiento',
@@ -31,9 +29,63 @@ export class PlantratamientoComponent implements OnInit {
     this._recivir.dataid$.subscribe(res=>{
       this.info_paciente=res
       console.log("recibiendo info",this.info_paciente)
+      if(!isNullOrUndefined(res)){
+        console.log(this.formtra)
+          this.getFormulariotratamiento(res.Id_Paciente);
+      }
     }) 
 
   }
+
+  getFormulariotratamiento(id){
+    console.log(id,"paciente")
+    
+    this._plantratamientoservices.getTratamiento(id).subscribe(res=>{
+      console.log("datos Tratamiento",res);
+      if(!isNullOrUndefined(res.Tratamiento[0])){ 
+      let datos = res.Tratamiento[0]
+      
+      this.formtra.Id_Pacient=id;
+      this.formtra.TdDS18=datos.TDDS18;
+      this.formtra.TdDS17=datos.TDDS17;
+      this.formtra.TdDS16=datos.TDDS16;
+      this.formtra.TdDS15=datos.TDDS15;
+      this.formtra.TdDS14=datos.TDDS14;
+      this.formtra.TdDS13=datos.TDDS13;
+      this.formtra.TdDS12=datos.TDDS12;
+      this.formtra.TdDS11=datos.TDDS11;
+      this.formtra.TdIS28=datos.TDIS28;
+      this.formtra.TdIS27=datos.TDIS27;
+      this.formtra.TdIS26=datos.TDIS26;
+      this.formtra.TdIS25=datos.TDIS25;
+      this.formtra.TdIS24=datos.TDIS24;
+      this.formtra.TdIS23=datos.TDIS23;
+      this.formtra.TdIS22=datos.TDIS22;
+      this.formtra.TdIS21=datos.TDIS21;
+      this.formtra.TdDI48=datos.TDDI48;
+      this.formtra.TdDI47=datos.TDDI47;
+      this.formtra.TdDI46=datos.TDDI46;
+      this.formtra.TdDI45=datos.TDDI45;
+      this.formtra.TdDI44=datos.TDDI44;
+      this.formtra.TdDI43=datos.TDDI43;
+      this.formtra.TdDI42=datos.TDDI42;
+      this.formtra.TdDI41=datos.TDDI41;
+      this.formtra.TdII38=datos.TDII38;
+      this.formtra.TdII37=datos.TDII37;
+      this.formtra.TdII36=datos.TDII36;
+      this.formtra.TdII35=datos.TDII35;
+      this.formtra.TdII34=datos.TDII34;
+      this.formtra.TdII33=datos.TDII33;
+      this.formtra.TdII32=datos.TDII32;
+      this.formtra.TdII31=datos.TDII31;
+      this.formtra.TObser=datos.TObser;
+
+     
+      }
+    })
+  }
+
+
 
   onSubmit(form){
     console.log(this.formtra)
@@ -107,4 +159,3 @@ export class PlantratamientoComponent implements OnInit {
   }
 
 }
-

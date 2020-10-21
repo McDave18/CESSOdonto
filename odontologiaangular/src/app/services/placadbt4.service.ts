@@ -18,14 +18,14 @@ export class Placadbt4Service{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/placaact4',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/placaact4',params,{headers:headers}); 
 
     }
     getPlacadbt4(id):Observable<any>
     { 
         
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/placaact4/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/placaact4/'+id,{headers:headers}); 
 
     }
 }

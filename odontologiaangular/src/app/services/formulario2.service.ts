@@ -17,7 +17,7 @@ export class Formulario2Service{
         let params = 'json='+json;
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.post('http://odon.com.devel/api/formulario',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/formulario',params,{headers:headers}); 
 
     }
     getFormulario2(id):Observable<any>
@@ -27,14 +27,14 @@ export class Formulario2Service{
         // let params = 'json='+json;
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/formulario/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/formulario/'+id,{headers:headers}); 
 
     }
     getFormulario2ex(id):Observable<any>
     { 
     
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/formularioex/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/formularioex/'+id,{headers:headers}); 
 
     }
 }

@@ -6,9 +6,6 @@ import { PlacadbtService } from 'src/app/services/placadbt.service';
 import { Data_enivarService } from 'src/app/services/data_enviar_componet.service';
 import { isNullOrUndefined } from 'util';
 import Swal from 'sweetalert2'; 
-// import Swal from 'sweetalert2/dist/sweetalert2.js'
-// import 'sweetalert2/src/sweetalert2.scss'
-// const Swal = require('sweetalert2')
 
 @Component({
   selector: 'app-placadbt',

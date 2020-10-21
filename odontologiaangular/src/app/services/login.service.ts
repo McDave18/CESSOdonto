@@ -23,7 +23,7 @@ export class LoginService{
         let params = 'json='+json;
         console.log("login",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.post('http://odon.com.devel/api/login',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/login',params,{headers:headers}); 
 
     }
     

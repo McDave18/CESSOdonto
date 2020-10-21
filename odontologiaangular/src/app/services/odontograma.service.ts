@@ -18,7 +18,7 @@ export class OdontogramaService{
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.post('http://odon.com.devel/api/odontograma',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/odontograma',params,{headers:headers}); 
 
     }
     getOdontograma(id):Observable<any>
@@ -28,7 +28,7 @@ export class OdontogramaService{
         // let params = 'json='+json;
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/odontograma/'+id,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/odontograma/'+id,{headers:headers}); 
 
     }
     contador1(mes,pregunta):Observable<any>
@@ -39,7 +39,7 @@ export class OdontogramaService{
         // console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
 
-        return this._http.get('http://odon.com.devel/api/contador1/'+mes+"/"+pregunta,{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/contador1/'+mes+"/"+pregunta,{headers:headers}); 
 
     }
    

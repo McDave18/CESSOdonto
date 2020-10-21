@@ -13,7 +13,7 @@ export class Formulario3Service{
     getPacientes():Observable<any>{
        
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.get('http://odon.com.devel/api/formulario3',{headers:headers}); 
+        return this._http.get('https://api.odontocess.org/api/formulario3',{headers:headers}); 
     }
     registrarFormulario3(formulario3):Observable<any>
     { 
@@ -22,7 +22,7 @@ export class Formulario3Service{
         let params = 'json='+json;
         console.log("formulario",params)
         let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-        return this._http.post('http://odon.com.devel/api/formulario3',params,{headers:headers}); 
+        return this._http.post('https://api.odontocess.org/api/formulario3',params,{headers:headers}); 
 
     }
 }
